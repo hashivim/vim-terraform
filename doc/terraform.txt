@@ -1,0 +1,14 @@
+*terraform.txt*  basic vim/terraform integration
+
+Author:  Mark Cornick <https://github.com/markcornick>
+License: MIT license
+Repo:    https://github.com/markcornick/vim-terraform
+
+COMMANDS                                        *terraform*
+
+This command is only available if terraform is in your PATH.
+
+                                                *terraform-:terraform*
+:Terraform [args]         Invoke an arbitrary terraform command.
+
+ vim:tw=78:et:ft=help:norl:
