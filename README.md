@@ -1,8 +1,8 @@
 # vim-terraform
 
 This plugin adds a `:Terraform` command that runs terraform, with tab
-completion of subcommands. It also sets up `*.tf` files to be highlighted
-as JSON, and `*.tfstate` files as Javascript.
+completion of subcommands. It also sets up `*.tf` and `*.tfstate` files
+to be highlighted as Javascript (really JSON.)
 
 ## Installation
 
