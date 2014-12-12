@@ -1,5 +1,9 @@
 # vim-terraform CHANGELOG
 
+## Version 1.2.0 (December 12, 2014)
+
+* Add Kevin Le's syntax highlighting
+
 ## Version 1.1.0 (December 11, 2014)
 
 * Remove syntax highlighting; see README.md
