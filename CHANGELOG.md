@@ -1,5 +1,9 @@
 # vim-terraform CHANGELOG
 
+## Version 1.2.1 (February 5, 2015)
+
+* Block indentation fix (thanks imkira@github)
+
 ## Version 1.2.0 (December 12, 2014)
 
 * Add Kevin Le's syntax highlighting
