@@ -19,3 +19,6 @@ Syntax highlighting and indentation by Kevin Le (@bkad) based on prior work
 by Larry Gilbert (@L2G). The rest written by Mark Cornick <mark@cornick.io> by
 adapting my prior [vim-vagrant](https://github.com/markcornick/vim-vagrant)
 plugin. Licensed under the MIT license.
+
+Thanks to:
+* michael j talarczyk (@mijit)
