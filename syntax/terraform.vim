@@ -35,13 +35,13 @@ syn cluster terraCommentGroup contains=terraTodo
 syn region  terraComment      start="/\*" end="\*/" contains=@terraCommentGroup,@Spell
 syn region  terraComment      start="#" end="$" contains=@terraCommentGroup,@Spell
 
-syn match  terraResource        /resource/ nextgroup=terraResourceTypeStr skipwhite
+syn match  terraResource        /\<resource\>/ nextgroup=terraResourceTypeStr skipwhite
 syn region terraResourceTypeStr start=/"/ end=/"/ contains=terraResourceTypeBI
                               \ nextgroup=terraResourceName skipwhite
 syn region terraResourceName    start=/"/ end=/"/
                               \ nextgroup=terraResourceBlock skipwhite
 """ provider
-syn match  terraProvider      /provider/ nextgroup=terraProviderName skipwhite
+syn match  terraProvider      /\<provider\>/ nextgroup=terraProviderName skipwhite
 syn region terraProviderName  start=/"/ end=/"/ nextgroup=terraProviderBlock skipwhite
 
 """ misc.
