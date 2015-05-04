@@ -9,7 +9,7 @@ to be highlighted as HML (Hashicorp's JSON variant) and JSON respectively.
 With [pathogen.vim](https://github.com/tpope/vim-pathogen) just do:
 
     cd ~/.vim/bundle
-    git clone git://github.com/markcornick/vim-terraform.git
+    git clone https://github.com/markcornick/vim-terraform.git
 
 If you prefer to use something besides pathogen, go ahead.
 
