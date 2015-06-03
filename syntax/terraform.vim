@@ -44,6 +44,14 @@ syn region terraResourceName    start=/"/ end=/"/
 syn match  terraProvider      /\<provider\>/ nextgroup=terraProviderName skipwhite
 syn region terraProviderName  start=/"/ end=/"/ nextgroup=terraProviderBlock skipwhite
 
+""" provisioner
+syn match  terraProvisioner     /\<provisioner\>/ nextgroup=terraProvisionerName skipwhite
+syn region terraProvisionerName start=/"/ end=/"/ nextgroup=terraProvisionerBlock skipwhite
+
+""" module
+syn match  terraModule     /\<module\>/ nextgroup=terraModuleName skipwhite
+syn region terraModuleName start=/"/ end=/"/ nextgroup=terraModuleBlock skipwhite
+
 """ misc.
 syn match terraValueDec      "\<[0-9]\+\([kKmMgG]b\?\)\?\>"
 syn match terraValueHexaDec  "\<0x[0-9a-f]\+\([kKmMgG]b\?\)\?\>"
@@ -68,5 +76,9 @@ hi def link terraValueBool         Boolean
 hi def link terraValueDec          Number
 hi def link terraValueHexaDec      Number
 hi def link terraValueString       String
+hi def link terraProvisioner       Structure
+hi def link terraProvisionerName   String
+hi def link terraModule            Structure
+hi def link terraModuleName        String
 
 let b:current_syntax = "terraform"
