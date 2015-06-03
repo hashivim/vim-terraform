@@ -22,3 +22,4 @@ plugin. Licensed under the MIT license.
 
 Thanks to:
 * michael j talarczyk (@mijit)
+* Koji Nakayama (@knakayama)
