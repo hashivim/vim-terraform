@@ -15,10 +15,16 @@ If you prefer to use something besides pathogen, go ahead.
 
 ## Credits
 
-Syntax highlighting and indentation by Kevin Le (@bkad) based on prior work
-by Larry Gilbert (@L2G). The rest written by Mark Cornick <mark@markcornick.com>
-and contributors listed below. Licensed under the MIT license.
+Syntax highlighting and indentation by Kevin Le (@bkad) based on prior work by
+Larry Gilbert (@L2G). The rest written by Mark Cornick
+<https://www.markcornick.com/> and contributors listed below. Licensed under the
+MIT license.
 
 Thanks to:
-* michael j talarczyk (@mijit)
-* Koji Nakayama (@knakayama)
+
+*   michael j talarczyk (@mijit)
+*   Koji Nakayama (@knakayama)
+
+This project is intended to be a safe, welcoming space for collaboration, and
+contributors are expected to adhere to the [Contributor
+Covenant](contributor-covenant.org) code of conduct.

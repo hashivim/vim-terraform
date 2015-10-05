@@ -28,4 +28,8 @@ same MIT license. If this is not the case for any reason, please let me
 know why you can't tolerate the MIT license. I am 99.99% likely to
 reject your change in that case, but I'll let you have your say.
 
+This project is intended to be a safe, welcoming space for collaboration, and
+contributors are expected to adhere to the [Contributor
+Covenant](contributor-covenant.org) code of conduct.
+
 Thanks for contributing!
