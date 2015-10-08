@@ -30,6 +30,6 @@ reject your change in that case, but I'll let you have your say.
 
 This project is intended to be a safe, welcoming space for collaboration, and
 contributors are expected to adhere to the [Contributor
-Covenant](contributor-covenant.org) code of conduct.
+Covenant](http://contributor-covenant.org) code of conduct.
 
 Thanks for contributing!
