@@ -22,8 +22,8 @@ MIT license.
 
 Thanks to:
 
-*   michael j talarczyk (@mijit)
-*   Koji Nakayama (@knakayama)
+-   michael j talarczyk (@mijit)
+-   Koji Nakayama (@knakayama)
 
 This project is intended to be a safe, welcoming space for collaboration, and
 contributors are expected to adhere to the [Contributor
