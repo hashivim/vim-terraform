@@ -18,7 +18,7 @@ If you prefer to use something besides pathogen, go ahead.
 Syntax highlighting and indentation by Kevin Le (@bkad) based on prior work by
 Larry Gilbert (@L2G). The rest written by Mark Cornick
 <https://www.markcornick.com/> and contributors listed below. Licensed under the
-MIT license.
+ISC license.
 
 Thanks to:
 

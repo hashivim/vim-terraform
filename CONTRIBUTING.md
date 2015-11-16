@@ -22,10 +22,10 @@ branch that I can merge without pulling in other stuff. Please do not
 update CHANGELOG, versions, etc.; I'll take care of that. I'll also add
 you to the Credits list with my thanks.
 
-All of my Vim plugins use the MIT license. If you submit a pull request,
+All of my Vim plugins use the ISC license. If you submit a pull request,
 I'll assume you are OK with any code you add being placed under that
-same MIT license. If this is not the case for any reason, please let me
-know why you can't tolerate the MIT license. I am 99.99% likely to
+same ISC license. If this is not the case for any reason, please let me
+know why you can't tolerate the ISC license. I am 99.99% likely to
 reject your change in that case, but I'll let you have your say.
 
 This project is intended to be a safe, welcoming space for collaboration, and

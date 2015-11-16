@@ -1,7 +1,7 @@
 *terraform.txt*  basic vim/terraform integration
 
 Author:  Mark Cornick <https://github.com/markcornick>
-License: MIT license
+License: ISC license
 Repo:    https://github.com/markcornick/vim-terraform
 
 COMMANDS                                        *terraform*
