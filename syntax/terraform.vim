@@ -189,6 +189,7 @@ syn keyword terraTodo         contained TODO FIXME XXX BUG
 syn cluster terraCommentGroup contains=terraTodo
 syn region  terraComment      start="/\*" end="\*/" contains=@terraCommentGroup,@Spell
 syn region  terraComment      start="#" end="$" contains=@terraCommentGroup,@Spell
+syn region  terraComment      start="//" end="$" contains=@terraCommentGroup,@Spell
 
 syn match  terraResource        /\<resource\>/ nextgroup=terraResourceTypeStr skipwhite
 syn region terraResourceTypeStr start=/"/ end=/"/ contains=terraResourceTypeBI
@@ -210,10 +211,14 @@ syn region terraModuleName start=/"/ end=/"/ nextgroup=terraModuleBlock skipwhit
 """ misc.
 syn match terraValueDec      "\<[0-9]\+\([kKmMgG]b\?\)\?\>"
 syn match terraValueHexaDec  "\<0x[0-9a-f]\+\([kKmMgG]b\?\)\?\>"
-syn match	terraBraces	       "[{}\[\]]"
+syn match terraBraces        "[{}\[\]]"
 
-syn region terraValueString  start=/"/    end=/"/    contains=terraStringInterp
-syn region terraStringInterp matchgroup=terraBrackets start=/\${/  end=/}/ contained
+""" skip \" in strings.
+""" we may also want to pass \\" into a function to escape quotes.
+syn region terraValueString   start=/"/ skip=/\\\+"/ end=/"/ contains=terraStringInterp
+syn region terraStringInterp  matchgroup=terraBrackets start=/\${/ end=/}/ contains=terraValueFunction contained
+"" TODO match keywords here, not a-z+
+syn region terraValueFunction matchgroup=terraBrackets start=/[a-z]\+(/ end=/)/ contains=terraValueString,terraValueFunction contained
 
 hi def link terraComment           Comment
 hi def link terraTodo              Todo
@@ -235,5 +240,6 @@ hi def link terraProvisioner       Structure
 hi def link terraProvisionerName   String
 hi def link terraModule            Structure
 hi def link terraModuleName        String
+hi def link terraValueFunction     Identifier
 
 let b:current_syntax = "terraform"
