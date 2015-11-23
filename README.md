@@ -1,8 +1,8 @@
 # vim-terraform
 
-This plugin adds a `:Terraform` command that runs terraform, with tab
-completion of subcommands. It also sets up `*.tf` and `*.tfstate` files
-to be highlighted as HML (Hashicorp's JSON variant) and JSON respectively.
+This plugin adds a `:Terraform` command that runs terraform, with tab completion
+of subcommands. It also sets up `*.tf`, `*.tfvars`, and `*.tfstate` files to be
+highlighted as HCL, HCL, and JSON respectively.
 
 ## Installation
 
