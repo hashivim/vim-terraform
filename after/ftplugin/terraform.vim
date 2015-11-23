@@ -1,5 +1,5 @@
 if !exists('g:terraform_align')
-    let g:terraform_align = 1
+  let g:terraform_align = 0
 endif
 
 if g:terraform_align && exists(':Tabularize')
