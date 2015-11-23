@@ -20,10 +20,13 @@ Larry Gilbert (@L2G). The rest written by Mark Cornick
 <https://www.markcornick.com/> and contributors listed below. Licensed under the
 ISC license.
 
-Thanks to:
+Thanks to the following contributors:
 
 -   michael j talarczyk (@mijit)
 -   Koji Nakayama (@knakayama)
+-   Kris (@kostecky)
+-   Okumura Takahiro (@hfm)
+-   Paul Forman (@pforman)
 
 This project is intended to be a safe, welcoming space for collaboration, and
 contributors are expected to adhere to the [Contributor
