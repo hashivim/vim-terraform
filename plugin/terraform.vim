@@ -1,5 +1,5 @@
 " terraform.vim - basic vim/terraform integration
-" Maintainer: Mark Cornick <https://github.com/markcornick>
+" Maintainer: HashiVim <https://github.com/hashivim>
 
 if exists("g:loaded_terraform") || v:version < 700 || &cp || !executable('terraform')
   finish

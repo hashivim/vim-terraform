@@ -9,14 +9,14 @@ highlighted as HCL, HCL, and JSON respectively.
 With [pathogen.vim](https://github.com/tpope/vim-pathogen) just do:
 
     cd ~/.vim/bundle
-    git clone https://github.com/markcornick/vim-terraform.git
+    git clone https://github.com/hashivim/vim-terraform.git
 
 If you prefer to use something besides pathogen, go ahead.
 
 ## Credits
 
 Syntax highlighting and indentation by Kevin Le (@bkad) based on prior work by
-Larry Gilbert (@L2G). The rest written by Mark Cornick
+Larry Gilbert (@L2G). The rest originally written by Mark Cornick
 <https://www.markcornick.com/> and contributors listed below. Licensed under the
 ISC license.
 

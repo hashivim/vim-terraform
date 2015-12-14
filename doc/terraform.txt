@@ -1,8 +1,8 @@
 *terraform.txt*  basic vim/terraform integration
 
-Author:  Mark Cornick <https://github.com/markcornick>
+Author:  HashiVim <https://github.com/hashivim>
 License: ISC license
-Repo:    https://github.com/markcornick/vim-terraform
+Repo:    https://github.com/hashivim/vim-terraform
 
 COMMANDS                                        *terraform*
 
