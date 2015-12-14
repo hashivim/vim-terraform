@@ -1,3 +1,10 @@
+# Call For Maintainers
+
+This plugin, along with others like it, is now maintained by the
+[HashiVim](http://hashivim.github.io/) organization, which is looking for
+additional maintainers and contributors. See the HashiVim home page for
+further information.
+
 # vim-terraform
 
 This plugin adds a `:Terraform` command that runs terraform, with tab completion
