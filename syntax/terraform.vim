@@ -17,9 +17,16 @@ syn keyword terraResourceTypeBI
           \ aws_ami
           \ aws_ami_copy
           \ aws_ami_from_instance
+          \ aws_api_gateway_api_key
+          \ aws_api_gateway_deployment
+          \ aws_api_gateway_integration
+          \ aws_api_gateway_integration_response
+          \ aws_api_gateway_method
+          \ aws_api_gateway_method_response
+          \ aws_api_gateway_model
+          \ aws_api_gateway_resource
+          \ aws_api_gateway_rest_api
           \ aws_app_cookie_stickiness_policy
-          \ aws_asg
-          \ aws_autoscale
           \ aws_autoscaling_group
           \ aws_autoscaling_lifecycle_hook
           \ aws_autoscaling_notification
@@ -27,6 +34,8 @@ syn keyword terraResourceTypeBI
           \ aws_autoscaling_schedule
           \ aws_cloudformation_stack
           \ aws_cloudtrail
+          \ aws_cloudwatch_event_rule
+          \ aws_cloudwatch_event_target
           \ aws_cloudwatch_log_group
           \ aws_cloudwatch_metric_alarm
           \ aws_codecommit_repository
@@ -48,6 +57,9 @@ syn keyword terraResourceTypeBI
           \ aws_efs_file_system
           \ aws_efs_mount_target
           \ aws_eip
+          \ aws_elastic_beanstalk_application
+          \ aws_elastic_beanstalk_configuration_template
+          \ aws_elastic_beanstalk_environment
           \ aws_elasticache_cluster
           \ aws_elasticache_parameter_group
           \ aws_elasticache_security_group
@@ -57,6 +69,7 @@ syn keyword terraResourceTypeBI
           \ aws_flow_log
           \ aws_glacier_vault
           \ aws_iam_access_key
+          \ aws_iam_account_password_policy
           \ aws_iam_group
           \ aws_iam_group_membership
           \ aws_iam_group_policy
@@ -74,13 +87,14 @@ syn keyword terraResourceTypeBI
           \ aws_key_pair
           \ aws_kinesis_firehose_delivery_stream
           \ aws_kinesis_stream
+          \ aws_kms_alias
+          \ aws_kms_key
           \ aws_lambda_alias
           \ aws_lambda_event_source_mapping
           \ aws_lambda_function
+          \ aws_lambda_permission
           \ aws_launch_configuration
           \ aws_lb_cookie_stickiness_policy
-          \ aws_lc
-          \ aws_load_balancer
           \ aws_main_route_table_association
           \ aws_nat_gateway
           \ aws_network_acl
@@ -166,6 +180,7 @@ syn keyword terraResourceTypeBI
           \ azurerm_resource_group
           \ azurerm_route
           \ azurerm_route_table
+          \ azurerm_search_service
           \ azurerm_sql_database
           \ azurerm_sql_firewall_rule
           \ azurerm_sql_server
@@ -174,7 +189,11 @@ syn keyword terraResourceTypeBI
           \ azurerm_storage_container
           \ azurerm_storage_queue
           \ azurerm_subnet
+          \ azurerm_virtual_machine
           \ azurerm_virtual_network
+          \ chef_acl
+          \ chef_client
+          \ chef_cookbook
           \ chef_data_bag
           \ chef_data_bag_item
           \ chef_environment
@@ -200,6 +219,7 @@ syn keyword terraResourceTypeBI
           \ cloudstack_vpn_customer_gateway
           \ cloudstack_vpn_gateway
           \ consul_keys
+          \ datadog_monitor
           \ digitalocean_domain
           \ digitalocean_droplet
           \ digitalocean_floating_ip
@@ -207,13 +227,15 @@ syn keyword terraResourceTypeBI
           \ digitalocean_ssh_key
           \ dme_record
           \ dnsimple_record
-          \ do_droplet
-          \ do_instance
           \ docker_container
           \ docker_image
           \ docker_network
           \ docker_volume
           \ dyn_record
+          \ github_membership
+          \ github_team
+          \ github_team_membership
+          \ github_team_repository
           \ google_compute_address
           \ google_compute_autoscaler
           \ google_compute_backend_service
@@ -225,12 +247,14 @@ syn keyword terraResourceTypeBI
           \ google_compute_http_health_check
           \ google_compute_https_health_check
           \ google_compute_instance
+          \ google_compute_instance_group
           \ google_compute_instance_group_manager
           \ google_compute_instance_template
           \ google_compute_network
           \ google_compute_project_metadata
           \ google_compute_route
           \ google_compute_ssl_certificate
+          \ google_compute_subnetwork
           \ google_compute_target_http_proxy
           \ google_compute_target_https_proxy
           \ google_compute_target_pool
@@ -263,7 +287,6 @@ syn keyword terraResourceTypeBI
           \ openstack_compute_keypair_v2
           \ openstack_compute_secgroup_v2
           \ openstack_compute_servergroup_v2
-          \ openstack_floating_ip
           \ openstack_fw_firewall_v1
           \ openstack_fw_policy_v1
           \ openstack_fw_rule_v1
@@ -292,13 +315,10 @@ syn keyword terraResourceTypeBI
           \ template_cloudinit_config
           \ template_file
           \ terraform_remote_state
-          \ test_instance
-          \ test_load_balancer
           \ tls_cert_request
           \ tls_locally_signed_cert
           \ tls_private_key
           \ tls_self_signed_cert
-          \ unknown_instance
           \ vcd_dnat
           \ vcd_firewall_rules
           \ vcd_network
