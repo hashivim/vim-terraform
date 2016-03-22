@@ -10,18 +10,14 @@ syntax_file = 'syntax/terraform.vim'
 # script.
 raise 'Please specify the location of the Terraform source.' if ARGV.empty?
 
-# Find all the lines that declare resources.
-resource_lines = []
-Dir.glob("#{ARGV[0]}/builtin/providers/*/*provider.go").each do |f|
-  resource_lines += File.open(f, 'r').readlines.select do |l|
-    resource_declaration.match(l)
-  end
-end
-
-# Extract the resource names into a list formatted for vim script.
-resources = resource_lines.collect do |rl|
-  "          \\ #{resource_declaration.match(rl)[1]}\n"
-end.sort
+# Create the list of resources.
+provider_files = Dir.glob("#{ARGV[0]}/builtin/providers/*/*provider.go")
+resources = provider_files.collect do |f|
+  File.open(f, 'r').readlines.collect do |l|
+    match = resource_declaration.match(l)
+    "          \\ #{match[1]}\n" if match
+  end.reject(&:nil?)
+end.flatten.sort
 
 # Read in the existing syntax file.
 syntax = File.open(syntax_file, 'r').readlines
