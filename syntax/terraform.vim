@@ -37,6 +37,7 @@ syn keyword terraResourceTypeBI
           \ aws_cloudwatch_event_rule
           \ aws_cloudwatch_event_target
           \ aws_cloudwatch_log_group
+          \ aws_cloudwatch_log_metric_filter
           \ aws_cloudwatch_metric_alarm
           \ aws_codecommit_repository
           \ aws_codedeploy_app
@@ -189,6 +190,7 @@ syn keyword terraResourceTypeBI
           \ azurerm_storage_container
           \ azurerm_storage_queue
           \ azurerm_subnet
+          \ azurerm_template_deployment
           \ azurerm_virtual_machine
           \ azurerm_virtual_network
           \ chef_acl
@@ -199,6 +201,11 @@ syn keyword terraResourceTypeBI
           \ chef_environment
           \ chef_node
           \ chef_role
+          \ clc_group
+          \ clc_load_balancer
+          \ clc_load_balancer_pool
+          \ clc_public_ip
+          \ clc_server
           \ cloudflare_record
           \ cloudstack_disk
           \ cloudstack_egress_firewall
@@ -319,6 +326,10 @@ syn keyword terraResourceTypeBI
           \ tls_locally_signed_cert
           \ tls_private_key
           \ tls_self_signed_cert
+          \ triton_firewall_rule
+          \ triton_key
+          \ triton_machine
+          \ ultradns_record
           \ vcd_dnat
           \ vcd_firewall_rules
           \ vcd_network
