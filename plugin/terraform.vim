@@ -27,7 +27,7 @@ endfunction
 augroup terraform
   autocmd!
   autocmd VimEnter *
-        \ command! -nargs=+ -complete=custom,s:commands Terraform execute '!terraform '.<q-args>
+        \ command! -nargs=+ -complete=custom,s:commands Terraform execute '!terraform '.<q-args>. ' -no-color'
 augroup END
 
 " vim:set et sw=2:
