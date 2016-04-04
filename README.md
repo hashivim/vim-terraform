@@ -34,6 +34,7 @@ Thanks to the following contributors:
 -   Kris (@kostecky)
 -   Okumura Takahiro (@hfm)
 -   Paul Forman (@pforman)
+-   Lowe Schmidt (@lsc)
 
 This project is intended to be a safe, welcoming space for collaboration, and
 contributors are expected to adhere to the [Contributor
