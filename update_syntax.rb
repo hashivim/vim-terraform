@@ -25,9 +25,7 @@ syntax = File.open(syntax_file, 'r').readlines
 # Replace the terraResourceTypeBI lines with our new list.
 first = syntax.index { |l| /^syn keyword terraResourceTypeBI/.match(l) } + 1
 last = syntax.index { |l| /^syn keyword terraTodo/.match(l) } - 3
-(last - first).times do
-  syntax.delete_at(first)
-end
+syntax.slice!(first, last - first)
 resources.reverse_each do |r|
   syntax.insert(first, r)
 end
