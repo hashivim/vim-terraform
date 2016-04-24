@@ -33,11 +33,14 @@ syn keyword terraResourceTypeBI
           \ aws_autoscaling_policy
           \ aws_autoscaling_schedule
           \ aws_cloudformation_stack
+          \ aws_cloudfront_distribution
+          \ aws_cloudfront_origin_access_identity
           \ aws_cloudtrail
           \ aws_cloudwatch_event_rule
           \ aws_cloudwatch_event_target
           \ aws_cloudwatch_log_group
           \ aws_cloudwatch_log_metric_filter
+          \ aws_cloudwatch_log_subscription_filter
           \ aws_cloudwatch_metric_alarm
           \ aws_codecommit_repository
           \ aws_codedeploy_app
@@ -47,6 +50,7 @@ syn keyword terraResourceTypeBI
           \ aws_db_parameter_group
           \ aws_db_security_group
           \ aws_db_subnet_group
+          \ aws_default_network_acl
           \ aws_directory_service_directory
           \ aws_dynamodb_table
           \ aws_ebs_volume
@@ -83,6 +87,7 @@ syn keyword terraResourceTypeBI
           \ aws_iam_server_certificate
           \ aws_iam_user
           \ aws_iam_user_policy
+          \ aws_iam_user_ssh_key
           \ aws_instance
           \ aws_internet_gateway
           \ aws_key_pair
@@ -101,9 +106,11 @@ syn keyword terraResourceTypeBI
           \ aws_network_acl
           \ aws_network_acl_rule
           \ aws_network_interface
+          \ aws_opsworks_application
           \ aws_opsworks_custom_layer
           \ aws_opsworks_ganglia_layer
           \ aws_opsworks_haproxy_layer
+          \ aws_opsworks_instance
           \ aws_opsworks_java_app_layer
           \ aws_opsworks_memcached_layer
           \ aws_opsworks_mysql_layer
@@ -129,6 +136,7 @@ syn keyword terraResourceTypeBI
           \ aws_route_table
           \ aws_route_table_association
           \ aws_s3_bucket
+          \ aws_s3_bucket_notification
           \ aws_s3_bucket_object
           \ aws_security_group
           \ aws_security_group_rule
@@ -220,11 +228,18 @@ syn keyword terraResourceTypeBI
           \ cloudstack_port_forward
           \ cloudstack_secondary_ipaddress
           \ cloudstack_ssh_keypair
+          \ cloudstack_static_nat
           \ cloudstack_template
           \ cloudstack_vpc
           \ cloudstack_vpn_connection
           \ cloudstack_vpn_customer_gateway
           \ cloudstack_vpn_gateway
+          \ cobbler_distro
+          \ cobbler_kickstart_file
+          \ cobbler_profile
+          \ cobbler_snippet
+          \ cobbler_system
+          \ consul_key_prefix
           \ consul_keys
           \ datadog_monitor
           \ digitalocean_domain
@@ -239,6 +254,7 @@ syn keyword terraResourceTypeBI
           \ docker_network
           \ docker_volume
           \ dyn_record
+          \ fastly_service_v1
           \ github_membership
           \ github_team
           \ github_team_membership
@@ -305,6 +321,7 @@ syn keyword terraResourceTypeBI
           \ openstack_networking_network_v2
           \ openstack_networking_port_v2
           \ openstack_networking_router_interface_v2
+          \ openstack_networking_router_route_v2
           \ openstack_networking_router_v2
           \ openstack_networking_subnet_v2
           \ openstack_objectstorage_container_v1
@@ -326,9 +343,11 @@ syn keyword terraResourceTypeBI
           \ tls_locally_signed_cert
           \ tls_private_key
           \ tls_self_signed_cert
+          \ triton_fabric
           \ triton_firewall_rule
           \ triton_key
           \ triton_machine
+          \ triton_vlan
           \ ultradns_record
           \ vcd_dnat
           \ vcd_firewall_rules
