@@ -58,3 +58,5 @@ augroup terraform
     autocmd BufWritePre *.tfvars call terraform#fmt()
   endif
 augroup END
+
+" vim:set et sw=2:
