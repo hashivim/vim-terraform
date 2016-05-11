@@ -17,7 +17,9 @@ syn keyword terraResourceTypeBI
           \ aws_ami
           \ aws_ami_copy
           \ aws_ami_from_instance
+          \ aws_api_gateway_account
           \ aws_api_gateway_api_key
+          \ aws_api_gateway_authorizer
           \ aws_api_gateway_deployment
           \ aws_api_gateway_integration
           \ aws_api_gateway_integration_response
@@ -46,7 +48,9 @@ syn keyword terraResourceTypeBI
           \ aws_codedeploy_app
           \ aws_codedeploy_deployment_group
           \ aws_customer_gateway
+          \ aws_db_event_subscription
           \ aws_db_instance
+          \ aws_db_option_group
           \ aws_db_parameter_group
           \ aws_db_security_group
           \ aws_db_subnet_group
@@ -62,6 +66,7 @@ syn keyword terraResourceTypeBI
           \ aws_efs_file_system
           \ aws_efs_mount_target
           \ aws_eip
+          \ aws_eip_association
           \ aws_elastic_beanstalk_application
           \ aws_elastic_beanstalk_configuration_template
           \ aws_elastic_beanstalk_environment
@@ -301,6 +306,8 @@ syn keyword terraResourceTypeBI
           \ heroku_cert
           \ heroku_domain
           \ heroku_drain
+          \ librato_space
+          \ librato_space_chart
           \ mailgun_domain
           \ mysql_database
           \ null_resource
@@ -323,6 +330,8 @@ syn keyword terraResourceTypeBI
           \ openstack_networking_router_interface_v2
           \ openstack_networking_router_route_v2
           \ openstack_networking_router_v2
+          \ openstack_networking_secgroup_rule_v2
+          \ openstack_networking_secgroup_v2
           \ openstack_networking_subnet_v2
           \ openstack_objectstorage_container_v1
           \ packet_device
@@ -335,6 +344,8 @@ syn keyword terraResourceTypeBI
           \ rundeck_private_key
           \ rundeck_project
           \ rundeck_public_key
+          \ softlayer_ssh_key
+          \ softlayer_virtual_guest
           \ statuscake_test
           \ template_cloudinit_config
           \ template_file
@@ -354,6 +365,7 @@ syn keyword terraResourceTypeBI
           \ vcd_network
           \ vcd_snat
           \ vcd_vapp
+          \ vsphere_file
           \ vsphere_folder
           \ vsphere_virtual_machine
           \
