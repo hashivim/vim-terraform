@@ -4,7 +4,7 @@
 
 require 'open3'
 
-command_re = /^\s\s\s\s(\w+)/
+command_re = /^\s\s\s\s(\S+)/
 plugin_file = 'plugin/terraform.vim'
 
 # Create the list of commands.
