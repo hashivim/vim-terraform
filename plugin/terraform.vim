@@ -20,11 +20,13 @@ function! s:commands(A, L, P)
   \ "init",
   \ "output",
   \ "plan",
-  \ "pull",
   \ "push",
   \ "refresh",
   \ "remote",
   \ "show",
+  \ "taint",
+  \ "untaint",
+  \ "validate",
   \ "version"
   \ ], "\n")
 endfunction
