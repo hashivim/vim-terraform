@@ -75,7 +75,10 @@ syn keyword terraResourceTypeBI
           \ aws_elasticache_security_group
           \ aws_elasticache_subnet_group
           \ aws_elasticsearch_domain
+          \ aws_elastictranscoder_pipeline
+          \ aws_elastictranscoder_preset
           \ aws_elb
+          \ aws_elb_attachment
           \ aws_flow_log
           \ aws_glacier_vault
           \ aws_iam_access_key
@@ -83,15 +86,18 @@ syn keyword terraResourceTypeBI
           \ aws_iam_group
           \ aws_iam_group_membership
           \ aws_iam_group_policy
+          \ aws_iam_group_policy_attachment
           \ aws_iam_instance_profile
           \ aws_iam_policy
           \ aws_iam_policy_attachment
           \ aws_iam_role
           \ aws_iam_role_policy
+          \ aws_iam_role_policy_attachment
           \ aws_iam_saml_provider
           \ aws_iam_server_certificate
           \ aws_iam_user
           \ aws_iam_user_policy
+          \ aws_iam_user_policy_attachment
           \ aws_iam_user_ssh_key
           \ aws_instance
           \ aws_internet_gateway
@@ -128,6 +134,7 @@ syn keyword terraResourceTypeBI
           \ aws_proxy_protocol_policy
           \ aws_rds_cluster
           \ aws_rds_cluster_instance
+          \ aws_rds_cluster_parameter_group
           \ aws_redshift_cluster
           \ aws_redshift_parameter_group
           \ aws_redshift_security_group
@@ -261,6 +268,7 @@ syn keyword terraResourceTypeBI
           \ dyn_record
           \ fastly_service_v1
           \ github_membership
+          \ github_repository_collaborator
           \ github_team
           \ github_team_membership
           \ github_team_repository
@@ -312,6 +320,7 @@ syn keyword terraResourceTypeBI
           \ mysql_database
           \ null_resource
           \ openstack_blockstorage_volume_v1
+          \ openstack_blockstorage_volume_v2
           \ openstack_compute_floatingip_v2
           \ openstack_compute_instance_v2
           \ openstack_compute_keypair_v2
@@ -340,6 +349,8 @@ syn keyword terraResourceTypeBI
           \ postgresql_database
           \ postgresql_role
           \ powerdns_record
+          \ random_id
+          \ random_shuffle
           \ rundeck_job
           \ rundeck_private_key
           \ rundeck_project
@@ -349,7 +360,6 @@ syn keyword terraResourceTypeBI
           \ statuscake_test
           \ template_cloudinit_config
           \ template_file
-          \ terraform_remote_state
           \ tls_cert_request
           \ tls_locally_signed_cert
           \ tls_private_key
@@ -367,6 +377,7 @@ syn keyword terraResourceTypeBI
           \ vcd_vapp
           \ vsphere_file
           \ vsphere_folder
+          \ vsphere_virtual_disk
           \ vsphere_virtual_machine
           \
           \ contained

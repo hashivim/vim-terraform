@@ -17,6 +17,7 @@ function! s:commands(A, L, P)
   \ "fmt",
   \ "get",
   \ "graph",
+  \ "import",
   \ "init",
   \ "output",
   \ "plan",
@@ -27,7 +28,8 @@ function! s:commands(A, L, P)
   \ "taint",
   \ "untaint",
   \ "validate",
-  \ "version"
+  \ "version",
+  \ "state"
   \ ], "\n")
 endfunction
 
