@@ -212,6 +212,7 @@ syn keyword terraResourceTypeBI
           \ azurerm_subnet
           \ azurerm_template_deployment
           \ azurerm_virtual_machine
+          \ azurerm_virtual_machine_scale_set
           \ azurerm_virtual_network
           \ chef_acl
           \ chef_client
@@ -329,9 +330,14 @@ syn keyword terraResourceTypeBI
           \ openstack_fw_firewall_v1
           \ openstack_fw_policy_v1
           \ openstack_fw_rule_v1
+          \ openstack_lb_listener_v2
+          \ openstack_lb_loadbalancer_v2
           \ openstack_lb_member_v1
+          \ openstack_lb_member_v2
           \ openstack_lb_monitor_v1
+          \ openstack_lb_monitor_v2
           \ openstack_lb_pool_v1
+          \ openstack_lb_pool_v2
           \ openstack_lb_vip_v1
           \ openstack_networking_floatingip_v2
           \ openstack_networking_network_v2
