@@ -152,8 +152,14 @@ syn keyword terraResourceTypeBI
           \ aws_s3_bucket_object
           \ aws_security_group
           \ aws_security_group_rule
+          \ aws_ses_active_receipt_rule_set
+          \ aws_ses_receipt_filter
+          \ aws_ses_receipt_rule
+          \ aws_ses_receipt_rule_set
+          \ aws_simpledb_domain
           \ aws_sns_topic
           \ aws_sns_topic_subscription
+          \ aws_spot_fleet_request
           \ aws_spot_instance_request
           \ aws_sqs_queue
           \ aws_subnet
@@ -255,11 +261,14 @@ syn keyword terraResourceTypeBI
           \ consul_key_prefix
           \ consul_keys
           \ datadog_monitor
+          \ datadog_timeboard
           \ digitalocean_domain
           \ digitalocean_droplet
           \ digitalocean_floating_ip
           \ digitalocean_record
           \ digitalocean_ssh_key
+          \ digitalocean_tag
+          \ digitalocean_volume
           \ dme_record
           \ dnsimple_record
           \ docker_container
@@ -317,6 +326,8 @@ syn keyword terraResourceTypeBI
           \ heroku_drain
           \ librato_space
           \ librato_space_chart
+          \ logentries_log
+          \ logentries_logset
           \ mailgun_domain
           \ mysql_database
           \ null_resource
@@ -361,12 +372,15 @@ syn keyword terraResourceTypeBI
           \ rundeck_private_key
           \ rundeck_project
           \ rundeck_public_key
+          \ scaleway_ip
+          \ scaleway_security_group
+          \ scaleway_security_group_rule
+          \ scaleway_server
+          \ scaleway_volume
+          \ scaleway_volume_attachment
           \ softlayer_ssh_key
           \ softlayer_virtual_guest
           \ statuscake_test
-          \ template_cloudinit_config
-          \ template_file
-          \ tls_cert_request
           \ tls_locally_signed_cert
           \ tls_private_key
           \ tls_self_signed_cert
