@@ -3,7 +3,7 @@
 # Use this script to update the resources recognized in syntax/terraform.vim.
 # You'll need a current checkout of the Terraform source.
 
-resource_declaration = /"(.*)":.*resource.*\(\),$/
+resource_declaration = /"(.*)":.*dataSource.*\(\),$/
 syntax_file = 'syntax/terraform.vim'
 
 # Specify the location of the Terraform source as the only argument to this
@@ -17,14 +17,14 @@ resources = provider_files.collect do |f|
     match = resource_declaration.match(l)
     "          \\ #{match[1]}\n" if match
   end.reject(&:nil?)
-end.flatten.sort
+end.flatten.sort.uniq
 
 # Read in the existing syntax file.
 syntax = File.open(syntax_file, 'r').readlines
 
 # Replace the terraResourceTypeBI lines with our new list.
-first = syntax.index { |l| /^syn keyword terraResourceTypeBI/.match(l) } + 1
-last = syntax.index { |l| /^""" end resources/.match(l) }
+first = syntax.index { |l| /^syn keyword terraDataTypeBI/.match(l) } + 1
+last = syntax.index { |l| /^""" end data sources/.match(l) }
 syntax.slice!(first, last - first)
 resources.reverse_each do |r|
   syntax.insert(first, r)

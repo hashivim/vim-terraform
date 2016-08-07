@@ -10,8 +10,24 @@ syn case match
 syn keyword terraSection connection output provider variable
 syn keyword terraValueBool true false on off yes no
 
-""" resource
+""" data
+syn keyword terraDataTypeBI
+          \ atlas_artifact
+          \ aws_ami
+          \ aws_availability_zones
+          \ aws_ecs_container_definition
+          \ aws_iam_policy_document
+          \ aws_s3_bucket_object
+          \ consul_keys
+          \ docker_registry_image
+          \ null_data_source
+          \ template_cloudinit_config
+          \ template_file
+          \ terraform_remote_state
+          \ tls_cert_request
+""" end data sources
 
+""" resource
 syn keyword terraResourceTypeBI
           \ atlas_artifact
           \ aws_ami
@@ -177,6 +193,7 @@ syn keyword terraResourceTypeBI
           \ aws_vpn_connection
           \ aws_vpn_connection_route
           \ aws_vpn_gateway
+          \ aws_vpn_gateway_attachment
           \ azure_affinity_group
           \ azure_data_disk
           \ azure_dns_server
@@ -336,6 +353,9 @@ syn keyword terraResourceTypeBI
           \ heroku_cert
           \ heroku_domain
           \ heroku_drain
+          \ influxdb_continuous_query
+          \ influxdb_database
+          \ influxdb_user
           \ librato_space
           \ librato_space_chart
           \ logentries_log
@@ -413,8 +433,7 @@ syn keyword terraResourceTypeBI
           \ vsphere_folder
           \ vsphere_virtual_disk
           \ vsphere_virtual_machine
-          \
-          \ contained
+""" end resources
 
 syn keyword terraTodo         contained TODO FIXME XXX BUG
 syn cluster terraCommentGroup contains=terraTodo
@@ -427,6 +446,13 @@ syn region terraResourceTypeStr start=/"/ end=/"/ contains=terraResourceTypeBI
                               \ nextgroup=terraResourceName skipwhite
 syn region terraResourceName    start=/"/ end=/"/
                               \ nextgroup=terraResourceBlock skipwhite
+
+syn match  terraData        /\<data\>/ nextgroup=terraDataTypeStr skipwhite
+syn region terraDataTypeStr start=/"/ end=/"/ contains=terraDataTypeBI
+                              \ nextgroup=terraDataName skipwhite
+syn region terraDataName    start=/"/ end=/"/
+                              \ nextgroup=terraDataBlock skipwhite
+
 """ provider
 syn match  terraProvider      /\<provider\>/ nextgroup=terraProviderName skipwhite
 syn region terraProviderName  start=/"/ end=/"/ nextgroup=terraProviderBlock skipwhite
@@ -461,6 +487,10 @@ hi def link terraResource          Structure
 hi def link terraResourceName      String
 hi def link terraResourceTypeBI    Tag
 hi def link terraResourceTypeStr   String
+hi def link terraData              Structure
+hi def link terraDataName          String
+hi def link terraDataTypeBI        Tag
+hi def link terraDataTypeStr       String
 hi def link terraSection           Structure
 hi def link terraStringInterp      Identifier
 hi def link terraValueBool         Boolean
