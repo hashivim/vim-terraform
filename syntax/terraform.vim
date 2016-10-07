@@ -30,6 +30,9 @@ syn keyword terraDataTypeBI
 """ resource
 syn keyword terraResourceTypeBI
           \ atlas_artifact
+          \ aws_alb
+          \ aws_alb_listener
+          \ aws_alb_target_group
           \ aws_ami
           \ aws_ami_copy
           \ aws_ami_from_instance
