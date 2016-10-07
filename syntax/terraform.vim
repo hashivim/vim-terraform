@@ -15,24 +15,33 @@ syn keyword terraDataTypeBI
           \ atlas_artifact
           \ aws_ami
           \ aws_availability_zones
+          \ aws_caller_identity
+          \ aws_cloudformation_stack
           \ aws_ecs_container_definition
+          \ aws_elb_service_account
           \ aws_iam_policy_document
+          \ aws_ip_ranges
+          \ aws_redshift_service_account
           \ aws_s3_bucket_object
           \ consul_keys
           \ docker_registry_image
+          \ fastly_ip_ranges
+          \ google_iam_policy
           \ null_data_source
           \ template_cloudinit_config
           \ template_file
           \ terraform_remote_state
-          \ tls_cert_request
 """ end data sources
 
 """ resource
 syn keyword terraResourceTypeBI
+          \ archive_file
           \ atlas_artifact
           \ aws_alb
           \ aws_alb_listener
+          \ aws_alb_listener_rule
           \ aws_alb_target_group
+          \ aws_alb_target_group_attachment
           \ aws_ami
           \ aws_ami_copy
           \ aws_ami_from_instance
@@ -40,7 +49,10 @@ syn keyword terraResourceTypeBI
           \ aws_api_gateway_account
           \ aws_api_gateway_api_key
           \ aws_api_gateway_authorizer
+          \ aws_api_gateway_base_path_mapping
+          \ aws_api_gateway_client_certificate
           \ aws_api_gateway_deployment
+          \ aws_api_gateway_domain_name
           \ aws_api_gateway_integration
           \ aws_api_gateway_integration_response
           \ aws_api_gateway_method
@@ -64,9 +76,11 @@ syn keyword terraResourceTypeBI
           \ aws_cloudwatch_event_target
           \ aws_cloudwatch_log_group
           \ aws_cloudwatch_log_metric_filter
+          \ aws_cloudwatch_log_stream
           \ aws_cloudwatch_log_subscription_filter
           \ aws_cloudwatch_metric_alarm
           \ aws_codecommit_repository
+          \ aws_codecommit_trigger
           \ aws_codedeploy_app
           \ aws_codedeploy_deployment_group
           \ aws_customer_gateway
@@ -77,6 +91,8 @@ syn keyword terraResourceTypeBI
           \ aws_db_security_group
           \ aws_db_subnet_group
           \ aws_default_network_acl
+          \ aws_default_route_table
+          \ aws_default_security_group
           \ aws_directory_service_directory
           \ aws_dynamodb_table
           \ aws_ebs_volume
@@ -94,6 +110,7 @@ syn keyword terraResourceTypeBI
           \ aws_elastic_beanstalk_environment
           \ aws_elasticache_cluster
           \ aws_elasticache_parameter_group
+          \ aws_elasticache_replication_group
           \ aws_elasticache_security_group
           \ aws_elasticache_subnet_group
           \ aws_elasticsearch_domain
@@ -101,6 +118,8 @@ syn keyword terraResourceTypeBI
           \ aws_elastictranscoder_preset
           \ aws_elb
           \ aws_elb_attachment
+          \ aws_emr_cluster
+          \ aws_emr_instance_group
           \ aws_flow_log
           \ aws_glacier_vault
           \ aws_iam_access_key
@@ -134,6 +153,10 @@ syn keyword terraResourceTypeBI
           \ aws_lambda_permission
           \ aws_launch_configuration
           \ aws_lb_cookie_stickiness_policy
+          \ aws_lb_ssl_negotiation_policy
+          \ aws_load_balancer_backend_server_policy
+          \ aws_load_balancer_listener_policy
+          \ aws_load_balancer_policy
           \ aws_main_route_table_association
           \ aws_nat_gateway
           \ aws_network_acl
@@ -174,6 +197,7 @@ syn keyword terraResourceTypeBI
           \ aws_s3_bucket
           \ aws_s3_bucket_notification
           \ aws_s3_bucket_object
+          \ aws_s3_bucket_policy
           \ aws_security_group
           \ aws_security_group_rule
           \ aws_ses_active_receipt_rule_set
@@ -182,10 +206,15 @@ syn keyword terraResourceTypeBI
           \ aws_ses_receipt_rule_set
           \ aws_simpledb_domain
           \ aws_sns_topic
+          \ aws_sns_topic_policy
           \ aws_sns_topic_subscription
+          \ aws_spot_datafeed_subscription
           \ aws_spot_fleet_request
           \ aws_spot_instance_request
           \ aws_sqs_queue
+          \ aws_sqs_queue_policy
+          \ aws_ssm_association
+          \ aws_ssm_document
           \ aws_subnet
           \ aws_volume_attachment
           \ aws_vpc
@@ -233,6 +262,9 @@ syn keyword terraResourceTypeBI
           \ azurerm_route
           \ azurerm_route_table
           \ azurerm_search_service
+          \ azurerm_servicebus_namespace
+          \ azurerm_servicebus_subscription
+          \ azurerm_servicebus_topic
           \ azurerm_sql_database
           \ azurerm_sql_firewall_rule
           \ azurerm_sql_server
@@ -248,6 +280,10 @@ syn keyword terraResourceTypeBI
           \ azurerm_virtual_machine
           \ azurerm_virtual_machine_scale_set
           \ azurerm_virtual_network
+          \ azurerm_virtual_network_peering
+          \ bitbucket_default_reviewers
+          \ bitbucket_hook
+          \ bitbucket_repository
           \ chef_acl
           \ chef_client
           \ chef_cookbook
@@ -262,6 +298,7 @@ syn keyword terraResourceTypeBI
           \ clc_public_ip
           \ clc_server
           \ cloudflare_record
+          \ cloudstack_affinity_group
           \ cloudstack_disk
           \ cloudstack_egress_firewall
           \ cloudstack_firewall
@@ -291,6 +328,7 @@ syn keyword terraResourceTypeBI
           \ consul_key_prefix
           \ consul_keys
           \ consul_node
+          \ consul_prepared_query
           \ consul_service
           \ datadog_monitor
           \ datadog_timeboard
@@ -324,6 +362,7 @@ syn keyword terraResourceTypeBI
           \ google_compute_global_forwarding_rule
           \ google_compute_http_health_check
           \ google_compute_https_health_check
+          \ google_compute_image
           \ google_compute_instance
           \ google_compute_instance_group
           \ google_compute_instance_group_manager
@@ -342,6 +381,7 @@ syn keyword terraResourceTypeBI
           \ google_container_cluster
           \ google_dns_managed_zone
           \ google_dns_record_set
+          \ google_project
           \ google_pubsub_subscription
           \ google_pubsub_topic
           \ google_sql_database
@@ -359,6 +399,8 @@ syn keyword terraResourceTypeBI
           \ influxdb_continuous_query
           \ influxdb_database
           \ influxdb_user
+          \ librato_alert
+          \ librato_service
           \ librato_space
           \ librato_space_chart
           \ logentries_log
@@ -400,9 +442,17 @@ syn keyword terraResourceTypeBI
           \ packet_device
           \ packet_project
           \ packet_ssh_key
+          \ packet_volume
           \ postgresql_database
           \ postgresql_role
           \ powerdns_record
+          \ rabbitmq_binding
+          \ rabbitmq_exchange
+          \ rabbitmq_permissions
+          \ rabbitmq_policy
+          \ rabbitmq_queue
+          \ rabbitmq_user
+          \ rabbitmq_vhost
           \ random_id
           \ random_shuffle
           \ rundeck_job
@@ -418,6 +468,7 @@ syn keyword terraResourceTypeBI
           \ softlayer_ssh_key
           \ softlayer_virtual_guest
           \ statuscake_test
+          \ tls_cert_request
           \ tls_locally_signed_cert
           \ tls_private_key
           \ tls_self_signed_cert
