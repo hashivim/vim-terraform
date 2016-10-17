@@ -14,7 +14,9 @@ syn keyword terraValueBool true false on off yes no
 syn keyword terraDataTypeBI
           \ atlas_artifact
           \ aws_ami
+          \ aws_availability_zone
           \ aws_availability_zones
+          \ aws_billing_service_account
           \ aws_caller_identity
           \ aws_cloudformation_stack
           \ aws_ecs_container_definition
@@ -22,7 +24,10 @@ syn keyword terraDataTypeBI
           \ aws_iam_policy_document
           \ aws_ip_ranges
           \ aws_redshift_service_account
+          \ aws_region
           \ aws_s3_bucket_object
+          \ aws_subnet
+          \ aws_vpc
           \ consul_keys
           \ docker_registry_image
           \ fastly_ip_ranges
@@ -253,6 +258,12 @@ syn keyword terraResourceTypeBI
           \ azurerm_dns_srv_record
           \ azurerm_dns_txt_record
           \ azurerm_dns_zone
+          \ azurerm_lb
+          \ azurerm_lb_backend_address_pool
+          \ azurerm_lb_nat_pool
+          \ azurerm_lb_nat_rule
+          \ azurerm_lb_probe
+          \ azurerm_lb_rule
           \ azurerm_local_network_gateway
           \ azurerm_network_interface
           \ azurerm_network_security_group
@@ -348,6 +359,7 @@ syn keyword terraResourceTypeBI
           \ dyn_record
           \ fastly_service_v1
           \ github_membership
+          \ github_repository
           \ github_repository_collaborator
           \ github_team
           \ github_team_membership
