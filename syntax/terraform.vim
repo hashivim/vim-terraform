@@ -33,6 +33,8 @@ syn keyword terraDataTypeBI
           \ fastly_ip_ranges
           \ google_iam_policy
           \ null_data_source
+          \ scaleway_bootscript
+          \ scaleway_image
           \ template_cloudinit_config
           \ template_file
           \ terraform_remote_state
