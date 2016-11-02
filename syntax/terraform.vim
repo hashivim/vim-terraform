@@ -12,6 +12,7 @@ syn keyword terraValueBool true false on off yes no
 
 """ data
 syn keyword terraDataTypeBI
+          \ archive_file
           \ atlas_artifact
           \ aws_ami
           \ aws_availability_zone
@@ -19,20 +20,25 @@ syn keyword terraDataTypeBI
           \ aws_billing_service_account
           \ aws_caller_identity
           \ aws_cloudformation_stack
+          \ aws_ebs_volume
           \ aws_ecs_container_definition
           \ aws_elb_service_account
           \ aws_iam_policy_document
           \ aws_ip_ranges
+          \ aws_prefix_list
           \ aws_redshift_service_account
           \ aws_region
           \ aws_s3_bucket_object
+          \ aws_security_group
           \ aws_subnet
           \ aws_vpc
+          \ azurerm_client_config
           \ consul_keys
           \ docker_registry_image
           \ fastly_ip_ranges
           \ google_iam_policy
           \ null_data_source
+          \ pagerduty_vendor
           \ scaleway_bootscript
           \ scaleway_image
           \ template_cloudinit_config
@@ -42,7 +48,6 @@ syn keyword terraDataTypeBI
 
 """ resource
 syn keyword terraResourceTypeBI
-          \ archive_file
           \ atlas_artifact
           \ aws_alb
           \ aws_alb_listener
@@ -144,6 +149,7 @@ syn keyword terraResourceTypeBI
           \ aws_iam_saml_provider
           \ aws_iam_server_certificate
           \ aws_iam_user
+          \ aws_iam_user_login_profile
           \ aws_iam_user_policy
           \ aws_iam_user_policy_attachment
           \ aws_iam_user_ssh_key
@@ -220,6 +226,7 @@ syn keyword terraResourceTypeBI
           \ aws_spot_instance_request
           \ aws_sqs_queue
           \ aws_sqs_queue_policy
+          \ aws_ssm_activation
           \ aws_ssm_association
           \ aws_ssm_document
           \ aws_subnet
@@ -233,6 +240,13 @@ syn keyword terraResourceTypeBI
           \ aws_vpn_connection_route
           \ aws_vpn_gateway
           \ aws_vpn_gateway_attachment
+          \ aws_waf_byte_match_set
+          \ aws_waf_ipset
+          \ aws_waf_rule
+          \ aws_waf_size_constraint_set
+          \ aws_waf_sql_injection_match_set
+          \ aws_waf_web_acl
+          \ aws_waf_xss_match_set
           \ azure_affinity_group
           \ azure_data_disk
           \ azure_dns_server
@@ -260,6 +274,8 @@ syn keyword terraResourceTypeBI
           \ azurerm_dns_srv_record
           \ azurerm_dns_txt_record
           \ azurerm_dns_zone
+          \ azurerm_eventhub_namespace
+          \ azurerm_key_vault
           \ azurerm_lb
           \ azurerm_lb_backend_address_pool
           \ azurerm_lb_nat_pool
@@ -285,6 +301,7 @@ syn keyword terraResourceTypeBI
           \ azurerm_storage_blob
           \ azurerm_storage_container
           \ azurerm_storage_queue
+          \ azurerm_storage_share
           \ azurerm_storage_table
           \ azurerm_subnet
           \ azurerm_template_deployment
@@ -323,9 +340,13 @@ syn keyword terraResourceTypeBI
           \ cloudstack_network_acl_rule
           \ cloudstack_nic
           \ cloudstack_port_forward
+          \ cloudstack_private_gateway
           \ cloudstack_secondary_ipaddress
+          \ cloudstack_security_group
+          \ cloudstack_security_group_rule
           \ cloudstack_ssh_keypair
           \ cloudstack_static_nat
+          \ cloudstack_static_route
           \ cloudstack_template
           \ cloudstack_vpc
           \ cloudstack_vpn_connection
@@ -457,6 +478,12 @@ syn keyword terraResourceTypeBI
           \ packet_project
           \ packet_ssh_key
           \ packet_volume
+          \ pagerduty_escalation_policy
+          \ pagerduty_schedule
+          \ pagerduty_service
+          \ pagerduty_service_integration
+          \ pagerduty_team
+          \ pagerduty_user
           \ postgresql_database
           \ postgresql_role
           \ powerdns_record
