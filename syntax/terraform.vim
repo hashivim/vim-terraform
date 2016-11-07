@@ -14,6 +14,7 @@ syn keyword terraValueBool true false on off yes no
 syn keyword terraDataTypeBI
           \ archive_file
           \ atlas_artifact
+          \ aws_acm_certificate
           \ aws_ami
           \ aws_availability_zone
           \ aws_availability_zones
@@ -75,6 +76,7 @@ syn keyword terraResourceTypeBI
           \ aws_app_cookie_stickiness_policy
           \ aws_appautoscaling_policy
           \ aws_appautoscaling_target
+          \ aws_autoscaling_attachment
           \ aws_autoscaling_group
           \ aws_autoscaling_lifecycle_hook
           \ aws_autoscaling_notification
@@ -485,6 +487,7 @@ syn keyword terraResourceTypeBI
           \ pagerduty_team
           \ pagerduty_user
           \ postgresql_database
+          \ postgresql_extension
           \ postgresql_role
           \ powerdns_record
           \ rabbitmq_binding
