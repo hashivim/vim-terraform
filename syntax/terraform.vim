@@ -276,6 +276,7 @@ syn keyword terraResourceTypeBI
           \ azurerm_dns_srv_record
           \ azurerm_dns_txt_record
           \ azurerm_dns_zone
+          \ azurerm_eventhub
           \ azurerm_eventhub_namespace
           \ azurerm_key_vault
           \ azurerm_lb
@@ -310,6 +311,7 @@ syn keyword terraResourceTypeBI
           \ azurerm_traffic_manager_endpoint
           \ azurerm_traffic_manager_profile
           \ azurerm_virtual_machine
+          \ azurerm_virtual_machine_extension
           \ azurerm_virtual_machine_scale_set
           \ azurerm_virtual_network
           \ azurerm_virtual_network_peering
