@@ -7,7 +7,7 @@ endif
 
 syn case match
 
-syn keyword terraSection connection output provider variable
+syn keyword terraSection connection output provider variable data terraform
 syn keyword terraValueBool true false on off yes no
 
 """ data
@@ -15,30 +15,43 @@ syn keyword terraDataTypeBI
           \ archive_file
           \ atlas_artifact
           \ aws_acm_certificate
+          \ aws_alb
+          \ aws_alb_listener
           \ aws_ami
           \ aws_availability_zone
           \ aws_availability_zones
           \ aws_billing_service_account
           \ aws_caller_identity
           \ aws_cloudformation_stack
+          \ aws_ebs_snapshot
           \ aws_ebs_volume
           \ aws_ecs_container_definition
+          \ aws_eip
           \ aws_elb_service_account
+          \ aws_iam_account_alias
           \ aws_iam_policy_document
+          \ aws_iam_server_certificate
           \ aws_ip_ranges
           \ aws_prefix_list
           \ aws_redshift_service_account
           \ aws_region
+          \ aws_route53_zone
+          \ aws_route_table
           \ aws_s3_bucket_object
           \ aws_security_group
           \ aws_subnet
           \ aws_vpc
+          \ aws_vpc_endpoint_service
+          \ aws_vpc_peering_connection
           \ azurerm_client_config
           \ consul_keys
           \ docker_registry_image
+          \ external
           \ fastly_ip_ranges
           \ google_iam_policy
+          \ newrelic_application
           \ null_data_source
+          \ pagerduty_user
           \ pagerduty_vendor
           \ scaleway_bootscript
           \ scaleway_image
@@ -109,6 +122,7 @@ syn keyword terraResourceTypeBI
           \ aws_default_security_group
           \ aws_directory_service_directory
           \ aws_dynamodb_table
+          \ aws_ebs_snapshot
           \ aws_ebs_volume
           \ aws_ecr_repository
           \ aws_ecr_repository_policy
@@ -169,6 +183,9 @@ syn keyword terraResourceTypeBI
           \ aws_launch_configuration
           \ aws_lb_cookie_stickiness_policy
           \ aws_lb_ssl_negotiation_policy
+          \ aws_lightsail_domain
+          \ aws_lightsail_instance
+          \ aws_lightsail_key_pair
           \ aws_load_balancer_backend_server_policy
           \ aws_load_balancer_listener_policy
           \ aws_load_balancer_policy
@@ -189,6 +206,7 @@ syn keyword terraResourceTypeBI
           \ aws_opsworks_permission
           \ aws_opsworks_php_app_layer
           \ aws_opsworks_rails_app_layer
+          \ aws_opsworks_rds_db_instance
           \ aws_opsworks_stack
           \ aws_opsworks_static_web_layer
           \ aws_opsworks_user_profile
@@ -216,10 +234,13 @@ syn keyword terraResourceTypeBI
           \ aws_security_group
           \ aws_security_group_rule
           \ aws_ses_active_receipt_rule_set
+          \ aws_ses_configuration_set
+          \ aws_ses_event_destination
           \ aws_ses_receipt_filter
           \ aws_ses_receipt_rule
           \ aws_ses_receipt_rule_set
           \ aws_simpledb_domain
+          \ aws_snapshot_create_volume_permission
           \ aws_sns_topic
           \ aws_sns_topic_policy
           \ aws_sns_topic_subscription
@@ -237,6 +258,7 @@ syn keyword terraResourceTypeBI
           \ aws_vpc_dhcp_options
           \ aws_vpc_dhcp_options_association
           \ aws_vpc_endpoint
+          \ aws_vpc_endpoint_route_table_association
           \ aws_vpc_peering_connection
           \ aws_vpn_connection
           \ aws_vpn_connection_route
@@ -268,6 +290,7 @@ syn keyword terraResourceTypeBI
           \ azurerm_availability_set
           \ azurerm_cdn_endpoint
           \ azurerm_cdn_profile
+          \ azurerm_container_registry
           \ azurerm_dns_a_record
           \ azurerm_dns_aaaa_record
           \ azurerm_dns_cname_record
@@ -277,6 +300,8 @@ syn keyword terraResourceTypeBI
           \ azurerm_dns_txt_record
           \ azurerm_dns_zone
           \ azurerm_eventhub
+          \ azurerm_eventhub_authorization_rule
+          \ azurerm_eventhub_consumer_group
           \ azurerm_eventhub_namespace
           \ azurerm_key_vault
           \ azurerm_lb
@@ -290,6 +315,7 @@ syn keyword terraResourceTypeBI
           \ azurerm_network_security_group
           \ azurerm_network_security_rule
           \ azurerm_public_ip
+          \ azurerm_redis_cache
           \ azurerm_resource_group
           \ azurerm_route
           \ azurerm_route_table
@@ -385,6 +411,7 @@ syn keyword terraResourceTypeBI
           \ docker_volume
           \ dyn_record
           \ fastly_service_v1
+          \ github_issue_label
           \ github_membership
           \ github_repository
           \ github_repository_collaborator
@@ -399,6 +426,7 @@ syn keyword terraResourceTypeBI
           \ google_compute_forwarding_rule
           \ google_compute_global_address
           \ google_compute_global_forwarding_rule
+          \ google_compute_health_check
           \ google_compute_http_health_check
           \ google_compute_https_health_check
           \ google_compute_image
@@ -408,6 +436,7 @@ syn keyword terraResourceTypeBI
           \ google_compute_instance_template
           \ google_compute_network
           \ google_compute_project_metadata
+          \ google_compute_region_backend_service
           \ google_compute_route
           \ google_compute_ssl_certificate
           \ google_compute_subnetwork
@@ -423,6 +452,7 @@ syn keyword terraResourceTypeBI
           \ google_project
           \ google_pubsub_subscription
           \ google_pubsub_topic
+          \ google_service_account
           \ google_sql_database
           \ google_sql_database_instance
           \ google_sql_user
@@ -435,6 +465,19 @@ syn keyword terraResourceTypeBI
           \ heroku_cert
           \ heroku_domain
           \ heroku_drain
+          \ icinga2_checkcommand
+          \ icinga2_host
+          \ icinga2_hostgroup
+          \ icinga2_service
+          \ ignition_config
+          \ ignition_disk
+          \ ignition_file
+          \ ignition_filesystem
+          \ ignition_group
+          \ ignition_networkd_unit
+          \ ignition_raid
+          \ ignition_systemd_unit
+          \ ignition_user
           \ influxdb_continuous_query
           \ influxdb_database
           \ influxdb_user
@@ -448,7 +491,13 @@ syn keyword terraResourceTypeBI
           \ mysql_database
           \ mysql_grant
           \ mysql_user
+          \ newrelic_alert_channel
+          \ newrelic_alert_condition
+          \ newrelic_alert_policy
+          \ newrelic_alert_policy_channel
+          \ nomad_job
           \ null_resource
+          \ openstack_blockstorage_volume_attach_v2
           \ openstack_blockstorage_volume_v1
           \ openstack_blockstorage_volume_v2
           \ openstack_compute_floatingip_v2
@@ -456,6 +505,7 @@ syn keyword terraResourceTypeBI
           \ openstack_compute_keypair_v2
           \ openstack_compute_secgroup_v2
           \ openstack_compute_servergroup_v2
+          \ openstack_compute_volume_attach_v2
           \ openstack_fw_firewall_v1
           \ openstack_fw_policy_v1
           \ openstack_fw_rule_v1
@@ -491,6 +541,7 @@ syn keyword terraResourceTypeBI
           \ postgresql_database
           \ postgresql_extension
           \ postgresql_role
+          \ postgresql_schema
           \ powerdns_record
           \ rabbitmq_binding
           \ rabbitmq_exchange
@@ -499,6 +550,11 @@ syn keyword terraResourceTypeBI
           \ rabbitmq_queue
           \ rabbitmq_user
           \ rabbitmq_vhost
+          \ rancher_environment
+          \ rancher_registration_token
+          \ rancher_registry
+          \ rancher_registry_credential
+          \ rancher_stack
           \ random_id
           \ random_shuffle
           \ rundeck_job
@@ -523,7 +579,11 @@ syn keyword terraResourceTypeBI
           \ triton_key
           \ triton_machine
           \ triton_vlan
+          \ ultradns_dirpool
+          \ ultradns_probe_http
+          \ ultradns_probe_ping
           \ ultradns_record
+          \ ultradns_tcpool
           \ vcd_dnat
           \ vcd_firewall_rules
           \ vcd_network
