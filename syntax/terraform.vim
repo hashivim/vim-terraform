@@ -51,6 +51,7 @@ syn keyword terraDataTypeBI
           \ google_iam_policy
           \ newrelic_application
           \ null_data_source
+          \ opsgenie_user
           \ pagerduty_user
           \ pagerduty_vendor
           \ scaleway_bootscript
@@ -62,6 +63,7 @@ syn keyword terraDataTypeBI
 
 """ resource
 syn keyword terraResourceTypeBI
+          \ arukas_container
           \ atlas_artifact
           \ aws_alb
           \ aws_alb_listener
@@ -109,6 +111,7 @@ syn keyword terraResourceTypeBI
           \ aws_codecommit_repository
           \ aws_codecommit_trigger
           \ aws_codedeploy_app
+          \ aws_codedeploy_deployment_config
           \ aws_codedeploy_deployment_group
           \ aws_customer_gateway
           \ aws_db_event_subscription
@@ -528,6 +531,8 @@ syn keyword terraResourceTypeBI
           \ openstack_networking_secgroup_v2
           \ openstack_networking_subnet_v2
           \ openstack_objectstorage_container_v1
+          \ opsgenie_team
+          \ opsgenie_user
           \ packet_device
           \ packet_project
           \ packet_ssh_key
