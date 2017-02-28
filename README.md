@@ -25,6 +25,12 @@ With [pathogen.vim](https://github.com/tpope/vim-pathogen) just do:
 
 If you prefer to use something besides pathogen, go ahead.
 
+## Usage
+
+Allow vim-terraform to override your `.vimrc` indentation syntax for matching files. Defaults to 0 which is off.
+
+    let g:terraform_align=1
+
 ## Credits
 
 Syntax highlighting and indentation by Kevin Le (@bkad) based on prior work by
