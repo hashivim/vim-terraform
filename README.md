@@ -27,6 +27,13 @@ With [pathogen.vim](https://github.com/tpope/vim-pathogen) just do:
 If you prefer to use something besides pathogen, go ahead.
 
 - - - -
+# Usage
+
+Allow vim-terraform to override your `.vimrc` indentation syntax for matching files. Defaults to 0 which is off.
+
+    let g:terraform_align=1
+
+- - - -
 # Updating vim-terraform
 Note, this is only for maintainers of the `vim-terraform` project.
 
@@ -36,16 +43,17 @@ When a new version of Terraform drops, you can run the following where x.x.x is 
 
 You will see the following truncated output
 
-	+) Extracting terraform-0.8.7.tar.gz
-	+) Running Mike's script updater scripts
-	+) Cleaning up after ourselves
-	On branch feature/run-helper-scripts-for-terraform-087/pgp
-	Changes not staged for commit:
-	  (use "git add <file>..." to update what will be committed)
-	  (use "git checkout -- <file>..." to discard changes in working directory)
+    +) Extracting terraform-0.8.7.tar.gz
+    +) Running update_commands.rb
+    +) Running update_data_sources.rb
+    +) Running update_syntax.rb
+    +) Cleaning up after ourselves
+    On branch feature/run-helper-scripts-for-terraform-087/pgp
+    Changes not staged for commit:
+      (use "git add <file>..." to update what will be committed)
+      (use "git checkout -- <file>..." to discard changes in working directory)
 
-		modified:   syntax/terraform.vim
-
+	    modified:   syntax/terraform.vim
 
 At this point, add the modified files to a git branch and open a pull request.
 
