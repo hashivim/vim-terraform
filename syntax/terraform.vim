@@ -52,6 +52,7 @@ syn keyword terraDataTypeBI
           \ aws_route_table
           \ aws_s3_bucket_object
           \ aws_security_group
+          \ aws_sns_topic
           \ aws_subnet
           \ aws_vpc
           \ aws_vpc_endpoint
@@ -59,6 +60,12 @@ syn keyword terraDataTypeBI
           \ aws_vpc_peering_connection
           \ aws_vpn_gateway
           \ azurerm_client_config
+          \ circonus_account
+          \ circonus_collector
+          \ consul_agent_self
+          \ consul_catalog_nodes
+          \ consul_catalog_service
+          \ consul_catalog_services
           \ consul_keys
           \ docker_registry_image
           \ external
@@ -68,11 +75,16 @@ syn keyword terraDataTypeBI
           \ newrelic_application
           \ ns1_datasource
           \ null_data_source
+          \ openstack_images_image_v2
+          \ openstack_networking_network_v2
           \ opsgenie_user
           \ pagerduty_escalation_policy
           \ pagerduty_schedule
           \ pagerduty_user
           \ pagerduty_vendor
+          \ profitbricks_datacenter
+          \ profitbricks_image
+          \ profitbricks_location
           \ scaleway_bootscript
           \ scaleway_image
           \ template_cloudinit_config
@@ -136,6 +148,8 @@ syn keyword terraResourceTypeBI
           \ aws_cloudtrail
           \ aws_cloudwatch_event_rule
           \ aws_cloudwatch_event_target
+          \ aws_cloudwatch_log_destination
+          \ aws_cloudwatch_log_destination_policy
           \ aws_cloudwatch_log_group
           \ aws_cloudwatch_log_metric_filter
           \ aws_cloudwatch_log_stream
@@ -147,6 +161,7 @@ syn keyword terraResourceTypeBI
           \ aws_codedeploy_app
           \ aws_codedeploy_deployment_config
           \ aws_codedeploy_deployment_group
+          \ aws_codepipeline
           \ aws_config_config_rule
           \ aws_config_configuration_recorder
           \ aws_config_configuration_recorder_status
@@ -177,9 +192,11 @@ syn keyword terraResourceTypeBI
           \ aws_ecs_task_definition
           \ aws_efs_file_system
           \ aws_efs_mount_target
+          \ aws_egress_only_internet_gateway
           \ aws_eip
           \ aws_eip_association
           \ aws_elastic_beanstalk_application
+          \ aws_elastic_beanstalk_application_version
           \ aws_elastic_beanstalk_configuration_template
           \ aws_elastic_beanstalk_environment
           \ aws_elasticache_cluster
@@ -198,6 +215,7 @@ syn keyword terraResourceTypeBI
           \ aws_flow_log
           \ aws_glacier_vault
           \ aws_iam_access_key
+          \ aws_iam_account_alias
           \ aws_iam_account_password_policy
           \ aws_iam_group
           \ aws_iam_group_membership
@@ -406,6 +424,12 @@ syn keyword terraResourceTypeBI
           \ chef_environment
           \ chef_node
           \ chef_role
+          \ circonus_check
+          \ circonus_contact_group
+          \ circonus_graph
+          \ circonus_metric
+          \ circonus_metric_cluster
+          \ circonus_rule_set
           \ clc_group
           \ clc_load_balancer
           \ clc_load_balancer_pool
@@ -448,16 +472,23 @@ syn keyword terraResourceTypeBI
           \ consul_node
           \ consul_prepared_query
           \ consul_service
+          \ datadog_downtime
           \ datadog_monitor
           \ datadog_timeboard
+          \ datadog_user
           \ digitalocean_domain
           \ digitalocean_droplet
           \ digitalocean_floating_ip
+          \ digitalocean_loadbalancer
           \ digitalocean_record
           \ digitalocean_ssh_key
           \ digitalocean_tag
           \ digitalocean_volume
           \ dme_record
+          \ dns_a_record_set
+          \ dns_aaaa_record_set
+          \ dns_cname_record
+          \ dns_ptr_record
           \ dnsimple_record
           \ docker_container
           \ docker_image
@@ -501,6 +532,7 @@ syn keyword terraResourceTypeBI
           \ google_compute_vpn_gateway
           \ google_compute_vpn_tunnel
           \ google_container_cluster
+          \ google_container_node_pool
           \ google_dns_managed_zone
           \ google_dns_record_set
           \ google_project
@@ -556,6 +588,7 @@ syn keyword terraResourceTypeBI
           \ openstack_blockstorage_volume_attach_v2
           \ openstack_blockstorage_volume_v1
           \ openstack_blockstorage_volume_v2
+          \ openstack_compute_floatingip_associate_v2
           \ openstack_compute_floatingip_v2
           \ openstack_compute_instance_v2
           \ openstack_compute_keypair_v2
@@ -565,6 +598,7 @@ syn keyword terraResourceTypeBI
           \ openstack_fw_firewall_v1
           \ openstack_fw_policy_v1
           \ openstack_fw_rule_v1
+          \ openstack_images_image_v2
           \ openstack_lb_listener_v2
           \ openstack_lb_loadbalancer_v2
           \ openstack_lb_member_v1
@@ -617,7 +651,9 @@ syn keyword terraResourceTypeBI
           \ rabbitmq_queue
           \ rabbitmq_user
           \ rabbitmq_vhost
+          \ rancher_certificate
           \ rancher_environment
+          \ rancher_host
           \ rancher_registration_token
           \ rancher_registry
           \ rancher_registry_credential
@@ -636,6 +672,9 @@ syn keyword terraResourceTypeBI
           \ scaleway_volume_attachment
           \ softlayer_ssh_key
           \ softlayer_virtual_guest
+          \ spotinst_aws_group
+          \ spotinst_healthcheck
+          \ spotinst_subscription
           \ statuscake_test
           \ tls_cert_request
           \ tls_locally_signed_cert
