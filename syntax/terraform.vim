@@ -285,6 +285,7 @@ syn keyword terraResourceTypeBI
           \ aws_security_group_rule
           \ aws_ses_active_receipt_rule_set
           \ aws_ses_configuration_set
+          \ aws_ses_domain_identity
           \ aws_ses_event_destination
           \ aws_ses_receipt_filter
           \ aws_ses_receipt_rule
