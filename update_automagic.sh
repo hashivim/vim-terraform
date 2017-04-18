@@ -39,6 +39,9 @@ echo "+) Running update_data_sources.rb"
 echo "+) Running update_syntax.rb"
 ./update_syntax.rb terraform-${VERSION}/
 
+echo "+) Updating the badge in the README.md"
+sed -i "/img.shields.io/c\[\![](https://img.shields.io/badge/supports-TF%20version%20>=${VERSION}-blue.svg)](https://github.com/hashicorp/terraform/blob/v${VERSION}/CHANGELOG.md)" README.md
+
 echo "+) Cleaning up after ourselves"
 rm -f v${VERSION}.tar.gz
 rm -rf terraform-${VERSION}

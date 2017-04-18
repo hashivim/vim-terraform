@@ -1,3 +1,5 @@
+[![](https://img.shields.io/badge/supports-TF%20version%20>=0.9.0-blue.svg)](https://github.com/hashicorp/terraform/blob/v0.9.0/CHANGELOG.md)
+
 # Call For Maintainers
 
 This plugin, along with others like it, is now maintained by the
