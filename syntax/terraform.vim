@@ -40,6 +40,7 @@ syn keyword terraDataTypeBI
           \ aws_elb_service_account
           \ aws_iam_account_alias
           \ aws_iam_policy_document
+          \ aws_iam_role
           \ aws_iam_server_certificate
           \ aws_instance
           \ aws_ip_ranges
@@ -54,6 +55,7 @@ syn keyword terraDataTypeBI
           \ aws_security_group
           \ aws_sns_topic
           \ aws_subnet
+          \ aws_subnet_ids
           \ aws_vpc
           \ aws_vpc_endpoint
           \ aws_vpc_endpoint_service
@@ -67,6 +69,9 @@ syn keyword terraDataTypeBI
           \ consul_catalog_service
           \ consul_catalog_services
           \ consul_keys
+          \ dns_a_record_set
+          \ dns_cname_record_set
+          \ dns_txt_record_set
           \ docker_registry_image
           \ external
           \ fastly_ip_ranges
@@ -94,6 +99,7 @@ syn keyword terraDataTypeBI
 
 """ resource
 syn keyword terraResourceTypeBI
+          \ alicloud_db_instance
           \ alicloud_disk
           \ alicloud_disk_attachment
           \ alicloud_eip
@@ -130,9 +136,13 @@ syn keyword terraResourceTypeBI
           \ aws_api_gateway_integration_response
           \ aws_api_gateway_method
           \ aws_api_gateway_method_response
+          \ aws_api_gateway_method_settings
           \ aws_api_gateway_model
           \ aws_api_gateway_resource
           \ aws_api_gateway_rest_api
+          \ aws_api_gateway_stage
+          \ aws_api_gateway_usage_plan
+          \ aws_api_gateway_usage_plan_key
           \ aws_app_cookie_stickiness_policy
           \ aws_appautoscaling_policy
           \ aws_appautoscaling_target
@@ -222,6 +232,7 @@ syn keyword terraResourceTypeBI
           \ aws_iam_group_policy
           \ aws_iam_group_policy_attachment
           \ aws_iam_instance_profile
+          \ aws_iam_openid_connect_provider
           \ aws_iam_policy
           \ aws_iam_policy_attachment
           \ aws_iam_role
@@ -254,6 +265,8 @@ syn keyword terraResourceTypeBI
           \ aws_lightsail_domain
           \ aws_lightsail_instance
           \ aws_lightsail_key_pair
+          \ aws_lightsail_static_ip
+          \ aws_lightsail_static_ip_attachment
           \ aws_load_balancer_backend_server_policy
           \ aws_load_balancer_listener_policy
           \ aws_load_balancer_policy
@@ -384,6 +397,7 @@ syn keyword terraResourceTypeBI
           \ azurerm_lb_probe
           \ azurerm_lb_rule
           \ azurerm_local_network_gateway
+          \ azurerm_managed_disk
           \ azurerm_network_interface
           \ azurerm_network_security_group
           \ azurerm_network_security_rule
@@ -499,8 +513,10 @@ syn keyword terraResourceTypeBI
           \ fastly_service_v1
           \ github_issue_label
           \ github_membership
+          \ github_organization_webhook
           \ github_repository
           \ github_repository_collaborator
+          \ github_repository_webhook
           \ github_team
           \ github_team_membership
           \ github_team_repository
@@ -570,6 +586,11 @@ syn keyword terraResourceTypeBI
           \ influxdb_continuous_query
           \ influxdb_database
           \ influxdb_user
+          \ kubernetes_config_map
+          \ kubernetes_namespace
+          \ kubernetes_persistent_volume
+          \ kubernetes_persistent_volume_claim
+          \ kubernetes_secret
           \ librato_alert
           \ librato_service
           \ librato_space
@@ -660,6 +681,7 @@ syn keyword terraResourceTypeBI
           \ rancher_registry_credential
           \ rancher_stack
           \ random_id
+          \ random_pet
           \ random_shuffle
           \ rundeck_job
           \ rundeck_private_key

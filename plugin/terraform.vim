@@ -17,7 +17,6 @@ function! s:commands(A, L, P)
   \ "destroy",
   \ "env",
   \ "fmt",
-  \ "force-unlock",
   \ "get",
   \ "graph",
   \ "import",
@@ -32,6 +31,7 @@ function! s:commands(A, L, P)
   \ "validate",
   \ "version",
   \ "debug",
+  \ "force-unlock",
   \ "state"
   \ ], "\n")
 endfunction
