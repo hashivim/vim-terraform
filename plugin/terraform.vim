@@ -13,7 +13,9 @@ endif
 function! s:commands(A, L, P)
   return join([
   \ "apply",
+  \ "console",
   \ "destroy",
+  \ "env",
   \ "fmt",
   \ "get",
   \ "graph",
@@ -23,12 +25,13 @@ function! s:commands(A, L, P)
   \ "plan",
   \ "push",
   \ "refresh",
-  \ "remote",
   \ "show",
   \ "taint",
   \ "untaint",
   \ "validate",
   \ "version",
+  \ "debug",
+  \ "force-unlock",
   \ "state"
   \ ], "\n")
 endfunction

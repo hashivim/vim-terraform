@@ -47,3 +47,11 @@ setlocal foldtext=TerraformFoldText()
 nnoremap <space> za
 onoremap <space> <C-C>za
 vnoremap <space> zf
+
+" Match the identation put in place by Hashicorp and :TerraformFmt, https://github.com/hashivim/vim-terraform/issues/21
+if get(g:, "terraform_align", 1)
+  setlocal tabstop=2
+  setlocal softtabstop=2
+  setlocal shiftwidth=2
+endif
+
