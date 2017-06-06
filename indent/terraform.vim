@@ -28,7 +28,7 @@ function! TerraformIndent(lnum)
   let thisindent = previndent
 
   " block open?
-  if prevline =~ '[\[{]\s*$'
+  if prevline =~ '[\[{\(]\s*$'
     let thisindent += &sw
   endif
 
@@ -36,7 +36,7 @@ function! TerraformIndent(lnum)
   let thisline = substitute(getline(a:lnum), '//.*$', '', '')
 
   " block close?
-  if thisline =~ '^\s*[\]}]'
+  if thisline =~ '^\s*[\)\]}]'
     let thisindent -= &sw
   endif
 
