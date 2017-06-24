@@ -29,6 +29,10 @@ function! TerraformFolds()
     return ">1"
   elseif match(thisline, '^output') >= 0
     return ">1"
+  elseif match(thisline, '^data') >= 0
+    return ">1"
+  elseif match(thisline, '^terraform') >= 0
+    return ">1"
   else
     return "="
   endif
