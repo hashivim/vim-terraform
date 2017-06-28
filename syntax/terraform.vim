@@ -762,9 +762,12 @@ syn match terraBraces        "[{}\[\]]"
 """ skip \" in strings.
 """ we may also want to pass \\" into a function to escape quotes.
 syn region terraValueString   start=/"/ skip=/\\\+"/ end=/"/ contains=terraStringInterp
-syn region terraStringInterp  matchgroup=terraBrackets start=/\${/ end=/}/ contains=terraValueFunction contained
+syn region terraStringInterp  matchgroup=terraBrackets start=/\${/ end=/}/ contains=terraValueFunction,terraValueVarSubscript contained
 "" TODO match keywords here, not a-z+
-syn region terraValueFunction matchgroup=terraBrackets start=/[0-9a-z]\+(/ end=/)/ contains=terraValueString,terraValueFunction contained
+syn region terraValueFunction matchgroup=terraBrackets start=/[a-z]\+(/ end=/)/ contains=terraValueString,terraValueFunction,terraValueVarSubscript contained
+" User variables or module outputs can be lists or maps, and accessed with
+" var.map["foo"]
+syn region terraValueVarSubscript start=/\(\<var\|\<module\)\.[a-z0-9_-]\+\[/ end=/\]/ contains=terraValueString,terraValueFunction,terraValueVarSubscript contained
 
 hi def link terraComment           Comment
 hi def link terraTodo              Todo
@@ -791,5 +794,6 @@ hi def link terraProvisionerName   String
 hi def link terraModule            Structure
 hi def link terraModuleName        String
 hi def link terraValueFunction     Identifier
+hi def link terraValueVarSubscript Identifier
 
 let b:current_syntax = "terraform"
