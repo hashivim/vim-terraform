@@ -45,7 +45,7 @@ function! terraform#fmt()
   let output = system("terraform fmt -write " . l:tmpfile)
   if v:shell_error == 0
     try | silent undojoin | catch | endtry
-    call rename(l:tmpfile, expand("%"))
+    call rename(l:tmpfile, resolve(expand("%")))
     silent edit!
     let &syntax = &syntax
   else
