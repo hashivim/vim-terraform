@@ -3,7 +3,7 @@ if !exists('g:terraform_align')
 endif
 
 if !exists('g:terraform_remap_spacebar')
-  let g:terraform_align = 1
+  let g:terraform_align = 0
 endif
 
 if g:terraform_align && exists(':Tabularize')

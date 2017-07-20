@@ -35,9 +35,9 @@ Allow vim-terraform to override your `.vimrc` indentation syntax for matching fi
 
     let g:terraform_align=1
 
-Allow vim-terraform to re-map the spacebar to fold / unfold. Defaults to 1 which is on.
+Allow vim-terraform to re-map the spacebar to fold / unfold. Defaults to 0 which is off.
 
-    let g:terraform_remap_spacebar=0
+    let g:terraform_remap_spacebar=1
 
 If you use the [vim-commentary](https://github.com/tpope/vim-commentary) plugin, you should set the following option in your `~/.vimrc`. See [TOOLS-1](https://github.com/hashivim/vim-hashicorp-tools/pull/1) for more details.
 
