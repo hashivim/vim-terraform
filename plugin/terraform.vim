@@ -23,6 +23,7 @@ function! s:commands(A, L, P)
   \ "init",
   \ "output",
   \ "plan",
+  \ "providers",
   \ "push",
   \ "refresh",
   \ "show",
@@ -30,6 +31,7 @@ function! s:commands(A, L, P)
   \ "untaint",
   \ "validate",
   \ "version",
+  \ "workspace",
   \ "debug",
   \ "force-unlock",
   \ "state"

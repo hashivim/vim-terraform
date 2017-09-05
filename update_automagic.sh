@@ -15,14 +15,14 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
-EXISTING_TF_VERSION=$(terraform version | head -n1 | sed -e 's/Terraform//gI' -e 's/v//gI' -e 's/[[:space:]]//g')
-
-if [ "${EXISTING_TF_VERSION}" != "${VERSION}" ]; then
-    echo "-) You are trying to update this script for terraform ${VERSION} while you have"
-    echo "   terraform ${EXISTING_TF_VERSION} installed at $(which terraform)."
-    echo "   Please update your local terraform before using this script."
-    exit 1
-fi
+#EXISTING_TF_VERSION=$(terraform version | head -n1 | sed -e 's/Terraform//gI' -e 's/v//gI' -e 's/[[:space:]]//g')
+#
+#if [ "${EXISTING_TF_VERSION}" != "${VERSION}" ]; then
+#    echo "-) You are trying to update this script for terraform ${VERSION} while you have"
+#    echo "   terraform ${EXISTING_TF_VERSION} installed at $(which terraform)."
+#    echo "   Please update your local terraform before using this script."
+#    exit 1
+#fi
 
 echo "+) Acquiring terraform-${VERSION}"
 wget https://github.com/hashicorp/terraform/archive/v${VERSION}.tar.gz
