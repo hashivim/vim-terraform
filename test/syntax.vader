@@ -34,3 +34,13 @@ Execute (syntax is good):
 
   " tags should reset syntax
   AssertEqual '', SyntaxOf("tags") 
+
+
+Given terraform (nested strings):
+  Name = "${var.environment == "staging" ? "sgn-stg-${var.application}" : "sgn-prd-${var.application}"}" # Comment
+  Other = "foo"
+
+Execute (syntax is good):
+  AssertEqual 'terraStringInterp', SyntaxOf('var.environment')
+  AssertEqual 'terraComment', SyntaxOf('Comment')
+  AssertEqual '', SyntaxAt(2, 1)
