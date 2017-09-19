@@ -1,0 +1,21 @@
+Before:
+  set filetype=terraform
+  let g:terraform_align=1
+
+Execute ("File syntax is set for terraform"):
+  AssertEqual "terraform", &ft
+
+Execute ("terraform_align is enabled"):
+  AssertEqual 1, g:terraform_align
+
+Execute ("terraform_remap_spacebar is disabled"):
+  AssertEqual 0, g:terraform_remap_spacebar
+
+Execute ("We display the correct number of spaces when pressing tab"):
+  AssertEqual 2, &tabstop
+
+Execute ("We insert the correct number of spaces when pressing tab"):
+  AssertEqual 2, &softtabstop
+
+Execute ("Number of spaces for indentation"):
+  AssertEqual 2, &shiftwidth

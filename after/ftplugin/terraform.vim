@@ -3,7 +3,6 @@ if !exists('g:terraform_align')
 endif
 
 if !exists('g:terraform_remap_spacebar')
-  let g:terraform_align = 0
   let g:terraform_remap_spacebar = 0
 endif
 
