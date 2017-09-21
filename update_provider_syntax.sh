@@ -16,7 +16,7 @@ mkdir -p terraform-providers
 cd terraform-providers
 for i in $(curl -sL https://api.github.com/users/terraform-providers/repos?per_page=200 | jq -r .[].name); do
     if [ ! -d $i ]; then
-	    git clone https://github.com/terraform-providers/$i
+	    git clone --depth 1 https://github.com/terraform-providers/$i
     else
         cd $i
         git pull https://github.com/terraform-providers/$i
