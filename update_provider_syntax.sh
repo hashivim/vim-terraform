@@ -18,12 +18,10 @@ for i in $(curl -sL https://api.github.com/users/terraform-providers/repos?per_p
     if [ ! -d $i ]; then
 	    git clone --depth 1 https://github.com/terraform-providers/$i
     else
-        cd $i
-        git pull https://github.com/terraform-providers/$i
-        cd
+        pushd $i
+        git pull --depth 1 https://github.com/terraform-providers/$i
+        popd
     fi
 done
 
-cd terraform-providers
 egrep -ro "\"(.*)\":.*resource.*\(\),$" | awk -F':' '{print $2}' | sed 's/"//g' | sort -u
-cd
