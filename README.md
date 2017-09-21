@@ -75,6 +75,13 @@ At this point, add the modified files to a git branch and open a pull request.
 Add another maintainer to the pull request and await confirmation.
 
 - - - -
+# Running tests
+
+To run the test suite and verify functionality
+
+    make
+
+- - - -
 # Credits
 
 Syntax highlighting and indentation by Kevin Le (@bkad) based on prior work by
