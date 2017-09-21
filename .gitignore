@@ -1,3 +1,7 @@
 /doc/tags
 /vader.vim
+<<<<<<< HEAD
 terraform-providers/
+=======
+/terraform-providers/
+>>>>>>> c1b143a3b64d350b8a821d38fc71b2277e65bb6d
