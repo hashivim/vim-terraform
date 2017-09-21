@@ -1,0 +1,19 @@
+Before:
+  silent! set filetype=terraform
+  silent! let g:terraform_remap_spacebar=1
+
+Given ("That g:terraform_remap_spacebar=1"):
+  You should never see me!
+
+Execute ("File syntax is set for terraform"):
+  AssertEqual "terraform", &ft
+
+Execute ("terraform_remap_spacebar is enabled"):
+  AssertEqual 1, g:terraform_remap_spacebar
+
+Execute ("terraform_align is disabled"):
+  AssertEqual 0, g:terraform_align
+
+Execute ("Cleanup"):
+  silent! let g:terraform_remap_spacebar=0
+  silent! unset filetype
