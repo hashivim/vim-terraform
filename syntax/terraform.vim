@@ -54,6 +54,9 @@ syn keyword terraDataTypeBI
           \ aws_kms_alias
           \ aws_kms_ciphertext
           \ aws_kms_secret
+          \ aws_lb
+          \ aws_lb_listener
+          \ aws_lb_target_group
           \ aws_partition
           \ aws_prefix_list
           \ aws_redshift_service_account
@@ -294,6 +297,11 @@ syn keyword terraResourceTypeBI
           \ aws_lambda_function
           \ aws_lambda_permission
           \ aws_launch_configuration
+          \ aws_lb
+          \ aws_lb_listener
+          \ aws_lb_listener_rule
+          \ aws_lb_target_group
+          \ aws_lb_target_group_attachment
           \ aws_lb_cookie_stickiness_policy
           \ aws_lb_ssl_negotiation_policy
           \ aws_lightsail_domain
