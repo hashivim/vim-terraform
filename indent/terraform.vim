@@ -5,7 +5,7 @@ endif
 let b:did_indent = 1
 
 setlocal nolisp
-setlocal autoindent
+setlocal autoindent sw=2 ts=2 expandtab
 setlocal indentexpr=TerraformIndent(v:lnum)
 setlocal indentkeys+=<:>,0=},0=)
 
