@@ -35,7 +35,11 @@ Allow vim-terraform to override your `.vimrc` indentation syntax for matching fi
 
     let g:terraform_align=1
 
-Allow vim-terraform to re-map the spacebar to fold / unfold. Defaults to 0 which is off.
+ALlow vim-terraform to automatically fold (hide until unfolded) sections of terraform code. Defaults to 0 which is off.
+
+    let g:terraform_fold_sections=1
+
+Allow vim-terraform to re-map the spacebar to fold/unfold. This works in conjunction with `let g:terraform_fold_sections=1` which should be enabled if you plan to use this feature. Defaults to 0 which is off.
 
     let g:terraform_remap_spacebar=1
 
@@ -47,23 +51,9 @@ If you use the [vim-commentary](https://github.com/tpope/vim-commentary) plugin,
 # Updating vim-terraform
 Note, this is only for maintainers of the `vim-terraform` project.
 
-When a new version of Terraform drops, you can run the following where x.x.x is a version such as 0.8.7
+When a new version of Terraform drops, you can run the following where x.x.x is a version such as 0.11.0
 
     ./update_automagic.sh x.x.x
-
-You will see the following truncated output
-
-    +) Extracting terraform-0.8.7.tar.gz
-    +) Running update_commands.rb
-    +) Running update_data_sources.rb
-    +) Running update_syntax.rb
-    +) Cleaning up after ourselves
-    On branch feature/run-helper-scripts-for-terraform-087/pgp
-    Changes not staged for commit:
-      (use "git add <file>..." to update what will be committed)
-      (use "git checkout -- <file>..." to discard changes in working directory)
-
-	    modified:   syntax/terraform.vim
 
 At this point, add the modified files to a git branch and open a pull request.
 
