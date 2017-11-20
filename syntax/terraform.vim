@@ -14,13 +14,16 @@ syn keyword terraValueBool true false on off yes no
 syn keyword terraDataTypeBI
           \ alicloud_images
           \ alicloud_instance_types
+          \ alicloud_key_pairs
           \ alicloud_regions
+          \ alicloud_vpcs
           \ alicloud_zones
           \ archive_file
           \ atlas_artifact
           \ aws_acm_certificate
           \ aws_alb
           \ aws_alb_listener
+          \ aws_alb_target_group
           \ aws_ami
           \ aws_ami_ids
           \ aws_autoscaling_groups
@@ -30,36 +33,52 @@ syn keyword terraDataTypeBI
           \ aws_caller_identity
           \ aws_canonical_user_id
           \ aws_cloudformation_stack
+          \ aws_cloudtrail_service_account
           \ aws_db_instance
           \ aws_db_snapshot
+          \ aws_dynamodb_table
           \ aws_ebs_snapshot
           \ aws_ebs_snapshot_ids
           \ aws_ebs_volume
+          \ aws_ecr_repository
           \ aws_ecs_cluster
           \ aws_ecs_container_definition
           \ aws_ecs_task_definition
           \ aws_efs_file_system
+          \ aws_efs_mount_target
           \ aws_eip
           \ aws_elastic_beanstalk_solution_stack
           \ aws_elasticache_cluster
+          \ aws_elasticache_replication_group
           \ aws_elb_hosted_zone_id
           \ aws_elb_service_account
           \ aws_iam_account_alias
+          \ aws_iam_group
+          \ aws_iam_instance_profile
           \ aws_iam_policy_document
           \ aws_iam_role
           \ aws_iam_server_certificate
+          \ aws_iam_user
           \ aws_instance
+          \ aws_instances
+          \ aws_internet_gateway
           \ aws_ip_ranges
           \ aws_kinesis_stream
           \ aws_kms_alias
           \ aws_kms_ciphertext
           \ aws_kms_secret
+          \ aws_lb
+          \ aws_lb_listener
+          \ aws_lb_target_group
+          \ aws_nat_gateway
           \ aws_partition
           \ aws_prefix_list
+          \ aws_rds_cluster
           \ aws_redshift_service_account
           \ aws_region
           \ aws_route53_zone
           \ aws_route_table
+          \ aws_s3_bucket
           \ aws_s3_bucket_object
           \ aws_security_group
           \ aws_sns_topic
@@ -71,10 +90,21 @@ syn keyword terraDataTypeBI
           \ aws_vpc_endpoint_service
           \ aws_vpc_peering_connection
           \ aws_vpn_gateway
+          \ azurerm_builtin_role_definition
           \ azurerm_client_config
+          \ azurerm_image
+          \ azurerm_key_vault_access_policy
+          \ azurerm_managed_disk
+          \ azurerm_platform_image
           \ azurerm_public_ip
+          \ azurerm_resource_group
+          \ azurerm_role_definition
+          \ azurerm_snapshot
+          \ azurerm_subnet
+          \ azurerm_subscription
           \ circonus_account
           \ circonus_collector
+          \ cloudstack_template
           \ consul_agent_self
           \ consul_catalog_nodes
           \ consul_catalog_service
@@ -82,28 +112,50 @@ syn keyword terraDataTypeBI
           \ consul_keys
           \ digitalocean_image
           \ dns_a_record_set
+          \ dns_aaaa_record_set
           \ dns_cname_record_set
+          \ dns_ns_record_set
           \ dns_txt_record_set
           \ docker_registry_image
           \ external
           \ fastly_ip_ranges
           \ github_team
           \ github_user
+          \ google_active_folder
+          \ google_client_config
+          \ google_compute_address
+          \ google_compute_global_address
+          \ google_compute_instance_group
+          \ google_compute_lb_ip_ranges
           \ google_compute_network
           \ google_compute_subnetwork
           \ google_compute_zones
           \ google_container_engine_versions
+          \ google_dns_managed_zone
           \ google_iam_policy
           \ google_storage_object_signed_url
           \ http
+          \ kubernetes_service
+          \ kubernetes_storage_class
+          \ logicmonitor_collectors
+          \ logicmonitor_device_group
           \ newrelic_application
           \ ns1_datasource
           \ null_data_source
+          \ oneandone_instance_size
+          \ opc_compute_image_list_entry
+          \ opc_compute_network_interface
+          \ opc_compute_storage_volume_snapshot
+          \ opc_compute_vnic
+          \ openstack_dns_zone_v2
           \ openstack_images_image_v2
           \ openstack_networking_network_v2
+          \ openstack_networking_secgroup_v2
+          \ openstack_networking_subnet_v2
           \ opsgenie_user
           \ ovh_publiccloud_region
           \ ovh_publiccloud_regions
+          \ packet_precreated_ip_block
           \ pagerduty_escalation_policy
           \ pagerduty_schedule
           \ pagerduty_user
@@ -111,11 +163,25 @@ syn keyword terraDataTypeBI
           \ profitbricks_datacenter
           \ profitbricks_image
           \ profitbricks_location
+          \ profitbricks_resource
+          \ profitbricks_snapshot
+          \ rancher_certificate
+          \ rancher_environment
+          \ rancher_setting
           \ scaleway_bootscript
           \ scaleway_image
           \ template_cloudinit_config
           \ template_file
           \ terraform_remote_state
+          \ triton_image
+          \ triton_network
+          \ vsphere_datacenter
+          \ vsphere_distributed_virtual_switch
+          \ vsphere_host
+          \ vsphere_network
+          \ vsphere_tag
+          \ vsphere_tag_category
+          \ vsphere_vmfs_disks
 """ end data sources
 
 """ resource

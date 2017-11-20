@@ -12,16 +12,18 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-mkdir -p terraform-providers
-cd terraform-providers
-for i in $(curl -sL https://api.github.com/users/terraform-providers/repos?per_page=200 | jq -r .[].name); do
-    if [ ! -d $i ]; then
-	    git clone --depth 1 https://github.com/terraform-providers/$i
-    else
-        pushd $i
-        git pull --depth 1 https://github.com/terraform-providers/$i
-        popd
-    fi
-done
+function get_providers() {
+    mkdir -p terraform-providers
+    cd terraform-providers
+    for i in $(curl -sL https://api.github.com/users/terraform-providers/repos?per_page=300 | jq -r .[].name); do
+        if [ ! -d $i ]; then
+            git clone --depth 1 https://github.com/terraform-providers/$i
+        else
+            pushd $i
+            git pull --depth 1 https://github.com/terraform-providers/$i
+            popd
+        fi
+    done
+}
 
-egrep -ro "\"(.*)\":.*resource.*\(\),$" | awk -F':' '{print $2}' | sed 's/"//g' | sort -u
+get_providers
