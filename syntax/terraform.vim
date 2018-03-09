@@ -396,6 +396,7 @@ syn keyword terraResourceTypeBI
           \ aws_emr_security_configuration
           \ aws_flow_log
           \ aws_glacier_vault
+          \ aws_glue_catalog_database
           \ aws_iam_access_key
           \ aws_iam_account_alias
           \ aws_iam_account_password_policy
