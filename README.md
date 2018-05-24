@@ -43,9 +43,10 @@ Allow vim-terraform to re-map the spacebar to fold/unfold. This works in conjunc
 
     let g:terraform_remap_spacebar=1
 
-If you use the [vim-commentary](https://github.com/tpope/vim-commentary) plugin, you should set the following option in your `~/.vimrc`. See [TOOLS-1](https://github.com/hashivim/vim-hashicorp-tools/pull/1) for more details.
+Override the Vim's `commentstring` setting with a custom value. Defaults to
+`#%s`. Example:
 
-    autocmd FileType terraform setlocal commentstring=#%s
+    let g:terraform_commentstring='//%s'
 
 - - - -
 # Updating vim-terraform
