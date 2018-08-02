@@ -72,3 +72,10 @@ if get(g:, "terraform_align", 1)
   setlocal softtabstop=2
   setlocal shiftwidth=2
 endif
+
+" Set the commentstring
+if exists('g:terraform_commentstring')
+    let &l:commentstring=g:terraform_commentstring
+else
+    setlocal commentstring=#%s
+endif
