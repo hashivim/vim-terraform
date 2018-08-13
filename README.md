@@ -13,11 +13,6 @@ This plugin adds a `:Terraform` command that runs terraform, with tab
 completion of subcommands. It also sets up `*.tf`, `*.tfvars`, and
 `*.tfstate` files to be highlighted as HCL, HCL, and JSON respectively.
 
-For Terraform 0.6.15 or greater, this plugin also adds a `:TerraformFmt`
-command that runs `terraform fmt` against the current buffer. Set
-`g:terraform_fmt_on_save` to 1 to run `terraform fmt` automatically when
-saving `*.tf` or `*.tfvars` files.
-
 - - - -
 # Installation
 
@@ -47,6 +42,11 @@ Override the Vim's `commentstring` setting with a custom value. Defaults to
 `#%s`. Example:
 
     let g:terraform_commentstring='//%s'
+
+Allow vim-terraform to automatically format `*.tf` and `*.tfvars` files with `terraform fmt`.
+You can also do this manually with the `:TerraformFmt` command.
+
+    let g:terraform_fmt_on_save=1
 
 - - - -
 # Updating vim-terraform
