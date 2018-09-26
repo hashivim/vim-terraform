@@ -5,6 +5,10 @@ if exists("b:current_syntax")
   finish
 endif
 
+" Include hyphens as keyword characters so that a keyword appearing as part of
+" a longer name doesn't get partially highlighted.
+setlocal iskeyword+=-
+
 syn case match
 
 syn keyword terraSection connection output provider variable data terraform locals
