@@ -1425,7 +1425,7 @@ syn match terraBraces        "[{}\[\]]"
 """ we may also want to pass \\" into a function to escape quotes.
 syn region terraValueString   start=/"/ skip=/\\\+"/ end=/"/ contains=terraStringInterp
 syn region terraStringInterp  matchgroup=terraBrackets start=/\${/ end=/}/ contains=terraValueFunction,terraValueVarSubscript,terraStringInterp contained
-syn region terraHereDocText   start=/<<\z([A-Z]\+\)/ end=/^\z1/ contains=terraStringInterp
+syn region terraHereDocText   start=/<<-\?\z([a-z0-9A-Z]\+\)/ end=/^\s*\z1/ contains=terraStringInterp
 "" TODO match keywords here, not a-z+
 syn region terraValueFunction matchgroup=terraBrackets start=/[a-z]\+(/ end=/)/ contains=terraValueString,terraValueFunction,terraValueVarSubscript contained
 " User variables or module outputs can be lists or maps, and accessed with
