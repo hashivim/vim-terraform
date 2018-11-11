@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 VERSION=$1
 
 function usage {
@@ -25,7 +26,9 @@ if [ "${EXISTING_TF_VERSION}" != "${VERSION}" ]; then
 fi
 
 echo "+) Acquiring terraform-${VERSION}"
-wget https://github.com/hashicorp/terraform/archive/v${VERSION}.tar.gz
+if [ ! -f "v${VERSION}.tar.gz" ]; then
+    wget https://github.com/hashicorp/terraform/archive/v${VERSION}.tar.gz
+fi
 
 echo "+) Extracting terraform-${VERSION}.tar.gz"
 tar zxf v${VERSION}.tar.gz
@@ -48,5 +51,6 @@ sed -i "/img.shields.io/c\[\![](https://img.shields.io/badge/Supports%20Terrafor
 echo "+) Cleaning up after ourselves"
 rm -f v${VERSION}.tar.gz
 rm -rf terraform-${VERSION}
+sudo umount terraform-providers
 
 git status

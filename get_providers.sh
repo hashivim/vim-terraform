@@ -14,13 +14,15 @@ fi
 
 function get_providers() {
     mkdir -p terraform-providers
+    # Make a ramdisk because there is a ton of stuff to download
+    sudo mount -t tmpfs -o size=3096m tmpfs $(pwd)/terraform-providers
     cd terraform-providers
     for i in $(curl -sL https://api.github.com/users/terraform-providers/repos?per_page=300 | jq -r .[].name); do
         if [ ! -d $i ]; then
             git clone --depth 1 https://github.com/terraform-providers/$i
         else
             pushd $i
-            git pull --depth 1 https://github.com/terraform-providers/$i
+            git pull --hard --depth 1 https://github.com/terraform-providers/$i
             popd
         fi
     done
