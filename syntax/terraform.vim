@@ -1672,6 +1672,7 @@ syn keyword terraResourceTypeBI
           \ google_project
           \ google_project_iam_custom_role
           \ google_project_iam_policy
+          \ google_project_iam_binding
           \ google_project_organization_policy
           \ google_project_service
           \ google_project_services
