@@ -1329,6 +1329,7 @@ syn keyword terraResourceTypeBI
           \ azurerm_packet_capture
           \ azurerm_policy_assignment
           \ azurerm_policy_definition
+          \ azurerm_policy_set_definition
           \ azurerm_postgresql_configuration
           \ azurerm_postgresql_database
           \ azurerm_postgresql_firewall_rule
