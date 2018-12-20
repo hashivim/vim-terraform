@@ -341,6 +341,7 @@ syn keyword terraDataTypeBI
           \ google_cloudfunctions_function
           \ google_compute_address
           \ google_compute_backend_service
+          \ google_compute_backend_bucket
           \ google_compute_default_service_account
           \ google_compute_forwarding_rule
           \ google_compute_global_address
