@@ -18,8 +18,15 @@ function get_providers() {
     sudo mount -t tmpfs -o size=3096m tmpfs $(pwd)/terraform-providers
     cd terraform-providers
     for i in $(curl -sL https://api.github.com/users/terraform-providers/repos?per_page=300 | jq -r .[].name); do
+        PROVIDER="$(echo ${i} | awk -F'-' '{print $3}')"
         if [ ! -d $i ]; then
             git clone --depth 1 https://github.com/terraform-providers/$i
+            # Only get the folder/files we need. There's probably a better way checkout only the files we need, but I don't know it.
+            cd ${i}
+            git filter-branch --prune-empty --subdirectory-filter ${PROVIDER} -- --all
+            git filter-branch -f --prune-empty --index-filter 'git rm --cached --ignore-unmatch $(git ls-files | grep -v "provider*.go")'
+            rm -rf vendor
+            cd ..
         else
             pushd $i
             git pull --hard --depth 1 https://github.com/terraform-providers/$i
