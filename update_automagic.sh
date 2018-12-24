@@ -42,8 +42,8 @@ echo "+) Running update_commands.rb"
 echo "+) Running update_data_sources.rb"
 ./update_data_sources.rb
 
-echo "+) Running update_syntax.rb"
-./update_syntax.rb
+echo "+) Running update_resources.rb"
+./update_resources.rb
 
 echo "+) Updating the badge in the README.md"
 sed -i "/img.shields.io/c\[\![](https://img.shields.io/badge/Supports%20Terraform%20Version-%3E%3D${VERSION}-blue.svg)](https://github.com/hashicorp/terraform/blob/v${VERSION}/CHANGELOG.md)" README.md
