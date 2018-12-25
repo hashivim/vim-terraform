@@ -89,6 +89,7 @@ syn keyword terraDataTypeBI
           \ aws_api_gateway_rest_api
           \ aws_api_gateway_vpc_link
           \ aws_arn
+          \ aws_autoscaling_group
           \ aws_autoscaling_groups
           \ aws_availability_zone
           \ aws_availability_zones
@@ -301,6 +302,7 @@ syn keyword terraDataTypeBI
           \ docker_registry_image
           \ external
           \ fastly_ip_ranges
+          \ filter
           \ flexibleengine_compute_bms_flavors_v2
           \ flexibleengine_compute_bms_keypairs_v2
           \ flexibleengine_compute_bms_nic_v2
@@ -341,7 +343,6 @@ syn keyword terraDataTypeBI
           \ google_cloudfunctions_function
           \ google_compute_address
           \ google_compute_backend_service
-          \ google_compute_backend_bucket
           \ google_compute_default_service_account
           \ google_compute_forwarding_rule
           \ google_compute_global_address
@@ -388,6 +389,7 @@ syn keyword terraDataTypeBI
           \ heroku_space
           \ heroku_space_peering_info
           \ http
+          \ huaweicloud_antiddos_v1
           \ huaweicloud_cce_cluster_v3
           \ huaweicloud_cce_node_v3
           \ huaweicloud_csbs_backup_policy_v1
@@ -435,6 +437,8 @@ syn keyword terraDataTypeBI
           \ newrelic_application
           \ newrelic_key_transaction
           \ newrelic_synthetics_monitor
+          \ nomad_deployments
+          \ nomad_job
           \ nomad_namespaces
           \ nomad_regions
           \ ns1_datasource
@@ -620,6 +624,20 @@ syn keyword terraDataTypeBI
           \ ucloud_images
           \ ucloud_projects
           \ ucloud_zones
+          \ vsphere_compute_cluster
+          \ vsphere_custom_attribute
+          \ vsphere_datacenter
+          \ vsphere_datastore
+          \ vsphere_datastore_cluster
+          \ vsphere_distributed_virtual_switch
+          \ vsphere_host
+          \ vsphere_network
+          \ vsphere_resource_pool
+          \ vsphere_tag
+          \ vsphere_tag_category
+          \ vsphere_vapp_container
+          \ vsphere_virtual_machine
+          \ vsphere_vmfs_disks
 """ end data sources
 
 """ resource
@@ -1004,6 +1022,7 @@ syn keyword terraResourceTypeBI
           \ aws_lb_ssl_negotiation_policy
           \ aws_lb_target_group
           \ aws_lb_target_group_attachment
+          \ aws_licensemanager_association
           \ aws_licensemanager_license_configuration
           \ aws_lightsail_domain
           \ aws_lightsail_instance
@@ -1093,11 +1112,13 @@ syn keyword terraResourceTypeBI
           \ aws_s3_bucket_notification
           \ aws_s3_bucket_object
           \ aws_s3_bucket_policy
+          \ aws_s3_bucket_public_access_block
           \ aws_secretsmanager_secret
           \ aws_secretsmanager_secret_version
           \ aws_security_group
           \ aws_security_group_rule
           \ aws_securityhub_account
+          \ aws_securityhub_product_subscription
           \ aws_securityhub_standards_subscription
           \ aws_service_discovery_http_namespace
           \ aws_service_discovery_private_dns_namespace
@@ -1683,44 +1704,78 @@ syn keyword terraResourceTypeBI
           \ gitlab_project_membership
           \ gitlab_project_variable
           \ gitlab_user
+          \ google_access_context_manager_access_level
+          \ google_access_context_manager_access_policy
+          \ google_access_context_manager_service_perimeter
           \ google_app_engine_application
           \ google_bigquery_dataset
           \ google_bigquery_table
           \ google_bigtable_instance
           \ google_bigtable_table
+          \ google_binary_authorization_attestor
+          \ google_binary_authorization_policy
           \ google_cloudbuild_trigger
           \ google_cloudfunctions_function
           \ google_cloudiot_registry
           \ google_composer_environment
+          \ google_compute_address
           \ google_compute_attached_disk
+          \ google_compute_autoscaler
+          \ google_compute_backend_bucket
           \ google_compute_backend_service
+          \ google_compute_disk
+          \ google_compute_firewall
+          \ google_compute_forwarding_rule
+          \ google_compute_global_address
           \ google_compute_global_forwarding_rule
+          \ google_compute_health_check
+          \ google_compute_http_health_check
+          \ google_compute_https_health_check
           \ google_compute_image
           \ google_compute_instance
           \ google_compute_instance_from_template
           \ google_compute_instance_group
           \ google_compute_instance_group_manager
           \ google_compute_instance_template
+          \ google_compute_interconnect_attachment
           \ google_compute_network
           \ google_compute_network_peering
           \ google_compute_project_metadata
           \ google_compute_project_metadata_item
+          \ google_compute_region_autoscaler
           \ google_compute_region_backend_service
+          \ google_compute_region_disk
           \ google_compute_region_instance_group_manager
+          \ google_compute_route
+          \ google_compute_router
           \ google_compute_router_interface
           \ google_compute_router_nat
           \ google_compute_router_peer
           \ google_compute_security_policy
           \ google_compute_shared_vpc_host_project
           \ google_compute_shared_vpc_service_project
+          \ google_compute_snapshot
+          \ google_compute_ssl_certificate
+          \ google_compute_ssl_policy
+          \ google_compute_subnetwork
+          \ google_compute_target_http_proxy
+          \ google_compute_target_https_proxy
           \ google_compute_target_pool
+          \ google_compute_target_ssl_proxy
+          \ google_compute_target_tcp_proxy
+          \ google_compute_url_map
+          \ google_compute_vpn_gateway
+          \ google_compute_vpn_tunnel
+          \ google_container_analysis_note
           \ google_container_cluster
           \ google_container_node_pool
           \ google_dataflow_job
           \ google_dataproc_cluster
           \ google_dataproc_job
+          \ google_dns_managed_zone
           \ google_dns_record_set
           \ google_endpoints_service
+          \ google_filestore_instance
           \ google_folder
           \ google_folder_organization_policy
           \ google_kms_crypto_key
@@ -1729,6 +1784,10 @@ syn keyword terraResourceTypeBI
           \ google_logging_folder_sink
           \ google_logging_organization_sink
           \ google_logging_project_sink
+          \ google_monitoring_alert_policy
+          \ google_monitoring_group
+          \ google_monitoring_notification_channel
+          \ google_monitoring_uptime_check_config
           \ google_organization_iam_custom_role
           \ google_organization_policy
           \ google_project
@@ -1740,6 +1799,8 @@ syn keyword terraResourceTypeBI
           \ google_project_usage_export_bucket
           \ google_pubsub_subscription
           \ google_pubsub_topic
+          \ google_redis_instance
+          \ google_resource_manager_lien
           \ google_runtimeconfig_config
           \ google_runtimeconfig_variable
           \ google_service_account
@@ -1755,9 +1816,12 @@ syn keyword terraResourceTypeBI
           \ google_storage_bucket
           \ google_storage_bucket_acl
           \ google_storage_bucket_object
+          \ google_storage_default_object_access_control
           \ google_storage_default_object_acl
           \ google_storage_notification
+          \ google_storage_object_access_control
           \ google_storage_object_acl
+          \ google_storage_transfer_job
           \ hcloud_floating_ip
           \ hcloud_floating_ip_assignment
           \ hcloud_rdns
@@ -1765,6 +1829,10 @@ syn keyword terraResourceTypeBI
           \ hcloud_ssh_key
           \ hcloud_volume
           \ hcloud_volume_attachment
+          \ hedvig_access
+          \ hedvig_lun
+          \ hedvig_mount
+          \ hedvig_vdisk
           \ helm_release
           \ helm_repository
           \ heroku_account_feature
@@ -2078,6 +2146,8 @@ syn keyword terraResourceTypeBI
           \ openstack_identity_role_v3
           \ openstack_identity_user_v3
           \ openstack_images_image_v2
+          \ openstack_lb_l7policy_v2
+          \ openstack_lb_l7rule_v2
           \ openstack_lb_listener_v2
           \ openstack_lb_loadbalancer_v2
           \ openstack_lb_member_v1
@@ -2493,6 +2563,45 @@ syn keyword terraResourceTypeBI
           \ ultradns_rdpool
           \ ultradns_record
           \ ultradns_tcpool
+          \ vcd_dnat
+          \ vcd_edgegateway_vpn
+          \ vcd_firewall_rules
+          \ vcd_network
+          \ vcd_snat
+          \ vcd_vapp
+          \ vcd_vapp_vm
+          \ vsphere_compute_cluster
+          \ vsphere_compute_cluster_host_group
+          \ vsphere_compute_cluster_vm_affinity_rule
+          \ vsphere_compute_cluster_vm_anti_affinity_rule
+          \ vsphere_compute_cluster_vm_dependency_rule
+          \ vsphere_compute_cluster_vm_group
+          \ vsphere_compute_cluster_vm_host_rule
+          \ vsphere_custom_attribute
+          \ vsphere_datacenter
+          \ vsphere_datastore_cluster
+          \ vsphere_datastore_cluster_vm_anti_affinity_rule
+          \ vsphere_distributed_port_group
+          \ vsphere_distributed_virtual_switch
+          \ vsphere_dpm_host_override
+          \ vsphere_drs_vm_override
+          \ vsphere_file
+          \ vsphere_folder
+          \ vsphere_ha_vm_override
+          \ vsphere_host_port_group
+          \ vsphere_host_virtual_switch
+          \ vsphere_license
+          \ vsphere_nas_datastore
+          \ vsphere_resource_pool
+          \ vsphere_storage_drs_vm_override
+          \ vsphere_tag
+          \ vsphere_tag_category
+          \ vsphere_vapp_container
+          \ vsphere_vapp_entity
+          \ vsphere_virtual_disk
+          \ vsphere_virtual_machine
+          \ vsphere_virtual_machine_snapshot
+          \ vsphere_vmfs_datastore
 """ end resources
 
 syn keyword terraTodo         contained TODO FIXME XXX BUG
