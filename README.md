@@ -30,7 +30,7 @@ Allow vim-terraform to override your `.vimrc` indentation syntax for matching fi
 
     let g:terraform_align=1
 
-ALlow vim-terraform to automatically fold (hide until unfolded) sections of terraform code. Defaults to 0 which is off.
+Allow vim-terraform to automatically fold (hide until unfolded) sections of terraform code. Defaults to 0 which is off.
 
     let g:terraform_fold_sections=1
 
