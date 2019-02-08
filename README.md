@@ -21,6 +21,10 @@ With [pathogen.vim](https://github.com/tpope/vim-pathogen) just do:
     cd ~/.vim/bundle
     git clone https://github.com/hashivim/vim-terraform.git
 
+For [vundle.vim](https://github.com/VundleVim/Vundle.vim) users, add the following to `~/.vimrc`:
+
+    Plugin 'hashivim/vim-terraform'
+
 If you prefer to use something besides pathogen, go ahead.
 
 - - - -
