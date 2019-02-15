@@ -1,6 +1,8 @@
 " terraform.vim - basic vim/terraform integration
 " Maintainer: HashiVim <https://github.com/hashivim>
 
+set formatoptions-=t
+
 if exists("g:loaded_terraform") || v:version < 700 || &cp || !executable('terraform')
   finish
 endif
