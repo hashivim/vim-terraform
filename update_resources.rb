@@ -3,7 +3,7 @@
 # Use this script to update the resources recognized in syntax/terraform.vim.
 # You'll need a current checkout of the Terraform source.
 
-resource_declaration = /"(.*)":.*resource.*\(.*\),$/i
+resource_declaration = /"(.*)":(.*)resource(.*)\(.*\),$/i
 syntax_file = 'syntax/terraform.vim'
 
 # Create the list of resources.
