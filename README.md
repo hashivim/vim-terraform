@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/Supports%20Terraform%20Version-%3E%3D0.11.10-blue.svg)](https://github.com/hashicorp/terraform/blob/v0.11.10/CHANGELOG.md)
+[![](https://img.shields.io/badge/Supports%20Terraform%20Version-%3E%3D0.11.11-blue.svg)](https://github.com/hashicorp/terraform/blob/v0.11.11/CHANGELOG.md)
 
 # Call For Maintainers
 
@@ -56,7 +56,7 @@ You can also do this manually with the `:TerraformFmt` command.
 # Updating vim-terraform
 Note, this is only for maintainers of the `vim-terraform` project.
 
-When a new version of Terraform drops, you can run the following where x.x.x is a version such as 0.11.0
+When a new version of Terraform drops, you can run the following where x.x.x is a version such as 0.11.11
 
     ./update_automagic.sh x.x.x
 
