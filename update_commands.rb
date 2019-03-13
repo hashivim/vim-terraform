@@ -5,7 +5,7 @@
 require 'open3'
 
 command_re = /^\s\s\s\s(\S+)/
-plugin_file = 'plugin/terraform.vim'
+plugin_file = 'ftplugin/terraform.vim'
 
 # Create the list of commands.
 stdout, stderr, _status = Open3.capture3('terraform list-commands')
