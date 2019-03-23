@@ -3387,6 +3387,10 @@ syn region terraProvisionerName start=/"/ end=/"/ nextgroup=terraProvisionerBloc
 syn match  terraModule     /\<module\>/ nextgroup=terraModuleName skipwhite
 syn region terraModuleName start=/"/ end=/"/ nextgroup=terraModuleBlock skipwhite
 
+""" dynamic (HCL2)
+syn match  terraDynamic     /\<dynamic\>/ nextgroup=terraDynamicName skipwhite
+syn region terraDynamicName start=/"/ end=/"/ nextgroup=terraDynamicBlock skipwhite
+
 """ misc.
 syn match terraValueDec      "\<[0-9]\+\([kKmMgG]b\?\)\?\>"
 syn match terraValueHexaDec  "\<0x[0-9a-f]\+\([kKmMgG]b\?\)\?\>"
@@ -3404,9 +3408,6 @@ syn region terraValueFunction matchgroup=terraBrackets start=/[a-z]\+(/ end=/)/ 
 syn region terraValueVarSubscript start=/\(\<var\|\<module\)\.[a-z0-9_-]\+\[/ end=/\]/ contains=terraValueString,terraValueFunction,terraValueVarSubscript contained
 
 """ HCL2
-syn match  terraDynamic     /\<dynamic\>/ nextgroup=terraDynamicName skipwhite
-syn region terraDynamicName start=/"/ end=/"/ nextgroup=terraDynamicBlock skipwhite
-
 syn keyword terraContent        content
 syn keyword terraRepeat         for in
 syn keyword terraConditional    if
