@@ -1,6 +1,5 @@
 #!/bin/bash
-set -x
-VERSION=$1
+VERSION="${1}"
 
 function usage {
     echo -e "
