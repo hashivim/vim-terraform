@@ -92,6 +92,7 @@ Thanks to the following contributors:
 -   Okumura Takahiro (@hfm)
 -   Paul Forman (@pforman)
 -   Lowe Schmidt (@lsc)
+-   Mario Kozjak (@mkozjak)
 
 The `:TerraformFmt` command is adapted from
 [vim-hclfmt](https://github.com/fatih/vim-hclfmt/blob/master/autoload/fmt.vim).
