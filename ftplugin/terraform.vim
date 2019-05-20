@@ -34,6 +34,7 @@ function! s:commands(A, L, P)
   \ "validate",
   \ "version",
   \ "workspace",
+  \ "0.12checklist",
   \ "debug",
   \ "force-unlock",
   \ "state"
