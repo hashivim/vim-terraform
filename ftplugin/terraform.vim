@@ -7,6 +7,10 @@ endif
 let b:did_ftplugin = 1
 
 let s:cpo_save = &cpoptions
+
+setlocal formatoptions-=t
+let b:undo_ftplugin = 'setlocal formatoptions<'
+
 set cpoptions&vim
 
 if !exists('g:terraform_align')
@@ -61,12 +65,14 @@ if g:terraform_fold_sections
   setlocal foldmethod=expr
   setlocal foldexpr=TerraformFolds()
   setlocal foldlevel=1
+  let b:undo_ftplugin .= ' foldmethod< foldexpr< foldlevel<'
 
   function! TerraformFoldText()
     let foldsize = (v:foldend-v:foldstart)
     return getline(v:foldstart).' ('.foldsize.' lines)'
   endfunction
   setlocal foldtext=TerraformFoldText()
+  let b:undo_ftplugin .= ' foldtext<'
 endif
 
 " Re-map the space bar to fold and unfold
@@ -83,7 +89,7 @@ if exists('g:terraform_commentstring')
 else
     setlocal commentstring=#%s
 endif
-setlocal formatoptions-=t
+let b:undo_ftplugin .= ' commentstring<'
 
 if !exists('g:terraform_fmt_on_save') || !filereadable(expand('%:p'))
   let g:terraform_fmt_on_save = 0
@@ -129,7 +135,6 @@ augroup terraform
   endif
 augroup END
 
-let b:undo_ftplugin = 'setlocal formatoptions<'
 
 let &cpoptions = s:cpo_save
 unlet s:cpo_save
