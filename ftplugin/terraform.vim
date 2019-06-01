@@ -91,7 +91,7 @@ else
 endif
 let b:undo_ftplugin .= ' commentstring<'
 
-if !exists('g:terraform_fmt_on_save') || !filereadable(expand('%:p'))
+if !exists('g:terraform_fmt_on_save')
   let g:terraform_fmt_on_save = 0
 endif
 

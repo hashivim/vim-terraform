@@ -1,6 +1,9 @@
 " Adapted from vim-hclfmt:
 " https://github.com/fatih/vim-hclfmt/blob/master/autoload/fmt.vim
 function! terraform#fmt()
+  if !filereadable(expand('%:p'))
+    return
+  endif
   let l:curw = winsaveview()
   let l:tmpfile = tempname() . '.tf'
   call writefile(getline(1, '$'), l:tmpfile)
