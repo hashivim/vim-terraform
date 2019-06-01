@@ -124,17 +124,17 @@ function! s:commands(A, L, P)
   \ ]
 endfunction
 
-augroup terraform
-  autocmd!
-  autocmd BufEnter *
-        \ command! -nargs=+ -complete=customlist,s:commands Terraform execute '!terraform '.<q-args>. ' -no-color'
-  autocmd BufEnter * command! -nargs=0 TerraformFmt call terraform#fmt()
-  if get(g:, 'terraform_fmt_on_save', 1)
+command! -nargs=+ -complete=customlist,s:commands -buffer Terraform execute '!terraform '.<q-args>. ' -no-color'
+command! -nargs=0 -buffer TerraformFmt call terraform#fmt()
+let b:undo_ftplugin .= '|delcommand Terraform|delcommand TerraformFmt'
+
+if get(g:, 'terraform_fmt_on_save', 1)
+  augroup terraform
+    autocmd!
     autocmd BufWritePre *.tf call terraform#fmt()
     autocmd BufWritePre *.tfvars call terraform#fmt()
-  endif
-augroup END
-
+  augroup END
+endif
 
 let &cpoptions = s:cpo_save
 unlet s:cpo_save
