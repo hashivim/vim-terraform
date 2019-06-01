@@ -3,54 +3,54 @@
 
 set formatoptions-=t
 
-if exists("g:loaded_terraform") || v:version < 700 || &cp || !executable('terraform')
+if exists('g:loaded_terraform') || v:version < 700 || &compatible || !executable('terraform')
   finish
 endif
 let g:loaded_terraform = 1
 
-if !exists("g:terraform_fmt_on_save") || !filereadable(expand("%:p"))
+if !exists('g:terraform_fmt_on_save') || !filereadable(expand('%:p'))
   let g:terraform_fmt_on_save = 0
 endif
 
 function! s:commands(A, L, P)
   return join([
-  \ "apply",
-  \ "console",
-  \ "destroy",
-  \ "env",
-  \ "fmt",
-  \ "get",
-  \ "graph",
-  \ "import",
-  \ "init",
-  \ "output",
-  \ "plan",
-  \ "providers",
-  \ "push",
-  \ "refresh",
-  \ "show",
-  \ "taint",
-  \ "untaint",
-  \ "validate",
-  \ "version",
-  \ "workspace",
-  \ "0.12checklist",
-  \ "debug",
-  \ "force-unlock",
-  \ "state"
-  \ ], "\n")
+  \ 'apply',
+  \ 'console',
+  \ 'destroy',
+  \ 'env',
+  \ 'fmt',
+  \ 'get',
+  \ 'graph',
+  \ 'import',
+  \ 'init',
+  \ 'output',
+  \ 'plan',
+  \ 'providers',
+  \ 'push',
+  \ 'refresh',
+  \ 'show',
+  \ 'taint',
+  \ 'untaint',
+  \ 'validate',
+  \ 'version',
+  \ 'workspace',
+  \ '0.12checklist',
+  \ 'debug',
+  \ 'force-unlock',
+  \ 'state'
+  \ ], '\n')
 endfunction
 
 " Adapted from vim-hclfmt:
 " https://github.com/fatih/vim-hclfmt/blob/master/autoload/fmt.vim
 function! terraform#fmt()
   let l:curw = winsaveview()
-  let l:tmpfile = tempname() . ".tf"
-  call writefile(getline(1, "$"), l:tmpfile)
-  let output = system("terraform fmt -write " . l:tmpfile)
+  let l:tmpfile = tempname() . '.tf'
+  call writefile(getline(1, '$'), l:tmpfile)
+  let output = system('terraform fmt -write ' . l:tmpfile)
   if v:shell_error == 0
     try | silent undojoin | catch | endtry
-    call rename(l:tmpfile, resolve(expand("%")))
+    call rename(l:tmpfile, resolve(expand('%')))
     silent edit!
     let &syntax = &syntax
   else
@@ -65,7 +65,7 @@ augroup terraform
   autocmd BufEnter *
         \ command! -nargs=+ -complete=custom,s:commands Terraform execute '!terraform '.<q-args>. ' -no-color'
   autocmd BufEnter * command! -nargs=0 TerraformFmt call terraform#fmt()
-  if get(g:, "terraform_fmt_on_save", 1)
+  if get(g:, 'terraform_fmt_on_save', 1)
     autocmd BufWritePre *.tf call terraform#fmt()
     autocmd BufWritePre *.tfvars call terraform#fmt()
   endif
