@@ -16,7 +16,7 @@ if !exists('g:terraform_fmt_on_save') || !filereadable(expand('%:p'))
 endif
 
 function! s:commands(A, L, P)
-  return join([
+  return [
   \ 'apply',
   \ 'console',
   \ 'destroy',
@@ -41,13 +41,13 @@ function! s:commands(A, L, P)
   \ 'debug',
   \ 'force-unlock',
   \ 'state'
-  \ ], '\n')
+  \ ]
 endfunction
 
 augroup terraform
   autocmd!
   autocmd BufEnter *
-        \ command! -nargs=+ -complete=custom,s:commands Terraform execute '!terraform '.<q-args>. ' -no-color'
+        \ command! -nargs=+ -complete=customlist,s:commands Terraform execute '!terraform '.<q-args>. ' -no-color'
   autocmd BufEnter * command! -nargs=0 TerraformFmt call terraform#fmt()
   if get(g:, 'terraform_fmt_on_save', 1)
     autocmd BufWritePre *.tf call terraform#fmt()
