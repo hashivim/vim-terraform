@@ -3725,6 +3725,10 @@ syn region terraProvisionerName start=/"/ end=/"/ nextgroup=terraProvisionerBloc
 syn match  terraModule     /\<module\>/ nextgroup=terraModuleName skipwhite
 syn region terraModuleName start=/"/ end=/"/ nextgroup=terraModuleBlock skipwhite
 
+""" dynamic (HCL2)
+syn match  terraDynamic     /\<dynamic\>/ nextgroup=terraDynamicName skipwhite
+syn region terraDynamicName start=/"/ end=/"/ nextgroup=terraDynamicBlock skipwhite
+
 """ misc.
 syn match terraValueDec      "\<[0-9]\+\([kKmMgG]b\?\)\?\>"
 syn match terraValueHexaDec  "\<0x[0-9a-f]\+\([kKmMgG]b\?\)\?\>"
@@ -3740,6 +3744,18 @@ syn region terraValueFunction matchgroup=terraBrackets start=/[a-z]\+(/ end=/)/ 
 " User variables or module outputs can be lists or maps, and accessed with
 " var.map["foo"]
 syn region terraValueVarSubscript start=/\(\<var\|\<module\)\.[a-z0-9_-]\+\[/ end=/\]/ contains=terraValueString,terraValueFunction,terraValueVarSubscript contained
+
+""" HCL2
+syn keyword terraContent        content
+syn keyword terraRepeat         for in
+syn keyword terraConditional    if
+syn keyword terraPrimitiveType  string bool number
+syn keyword terraStructuralType object tuple
+syn keyword terraCollectionType list map set
+syn keyword terraValueNull      null
+
+""" Terraform v0.12
+syn keyword terraTodo contained TF-UPGRADE-TODO
 
 hi def link terraComment           Comment
 hi def link terraTodo              Todo
@@ -3768,5 +3784,14 @@ hi def link terraModule            Structure
 hi def link terraModuleName        String
 hi def link terraValueFunction     Identifier
 hi def link terraValueVarSubscript Identifier
+hi def link terraDynamic           Structure
+hi def link terraDynamicName       String
+hi def link terraContent           Structure
+hi def link terraRepeat            Repeat
+hi def link terraConditional       Conditional
+hi def link terraPrimitiveType     Type
+hi def link terraStructuralType    Type
+hi def link terraCollectionType    Type
+hi def link terraValueNull         Constant
 
 let b:current_syntax = "terraform"
