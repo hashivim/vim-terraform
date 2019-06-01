@@ -1,7 +1,7 @@
 " terraform.vim - basic vim/terraform integration
 " Maintainer: HashiVim <https://github.com/hashivim>
 
-if exists('b:did_ftplugin') || v:version < 700 || &compatible || !executable('terraform')
+if exists('b:did_ftplugin') || v:version < 700 || &compatible
   finish
 endif
 let b:did_ftplugin = 1
@@ -128,6 +128,15 @@ function! s:commands(A, L, P)
   \ 'state'
   \ ]
 endfunction
+
+let &cpoptions = s:cpo_save
+unlet s:cpo_save
+
+if !executable('terraform')
+  finish
+endif
+
+let s:cpo_save = &cpoptions
 
 command! -nargs=+ -complete=customlist,s:commands -buffer Terraform execute '!terraform '.<q-args>. ' -no-color'
 command! -nargs=0 -buffer TerraformFmt call terraform#fmt()
