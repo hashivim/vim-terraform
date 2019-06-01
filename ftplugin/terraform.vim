@@ -77,13 +77,6 @@ if get(g:, 'terraform_remap_spacebar', 1)
   vnoremap <space> zf
 endif
 
-" Match the identation put in place by Hashicorp and :TerraformFmt, https://github.com/hashivim/vim-terraform/issues/21
-if get(g:, 'terraform_align', 1)
-  setlocal tabstop=2
-  setlocal softtabstop=2
-  setlocal shiftwidth=2
-endif
-
 " Set the commentstring
 if exists('g:terraform_commentstring')
     let &l:commentstring=g:terraform_commentstring
