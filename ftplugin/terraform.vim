@@ -1,12 +1,15 @@
 " terraform.vim - basic vim/terraform integration
 " Maintainer: HashiVim <https://github.com/hashivim>
 
-set formatoptions-=t
-
-if exists('g:loaded_terraform') || v:version < 700 || &compatible || !executable('terraform')
+if exists('b:did_ftplugin') || v:version < 700 || &compatible || !executable('terraform')
   finish
 endif
-let g:loaded_terraform = 1
+let b:did_ftplugin = 1
+
+let s:cpo_save = &cpoptions
+set cpoptions&vim
+
+setlocal formatoptions-=t
 
 if !exists('g:terraform_fmt_on_save') || !filereadable(expand('%:p'))
   let g:terraform_fmt_on_save = 0
@@ -51,3 +54,8 @@ augroup terraform
     autocmd BufWritePre *.tfvars call terraform#fmt()
   endif
 augroup END
+
+let b:undo_ftplugin = 'setlocal formatoptions<'
+
+let &cpoptions = s:cpo_save
+unlet s:cpo_save
