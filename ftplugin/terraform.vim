@@ -11,6 +11,11 @@ let s:cpo_save = &cpoptions
 setlocal formatoptions-=t
 let b:undo_ftplugin = 'setlocal formatoptions<'
 
+" Include hyphens as keyword characters so that a keyword appearing as part of
+" a longer name doesn't get partially highlighted.
+setlocal iskeyword+=-
+let b:undo_ftplugin .= ' iskeyword<'
+
 set cpoptions&vim
 
 if !exists('g:terraform_align')
