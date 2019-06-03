@@ -30,7 +30,7 @@ If you prefer to use something besides pathogen, go ahead.
 - - - -
 # Usage
 
-Allow vim-terraform to override your `.vimrc` indentation syntax for matching files. Defaults to 0 which is off.
+Allow vim-terraform to align settings automatically with Tabularize.
 
     let g:terraform_align=1
 

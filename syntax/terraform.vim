@@ -1,13 +1,9 @@
 " Forked from Larry Gilbert's syntax file
 " github.com/L2G/vim-syntax-terraform
 
-if exists("b:current_syntax")
+if exists('b:current_syntax')
   finish
 endif
-
-" Include hyphens as keyword characters so that a keyword appearing as part of
-" a longer name doesn't get partially highlighted.
-setlocal iskeyword+=-
 
 syn case match
 
@@ -3794,4 +3790,4 @@ hi def link terraStructuralType    Type
 hi def link terraCollectionType    Type
 hi def link terraValueNull         Constant
 
-let b:current_syntax = "terraform"
+let b:current_syntax = 'terraform'
