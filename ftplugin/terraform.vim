@@ -7,6 +7,7 @@ endif
 let b:did_ftplugin = 1
 
 let s:cpo_save = &cpoptions
+set cpoptions&vim
 
 setlocal formatoptions-=t
 let b:undo_ftplugin = 'setlocal formatoptions<'
@@ -15,8 +16,6 @@ let b:undo_ftplugin = 'setlocal formatoptions<'
 " a longer name doesn't get partially highlighted.
 setlocal iskeyword+=-
 let b:undo_ftplugin .= ' iskeyword<'
-
-set cpoptions&vim
 
 if !exists('g:terraform_align')
   let g:terraform_align = 0
@@ -137,6 +136,7 @@ if !executable('terraform')
 endif
 
 let s:cpo_save = &cpoptions
+set cpoptions&vim
 
 command! -nargs=+ -complete=customlist,s:commands -buffer Terraform execute '!terraform '.<q-args>. ' -no-color'
 command! -nargs=0 -buffer TerraformFmt call terraform#fmt()
