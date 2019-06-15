@@ -67,17 +67,17 @@ if get(g:, 'terraform_fold_sections', 0)
   let b:undo_ftplugin .= ' foldtext<'
 endif
 
-" Re-map the space bar to fold and unfold
-if get(g:, 'terraform_remap_spacebar', 0)
-  "inoremap <space> <C-O>za
-  nnoremap <space> za
-  onoremap <space> <C-C>za
-  vnoremap <space> zf
-endif
-
 " Set the commentstring
 let &l:commentstring = get(g:, 'terraform_commentstring', '#%s')
 let b:undo_ftplugin .= ' commentstring<'
+
+" Re-map the space bar to fold and unfold
+if get(g:, 'terraform_remap_spacebar', 0)
+  nnoremap <buffer> <space> za
+  onoremap <buffer> <space> <C-C>za
+  vnoremap <buffer> <space> zf
+  let b:undo_ftplugin .= '|unmap <buffer> <space>'
+endif
 
 let &cpoptions = s:cpo_save
 unlet s:cpo_save
