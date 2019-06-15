@@ -95,6 +95,16 @@ else
 endif
 let b:undo_ftplugin .= ' commentstring<'
 
+let &cpoptions = s:cpo_save
+unlet s:cpo_save
+
+if !executable('terraform')
+  finish
+endif
+
+let s:cpo_save = &cpoptions
+set cpoptions&vim
+
 if !exists('g:terraform_fmt_on_save')
   let g:terraform_fmt_on_save = 0
 endif
@@ -127,16 +137,6 @@ function! s:commands(A, L, P)
   \ 'state'
   \ ]
 endfunction
-
-let &cpoptions = s:cpo_save
-unlet s:cpo_save
-
-if !executable('terraform')
-  finish
-endif
-
-let s:cpo_save = &cpoptions
-set cpoptions&vim
 
 command! -nargs=+ -complete=customlist,s:commands -buffer Terraform execute '!terraform '.<q-args>. ' -no-color'
 command! -nargs=0 -buffer TerraformFmt call terraform#fmt()
