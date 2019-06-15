@@ -17,20 +17,6 @@ let b:undo_ftplugin = 'setlocal formatoptions<'
 setlocal iskeyword+=-
 let b:undo_ftplugin .= ' iskeyword<'
 
-if get(g:, 'terraform_align', 0) && exists(':Tabularize')
-  inoremap <buffer> <silent> = =<Esc>:call <SID>terraformalign()<CR>a
-  function! s:terraformalign()
-    let p = '^.*=[^>]*$'
-    if exists(':Tabularize') && getline('.') =~# '^.*=' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-      let column = strlen(substitute(getline('.')[0:col('.')],'[^=]','','g'))
-      let position = strlen(matchstr(getline('.')[0:col('.')],'.*=\s*\zs.*'))
-      Tabularize/=/l1
-      normal! 0
-      call search(repeat('[^=]*=',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-    endif
-  endfunction
-endif
-
 if get(g:, 'terraform_fold_sections', 0)
   function! TerraformFolds()
     let thisline = getline(v:lnum)
@@ -77,6 +63,21 @@ if get(g:, 'terraform_remap_spacebar', 0)
   onoremap <buffer> <space> <C-C>za
   vnoremap <buffer> <space> zf
   let b:undo_ftplugin .= '|unmap <buffer> <space>'
+endif
+
+if get(g:, 'terraform_align', 0) && exists(':Tabularize')
+  inoremap <buffer> <silent> = =<Esc>:call <SID>terraformalign()<CR>a
+  let b:undo_ftplugin .= '|iunmap <buffer> ='
+  function! s:terraformalign()
+    let p = '^.*=[^>]*$'
+    if exists(':Tabularize') && getline('.') =~# '^.*=' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+      let column = strlen(substitute(getline('.')[0:col('.')],'[^=]','','g'))
+      let position = strlen(matchstr(getline('.')[0:col('.')],'.*=\s*\zs.*'))
+      Tabularize/=/l1
+      normal! 0
+      call search(repeat('[^=]*=',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+    endif
+  endfunction
 endif
 
 let &cpoptions = s:cpo_save
