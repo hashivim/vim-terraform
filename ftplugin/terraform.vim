@@ -88,11 +88,7 @@ if get(g:, 'terraform_remap_spacebar', 1)
 endif
 
 " Set the commentstring
-if exists('g:terraform_commentstring')
-    let &l:commentstring=g:terraform_commentstring
-else
-    setlocal commentstring=#%s
-endif
+let &l:commentstring = get(g:, 'terraform_commentstring', '#%s')
 let b:undo_ftplugin .= ' commentstring<'
 
 let &cpoptions = s:cpo_save
