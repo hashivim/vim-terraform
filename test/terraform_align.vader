@@ -11,9 +11,6 @@ Execute ("File syntax is set for terraform"):
 Execute ("terraform_align is enabled"):
   AssertEqual 1, g:terraform_align
 
-Execute ("terraform_remap_spacebar is disabled"):
-  AssertEqual 0, g:terraform_remap_spacebar
-
 Execute ("We display the correct number of spaces when pressing tab"):
   AssertEqual 2, &tabstop
 

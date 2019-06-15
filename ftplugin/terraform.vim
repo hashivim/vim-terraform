@@ -17,19 +17,7 @@ let b:undo_ftplugin = 'setlocal formatoptions<'
 setlocal iskeyword+=-
 let b:undo_ftplugin .= ' iskeyword<'
 
-if !exists('g:terraform_align')
-  let g:terraform_align = 0
-endif
-
-if !exists('g:terraform_remap_spacebar')
-  let g:terraform_remap_spacebar = 0
-endif
-
-if !exists('g:terraform_fold_sections')
-  let g:terraform_fold_sections = 0
-endif
-
-if g:terraform_align && exists(':Tabularize')
+if get(g:, 'terraform_align', 0) && exists(':Tabularize')
   inoremap <buffer> <silent> = =<Esc>:call <SID>terraformalign()<CR>a
   function! s:terraformalign()
     let p = '^.*=[^>]*$'
@@ -43,7 +31,7 @@ if g:terraform_align && exists(':Tabularize')
   endfunction
 endif
 
-if g:terraform_fold_sections
+if get(g:, 'terraform_fold_sections', 0)
   function! TerraformFolds()
     let thisline = getline(v:lnum)
     if match(thisline, '^resource') >= 0
@@ -80,7 +68,7 @@ if g:terraform_fold_sections
 endif
 
 " Re-map the space bar to fold and unfold
-if get(g:, 'terraform_remap_spacebar', 1)
+if get(g:, 'terraform_remap_spacebar', 0)
   "inoremap <space> <C-O>za
   nnoremap <space> za
   onoremap <space> <C-C>za
@@ -100,10 +88,6 @@ endif
 
 let s:cpo_save = &cpoptions
 set cpoptions&vim
-
-if !exists('g:terraform_fmt_on_save')
-  let g:terraform_fmt_on_save = 0
-endif
 
 function! s:commands(A, L, P)
   return [
@@ -138,7 +122,7 @@ command! -nargs=+ -complete=customlist,s:commands -buffer Terraform execute '!te
 command! -nargs=0 -buffer TerraformFmt call terraform#fmt()
 let b:undo_ftplugin .= '|delcommand Terraform|delcommand TerraformFmt'
 
-if get(g:, 'terraform_fmt_on_save', 1)
+if get(g:, 'terraform_fmt_on_save', 0)
   augroup terraform
     autocmd!
     autocmd BufWritePre *.tf call terraform#fmt()
