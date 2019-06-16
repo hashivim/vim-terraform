@@ -9,7 +9,9 @@ let b:did_ftplugin = 1
 let s:cpo_save = &cpoptions
 set cpoptions&vim
 
-setlocal formatoptions-=t
+" j is a relatively recent addition; silence warnings when setting it.
+setlocal formatoptions-=t formatoptions+=croql
+silent! setlocal formatoptions+=j
 let b:undo_ftplugin = 'setlocal formatoptions<'
 
 " Include hyphens as keyword characters so that a keyword appearing as part of
