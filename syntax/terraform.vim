@@ -5,6 +5,12 @@ if exists('b:current_syntax')
   finish
 endif
 
+" Identifiers are made up of alphanumeric characters, underscores, and
+" hyphens.
+if has('patch-7.4.1142')
+    syn iskeyword a-z,A-Z,48-57,_,-
+endif
+
 syn case match
 
 syn keyword terraSection connection output provider variable data terraform locals

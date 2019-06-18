@@ -14,10 +14,12 @@ setlocal formatoptions-=t formatoptions+=croql
 silent! setlocal formatoptions+=j
 let b:undo_ftplugin = 'setlocal formatoptions<'
 
-" Include hyphens as keyword characters so that a keyword appearing as part of
-" a longer name doesn't get partially highlighted.
-setlocal iskeyword+=-
-let b:undo_ftplugin .= ' iskeyword<'
+if !has('patch-7.4.1142')
+    " Include hyphens as keyword characters so that a keyword appearing as
+    " part of a longer name doesn't get partially highlighted.
+    setlocal iskeyword+=-
+    let b:undo_ftplugin .= ' iskeyword<'
+endif
 
 if get(g:, 'terraform_fold_sections', 0)
   setlocal foldmethod=expr
