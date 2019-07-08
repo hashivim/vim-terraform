@@ -15,7 +15,7 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
-EXISTING_TF_VERSION=$(terraform version | head -n1 | sed -e 's/Terraform//gI' -e 's/v//gI' -e 's/[[:space:]]//g')
+EXISTING_TF_VERSION=$(terraform version | head -n1 | sed -e 's/Terraform//g' -e 's/v//g' -e 's/[[:space:]]//g')
 
 if [ "${EXISTING_TF_VERSION}" != "${VERSION}" ]; then
     echo "-) You are trying to update this script for terraform ${VERSION} while you have"
