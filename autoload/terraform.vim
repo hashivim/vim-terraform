@@ -73,7 +73,6 @@ function! terraform#commands(A, L, P)
   \ 'output',
   \ 'plan',
   \ 'providers',
-  \ 'push',
   \ 'refresh',
   \ 'show',
   \ 'taint',
@@ -81,9 +80,10 @@ function! terraform#commands(A, L, P)
   \ 'validate',
   \ 'version',
   \ 'workspace',
-  \ '0.12checklist',
+  \ '0.12upgrade',
   \ 'debug',
   \ 'force-unlock',
+  \ 'push',
   \ 'state'
   \ ]
 endfunction
