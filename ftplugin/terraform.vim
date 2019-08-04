@@ -33,14 +33,6 @@ endif
 let &l:commentstring = get(g:, 'terraform_commentstring', '#%s')
 let b:undo_ftplugin .= ' commentstring<'
 
-" Re-map the space bar to fold and unfold
-if get(g:, 'terraform_remap_spacebar', 0)
-  nnoremap <buffer> <space> za
-  onoremap <buffer> <space> <C-C>za
-  vnoremap <buffer> <space> zf
-  let b:undo_ftplugin .= '|unmap <buffer> <space>'
-endif
-
 if get(g:, 'terraform_align', 0) && exists(':Tabularize')
   inoremap <buffer> <silent> = =<Esc>:call terraform#align()<CR>a
   let b:undo_ftplugin .= '|iunmap <buffer> ='
