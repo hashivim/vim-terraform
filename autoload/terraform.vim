@@ -3,7 +3,7 @@ function! terraform#fmt()
     return
   endif
   let l:curw = winsaveview()
-  execute '%!terraform fmt -'
+  execute '%!terraform fmt -no-color -'
   if v:shell_error != 0
     let output = getline(1, '$')
     undo
