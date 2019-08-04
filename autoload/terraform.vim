@@ -1,13 +1,21 @@
+" Adapted from vim-hclfmt:
+" https://github.com/fatih/vim-hclfmt/blob/master/autoload/fmt.vim
 function! terraform#fmt()
   if !filereadable(expand('%:p'))
     return
   endif
   let l:curw = winsaveview()
-  silent execute '%!terraform fmt -no-color -'
-  if v:shell_error != 0
-    let output = getline(1, '$')
-    silent undo
-    echo join(output, "\n")
+  let l:tmpfile = tempname() . '.tf'
+  call writefile(getline(1, '$'), l:tmpfile)
+  let output = system('cd "' . resolve(expand('%:p:h')) . '" && terraform fmt -no-color -write ' . l:tmpfile)
+  if v:shell_error == 0
+    try | silent undojoin | catch | endtry
+    call rename(l:tmpfile, resolve(expand('%')))
+    silent edit!
+    let &syntax = &syntax
+  else
+    echo output
+    call delete(l:tmpfile)
   endif
   call winrestview(l:curw)
 endfunction
