@@ -5,7 +5,7 @@ function! terraform#fmt()
   let l:curw = winsaveview()
   " Make a fake change so that the undo point is right.
   normal! ix
-  normal! x
+  normal! "_x
   silent execute '%!terraform fmt -no-color -'
   if v:shell_error != 0
     let output = getline(1, '$')
