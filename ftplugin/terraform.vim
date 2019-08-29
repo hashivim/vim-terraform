@@ -22,11 +22,8 @@ if !has('patch-7.4.1142')
 endif
 
 if get(g:, 'terraform_fold_sections', 0)
-  setlocal foldmethod=expr
-  setlocal foldexpr=terraform#folds()
-  setlocal foldlevel=1
-  setlocal foldtext=terraform#foldText()
-  let b:undo_ftplugin .= ' foldmethod< foldexpr< foldlevel< foldtext<'
+  setlocal foldmethod=syntax
+  let b:undo_ftplugin .= ' foldmethod<'
 endif
 
 " Set the commentstring

@@ -15,34 +15,6 @@ function! terraform#fmt()
   call winrestview(l:curw)
 endfunction
 
-function! terraform#folds()
-  let thisline = getline(v:lnum)
-  if match(thisline, '^resource') >= 0
-    return '>1'
-  elseif match(thisline, '^provider') >= 0
-    return '>1'
-  elseif match(thisline, '^module') >= 0
-    return '>1'
-  elseif match(thisline, '^variable') >= 0
-    return '>1'
-  elseif match(thisline, '^output') >= 0
-    return '>1'
-  elseif match(thisline, '^data') >= 0
-    return '>1'
-  elseif match(thisline, '^terraform') >= 0
-    return '>1'
-  elseif match(thisline, '^locals') >= 0
-    return '>1'
-  else
-    return '='
-  endif
-endfunction
-
-function! terraform#foldText()
-  let foldsize = (v:foldend-v:foldstart)
-  return getline(v:foldstart).' ('.foldsize.' lines)'
-endfunction
-
 function! terraform#align()
   let p = '^.*=[^>]*$'
   if exists(':Tabularize') && getline('.') =~# '^.*=' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
