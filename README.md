@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/Supports%20Terraform%20Version-%3E%3D0.12.3-blue.svg)](https://github.com/hashicorp/terraform/blob/v0.12.3/CHANGELOG.md)
+[![](https://img.shields.io/badge/Supports%20Terraform%20Version-%3E%3D0.12.6-blue.svg)](https://github.com/hashicorp/terraform/blob/v0.12.6/CHANGELOG.md)
 
 # Call For Maintainers
 
@@ -37,11 +37,6 @@ Allow vim-terraform to align settings automatically with Tabularize.
 Allow vim-terraform to automatically fold (hide until unfolded) sections of terraform code. Defaults to 0 which is off.
 
     let g:terraform_fold_sections=1
-
-Override the Vim's `commentstring` setting with a custom value. Defaults to
-`#%s`. Example:
-
-    let g:terraform_commentstring='//%s'
 
 Allow vim-terraform to automatically format `*.tf` and `*.tfvars` files with `terraform fmt`.
 You can also do this manually with the `:TerraformFmt` command.

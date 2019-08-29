@@ -30,7 +30,7 @@ if get(g:, 'terraform_fold_sections', 0)
 endif
 
 " Set the commentstring
-let &l:commentstring = get(g:, 'terraform_commentstring', '#%s')
+setlocal commentstring=#%s
 let b:undo_ftplugin .= ' commentstring<'
 
 if get(g:, 'terraform_align', 0) && exists(':Tabularize')
