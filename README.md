@@ -38,10 +38,6 @@ Allow vim-terraform to automatically fold (hide until unfolded) sections of terr
 
     let g:terraform_fold_sections=1
 
-Allow vim-terraform to re-map the spacebar to fold/unfold. This works in conjunction with `let g:terraform_fold_sections=1` which should be enabled if you plan to use this feature. Defaults to 0 which is off.
-
-    let g:terraform_remap_spacebar=1
-
 Allow vim-terraform to automatically format `*.tf` and `*.tfvars` files with `terraform fmt`.
 You can also do this manually with the `:TerraformFmt` command.
 
