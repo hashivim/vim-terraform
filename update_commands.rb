@@ -11,10 +11,8 @@ plugin_file = 'autoload/terraform.vim'
 
 if File.file?('./terraform')
     stdout, stderr, _status = Open3.capture3('./terraform list-commands')
-    print 'local TF found'
 else
     stdout, stderr, _status = Open3.capture3('terraform list-commands')
-    print 'local TF not found'
 end
 
 output = if stderr == ''
