@@ -8,7 +8,13 @@ command_re = /^\s\s\s\s(\S+)/
 plugin_file = 'autoload/terraform.vim'
 
 # Create the list of commands.
-stdout, stderr, _status = Open3.capture3('terraform list-commands')
+
+if File.file?('./terraform')
+    stdout, stderr, _status = Open3.capture3('./terraform list-commands')
+else
+    stdout, stderr, _status = Open3.capture3('terraform list-commands')
+end
+
 output = if stderr == ''
            stdout.split("\n")
          else
