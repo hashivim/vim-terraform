@@ -6,7 +6,7 @@ function! terraform#fmt()
   " Make a fake change so that the undo point is right.
   normal! ix
   normal! "_x
-  silent execute '%!terraform fmt -no-color -'
+  silent execute '%!TF_CLI_ARGS_fmt= terraform fmt -no-color -'
   if v:shell_error != 0
     let output = getline(1, '$')
     silent undo
