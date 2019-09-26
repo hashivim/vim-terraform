@@ -1,3 +1,6 @@
+" Ensure no conflict with arguments from the environment
+let $TF_CLI_ARGS_fmt=''
+
 function! terraform#fmt()
   if !filereadable(expand('%:p'))
     return
@@ -6,7 +9,6 @@ function! terraform#fmt()
   " Make a fake change so that the undo point is right.
   normal! ix
   normal! "_x
-  let $TF_CLI_ARGS_fmt=''
   silent execute '%!terraform fmt -no-color -'
   if v:shell_error != 0
     let output = getline(1, '$')
