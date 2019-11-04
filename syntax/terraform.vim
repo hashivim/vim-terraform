@@ -13,7 +13,7 @@ endif
 
 syn case match
 
-syn keyword terraSection connection output provider variable data terraform locals
+syn keyword terraSection connection output provider variable terraform locals
 syn keyword terraValueBool true false on off yes no
 
 """ data
