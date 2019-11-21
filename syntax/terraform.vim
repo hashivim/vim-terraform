@@ -4868,7 +4868,7 @@ syn region terraValueString   start=/"/ skip=/\\\+"/ end=/"/ contains=terraStrin
 syn region terraStringInterp  matchgroup=terraBrackets start=/\${/ end=/}/ contains=terraValueFunction,terraValueVarSubscript,terraStringInterp contained
 syn region terraHereDocText   start=/<<-\?\z([a-z0-9A-Z]\+\)/ end=/^\s*\z1/ contains=terraStringInterp
 "" TODO match keywords here, not a-z+
-syn region terraValueFunction matchgroup=terraBrackets start=/[a-z]\+(/ end=/)/ contains=terraValueString,terraValueFunction,terraValueVarSubscript contained
+syn region terraValueFunction matchgroup=terraBrackets start=/[a-z]\+(/ end=/)/ contains=terraValueString,terraValueFunction,terraValueVarSubscript,terraBlock contained
 " User variables or module outputs can be lists or maps, and accessed with
 " var.map["foo"]
 syn region terraValueVarSubscript start=/\(\<var\|\<module\)\.[a-z0-9_-]\+\[/ end=/\]/ contains=terraValueString,terraValueFunction,terraValueVarSubscript contained
@@ -4886,7 +4886,7 @@ syn keyword terraValueNull      null
 syn keyword terraTodo contained TF-UPGRADE-TODO
 
 " enable block folding
-syn region terraBlock matchgroup=terraBraces start="{" end="}" fold transparent
+syn region terraBlock matchgroup=terraBraces start="{" end="}" contains=terraComment,terraHereDocText,terraValueString,terraValueFunction,terraValueVarSubscript,terraStringInterp fold transparent 
 
 hi def link terraComment           Comment
 hi def link terraTodo              Todo
@@ -4926,3 +4926,4 @@ hi def link terraCollectionType    Type
 hi def link terraValueNull         Constant
 
 let b:current_syntax = 'terraform'
+
