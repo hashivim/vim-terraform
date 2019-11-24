@@ -9,7 +9,7 @@ Given terraform (user maps):
 Execute (syntax is good):
   AssertEqual 'terraStringInterp', SyntaxOf('count.index')
 
-  " Check it closed the string and wnet back to normal mode properly.
+  " Check it closed the string and went back to normal mode properly.
   AssertEqual 'terraComment', SyntaxOf('Comment')
 
 
@@ -26,7 +26,7 @@ CMD # Comment
 ;
 
 Execute (syntax is good):
-  AssertEqual 'terraStringInterp', SyntaxOf('aws_instance')
+  AssertEqual 'terraResourceTypeBI', SyntaxOf('aws_instance')
   AssertEqual 'terraHereDocText', SyntaxOf('my_command')
 
   " Closing CMD is still here doc
