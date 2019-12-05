@@ -4828,10 +4828,9 @@ syn keyword terraSection connection output variable terraform locals
 syn keyword terraValueBool true false on off yes no
 
 syn keyword terraTodo         contained TODO FIXME XXX BUG
-syn cluster terraCommentGroup contains=terraTodo
-syn region  terraComment      start="/\*" end="\*/" contains=@terraCommentGroup,@Spell
-syn region  terraComment      start="#" end="$" contains=@terraCommentGroup,@Spell
-syn region  terraComment      start="//" end="$" contains=@terraCommentGroup,@Spell
+syn region  terraComment      start="/\*" end="\*/" contains=terraTodo,@Spell
+syn region  terraComment      start="#" end="$" contains=terraTodo,@Spell
+syn region  terraComment      start="//" end="$" contains=terraTodo,@Spell
 
 syn keyword terraResource        resource nextgroup=terraResourceTypeStr skipwhite
 syn region  terraResourceTypeStr start=/"/ end=/"/ contains=terraResourceTypeBI nextgroup=terraResourceName skipwhite
@@ -4910,7 +4909,6 @@ hi def link terraProvisionerName   String
 hi def link terraModule            Structure
 hi def link terraModuleName        String
 hi def link terraValueFunction     Function
-hi def link terraValueVarSubscript Identifier
 hi def link terraDynamic           Structure
 hi def link terraDynamicName       String
 hi def link terraContent           Structure
