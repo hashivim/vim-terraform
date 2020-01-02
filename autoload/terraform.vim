@@ -1,3 +1,6 @@
+let s:cpo_save = &cpoptions
+set cpoptions&vim
+
 " Ensure no conflict with arguments from the environment
 let $TF_CLI_ARGS_fmt=''
 
@@ -58,3 +61,6 @@ function! terraform#commands(ArgLead, CmdLine, CursorPos)
   \ ]
   return join(l:commands, "\n")
 endfunction
+
+let &cpoptions = s:cpo_save
+unlet s:cpo_save
