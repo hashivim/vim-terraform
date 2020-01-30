@@ -23,7 +23,7 @@ function get_providers() {
                 git clone --depth 1 https://github.com/terraform-providers/${REPO}
                 # Only get the folder/files we need. There's probably a better way checkout only the files we need, but I don't know it.
                 cd ${REPO}
-                find -type f -not -name "*provider*.go" -delete
+                find . -type f -not -name "*provider*.go" -delete
                 cd ..
             else
                 cd ${REPO}
