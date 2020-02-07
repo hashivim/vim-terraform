@@ -7,7 +7,7 @@ resource_declaration = /"(.*)":(.*)dataSource(.*)\(.*\),$/i
 syntax_file = 'syntax/terraform.vim'
 
 # Create the list of resources.
-provider_files = Dir.glob('terraform-providers/*/*/*provider*.go')
+provider_files = Dir.glob(['terraform-providers/**/*provider*.go', 'terraform-providers/**/*registration*.go'])
 provider_files = provider_files.grep_v('*_test.go')
 resources = provider_files.collect do |f|
   File.open(f, 'r').readlines.collect do |l|
