@@ -197,7 +197,6 @@ syn keyword terraDataTypeBI
           \ alicloud_yundun_dbaudit_instance
           \ alicloud_zones
           \ archive_file
-          \ atlas_artifact
           \ avi_actiongroupconfig
           \ avi_alertconfig
           \ avi_alertemailconfig
@@ -424,6 +423,7 @@ syn keyword terraDataTypeBI
           \ aws_sqs_queue
           \ aws_ssm_document
           \ aws_ssm_parameter
+          \ aws_ssm_patch_baseline
           \ aws_storagegateway_local_disk
           \ aws_subnet
           \ aws_subnet_ids
@@ -444,6 +444,119 @@ syn keyword terraDataTypeBI
           \ aws_wafregional_rule
           \ aws_wafregional_web_acl
           \ aws_workspaces_bundle
+          \ azurerm_api_management
+          \ azurerm_api_management_api
+          \ azurerm_api_management_api_version_set
+          \ azurerm_api_management_group
+          \ azurerm_api_management_product
+          \ azurerm_api_management_user
+          \ azurerm_app_service
+          \ azurerm_app_service_certificate
+          \ azurerm_app_service_certificate_order
+          \ azurerm_app_service_plan
+          \ azurerm_application_insights
+          \ azurerm_application_security_group
+          \ azurerm_automation_account
+          \ azurerm_automation_variable_bool
+          \ azurerm_automation_variable_datetime
+          \ azurerm_automation_variable_int
+          \ azurerm_automation_variable_string
+          \ azurerm_availability_set
+          \ azurerm_azuread_application
+          \ azurerm_batch_account
+          \ azurerm_batch_certificate
+          \ azurerm_batch_pool
+          \ azurerm_builtin_role_definition
+          \ azurerm_cdn_profile
+          \ azurerm_client_config
+          \ azurerm_container_registry
+          \ azurerm_cosmosdb_account
+          \ azurerm_data_factory
+          \ azurerm_dedicated_host
+          \ azurerm_dedicated_host_group
+          \ azurerm_dev_test_lab
+          \ azurerm_disk_encryption_set
+          \ azurerm_dns_zone
+          \ azurerm_eventgrid_topic
+          \ azurerm_eventhub_namespace
+          \ azurerm_eventhub_namespace_authorization_rule
+          \ azurerm_express_route_circuit
+          \ azurerm_firewall
+          \ azurerm_hdinsight_cluster
+          \ azurerm_healthcare_service
+          \ azurerm_image
+          \ azurerm_iothub_dps
+          \ azurerm_iothub_shared_access_policy
+          \ azurerm_key_vault
+          \ azurerm_key_vault_access_policy
+          \ azurerm_key_vault_key
+          \ azurerm_key_vault_secret
+          \ azurerm_kubernetes_cluster
+          \ azurerm_kubernetes_service_versions
+          \ azurerm_lb
+          \ azurerm_lb_backend_address_pool
+          \ azurerm_logic_app_workflow
+          \ azurerm_managed_disk
+          \ azurerm_management_group
+          \ azurerm_maps_account
+          \ azurerm_mariadb_server
+          \ azurerm_monitor_action_group
+          \ azurerm_monitor_diagnostic_categories
+          \ azurerm_mssql_elasticpool
+          \ azurerm_nat_gateway
+          \ azurerm_netapp_account
+          \ azurerm_netapp_pool
+          \ azurerm_netapp_volume
+          \ azurerm_network_ddos_protection_plan
+          \ azurerm_network_interface
+          \ azurerm_network_security_group
+          \ azurerm_network_watcher
+          \ azurerm_notification_hub
+          \ azurerm_notification_hub_namespace
+          \ azurerm_platform_image
+          \ azurerm_policy_definition
+          \ azurerm_postgresql_server
+          \ azurerm_private_endpoint_connection
+          \ azurerm_private_link_endpoint_connection
+          \ azurerm_private_link_service
+          \ azurerm_private_link_service_endpoint_connections
+          \ azurerm_proximity_placement_group
+          \ azurerm_public_ip
+          \ azurerm_public_ip_prefix
+          \ azurerm_public_ips
+          \ azurerm_recovery_services_protection_policy_vm
+          \ azurerm_recovery_services_vault
+          \ azurerm_redis_cache
+          \ azurerm_resource_group
+          \ azurerm_resources
+          \ azurerm_role_definition
+          \ azurerm_route_table
+          \ azurerm_scheduler_job_collection
+          \ azurerm_servicebus_namespace
+          \ azurerm_servicebus_namespace_authorization_rule
+          \ azurerm_shared_image
+          \ azurerm_shared_image_gallery
+          \ azurerm_shared_image_version
+          \ azurerm_signalr_service
+          \ azurerm_snapshot
+          \ azurerm_sql_database
+          \ azurerm_sql_server
+          \ azurerm_storage_account
+          \ azurerm_storage_account_blob_container_sas
+          \ azurerm_storage_account_sas
+          \ azurerm_storage_container
+          \ azurerm_storage_management_policy
+          \ azurerm_stream_analytics_job
+          \ azurerm_subnet
+          \ azurerm_subscription
+          \ azurerm_subscriptions
+          \ azurerm_traffic_manager_geographical_location
+          \ azurerm_user_assigned_identity
+          \ azurerm_virtual_hub
+          \ azurerm_virtual_machine
+          \ azurerm_virtual_network
+          \ azurerm_virtual_network_gateway
+          \ azurerm_virtual_network_gateway_connection
           \ azurestack_client_config
           \ azurestack_network_interface
           \ azurestack_network_security_group
@@ -614,7 +727,9 @@ syn keyword terraDataTypeBI
           \ google_organization
           \ google_project
           \ google_project_organization_policy
+          \ google_project_services
           \ google_projects
+          \ google_secret_manager_secret_version
           \ google_service_account
           \ google_service_account_access_token
           \ google_service_account_key
@@ -732,23 +847,35 @@ syn keyword terraDataTypeBI
           \ local_file
           \ logentries_logset
           \ logicmonitor_collectors
+          \ logicmonitor_dashboard
+          \ logicmonitor_dashboard_group
           \ logicmonitor_device_group
           \ metalcloud_volume_template
+          \ mongodbatlas_alert_configuration
+          \ mongodbatlas_auditing
           \ mongodbatlas_cloud_provider_snapshot
           \ mongodbatlas_cloud_provider_snapshot_restore_job
           \ mongodbatlas_cloud_provider_snapshot_restore_jobs
           \ mongodbatlas_cloud_provider_snapshots
           \ mongodbatlas_cluster
           \ mongodbatlas_clusters
+          \ mongodbatlas_custom_db_role
+          \ mongodbatlas_custom_db_roles
           \ mongodbatlas_database_user
           \ mongodbatlas_database_users
+          \ mongodbatlas_global_cluster_config
           \ mongodbatlas_maintenance_window
           \ mongodbatlas_network_container
           \ mongodbatlas_network_containers
           \ mongodbatlas_network_peering
           \ mongodbatlas_network_peerings
+          \ mongodbatlas_private_endpoint
+          \ mongodbatlas_private_endpoint_interface_link
           \ mongodbatlas_project
           \ mongodbatlas_projects
+          \ mongodbatlas_team
+          \ mongodbatlas_teams
+          \ mongodbatlas_x509_authentication_database_user
           \ ncloud_access_control_group
           \ ncloud_access_control_groups
           \ ncloud_access_control_rule
@@ -785,6 +912,7 @@ syn keyword terraDataTypeBI
           \ ns1_zone
           \ nsxt_certificate
           \ nsxt_edge_cluster
+          \ nsxt_firewall_section
           \ nsxt_ip_pool
           \ nsxt_logical_tier0_router
           \ nsxt_logical_tier1_router
@@ -1004,6 +1132,14 @@ syn keyword terraDataTypeBI
           \ oci_dataflow_invoke_runs
           \ oci_dataflow_run_log
           \ oci_dataflow_run_logs
+          \ oci_datascience_model
+          \ oci_datascience_model_provenance
+          \ oci_datascience_models
+          \ oci_datascience_notebook_session
+          \ oci_datascience_notebook_session_shapes
+          \ oci_datascience_notebook_sessions
+          \ oci_datascience_project
+          \ oci_datascience_projects
           \ oci_dns_records
           \ oci_dns_steering_policies
           \ oci_dns_steering_policy
@@ -1508,6 +1644,8 @@ syn keyword terraDataTypeBI
           \ tencentcloud_vpn_customer_gateways
           \ tencentcloud_vpn_gateways
           \ terraform_remote_state
+          \ test_data_source
+          \ test_provider_label
           \ tfe_ssh_key
           \ tfe_team
           \ tfe_team_access
@@ -1579,6 +1717,7 @@ syn keyword terraDataTypeBI
           \ yandex_compute_instance_group
           \ yandex_compute_snapshot
           \ yandex_container_registry
+          \ yandex_dataproc_cluster
           \ yandex_iam_policy
           \ yandex_iam_role
           \ yandex_iam_service_account
@@ -1847,7 +1986,6 @@ syn keyword terraResourceTypeBI
           \ alicloud_yundun_bastionhost_instance
           \ alicloud_yundun_dbaudit_instance
           \ arukas_container
-          \ atlas_artifact
           \ auth0_resource_server
           \ avi_actiongroupconfig
           \ avi_alertconfig
@@ -2087,6 +2225,7 @@ syn keyword terraResourceTypeBI
           \ aws_datasync_location_efs
           \ aws_datasync_location_nfs
           \ aws_datasync_location_s3
+          \ aws_datasync_location_smb
           \ aws_datasync_task
           \ aws_dax_cluster
           \ aws_dax_parameter_group
@@ -2528,6 +2667,366 @@ syn keyword terraResourceTypeBI
           \ azuread_service_principal
           \ azuread_service_principal_password
           \ azuread_user
+          \ azurerm_advanced_threat_protection
+          \ azurerm_analysis_services_server
+          \ azurerm_api_management
+          \ azurerm_api_management_api
+          \ azurerm_api_management_api_operation
+          \ azurerm_api_management_api_operation_policy
+          \ azurerm_api_management_api_policy
+          \ azurerm_api_management_api_schema
+          \ azurerm_api_management_api_version_set
+          \ azurerm_api_management_authorization_server
+          \ azurerm_api_management_backend
+          \ azurerm_api_management_certificate
+          \ azurerm_api_management_diagnostic
+          \ azurerm_api_management_group
+          \ azurerm_api_management_group_user
+          \ azurerm_api_management_identity_provider_aad
+          \ azurerm_api_management_identity_provider_facebook
+          \ azurerm_api_management_identity_provider_google
+          \ azurerm_api_management_identity_provider_microsoft
+          \ azurerm_api_management_identity_provider_twitter
+          \ azurerm_api_management_logger
+          \ azurerm_api_management_openid_connect_provider
+          \ azurerm_api_management_product
+          \ azurerm_api_management_product_api
+          \ azurerm_api_management_product_group
+          \ azurerm_api_management_product_policy
+          \ azurerm_api_management_property
+          \ azurerm_api_management_subscription
+          \ azurerm_api_management_user
+          \ azurerm_app_configuration
+          \ azurerm_app_service
+          \ azurerm_app_service_active_slot
+          \ azurerm_app_service_certificate
+          \ azurerm_app_service_certificate_order
+          \ azurerm_app_service_custom_hostname_binding
+          \ azurerm_app_service_plan
+          \ azurerm_app_service_slot
+          \ azurerm_app_service_source_control_token
+          \ azurerm_app_service_virtual_network_swift_connection
+          \ azurerm_application_gateway
+          \ azurerm_application_insights
+          \ azurerm_application_insights_analytics_item
+          \ azurerm_application_insights_api_key
+          \ azurerm_application_insights_web_test
+          \ azurerm_application_security_group
+          \ azurerm_automation_account
+          \ azurerm_automation_certificate
+          \ azurerm_automation_credential
+          \ azurerm_automation_dsc_configuration
+          \ azurerm_automation_dsc_nodeconfiguration
+          \ azurerm_automation_job_schedule
+          \ azurerm_automation_module
+          \ azurerm_automation_runbook
+          \ azurerm_automation_schedule
+          \ azurerm_automation_variable_bool
+          \ azurerm_automation_variable_datetime
+          \ azurerm_automation_variable_int
+          \ azurerm_automation_variable_string
+          \ azurerm_autoscale_setting
+          \ azurerm_availability_set
+          \ azurerm_azuread_application
+          \ azurerm_azuread_service_principal_password
+          \ azurerm_backup_container_storage_account
+          \ azurerm_backup_policy_file_share
+          \ azurerm_backup_policy_vm
+          \ azurerm_backup_protected_file_share
+          \ azurerm_backup_protected_vm
+          \ azurerm_bastion_host
+          \ azurerm_batch_account
+          \ azurerm_batch_application
+          \ azurerm_batch_certificate
+          \ azurerm_batch_pool
+          \ azurerm_bot_channel_email
+          \ azurerm_bot_channel_ms_teams
+          \ azurerm_bot_channel_slack
+          \ azurerm_bot_channels_registration
+          \ azurerm_bot_connection
+          \ azurerm_bot_web_app
+          \ azurerm_cdn_endpoint
+          \ azurerm_cdn_profile
+          \ azurerm_cognitive_account
+          \ azurerm_connection_monitor
+          \ azurerm_container_group
+          \ azurerm_container_registry
+          \ azurerm_container_registry_webhook
+          \ azurerm_container_service
+          \ azurerm_cosmosdb_account
+          \ azurerm_cosmosdb_cassandra_keyspace
+          \ azurerm_cosmosdb_gremlin_database
+          \ azurerm_cosmosdb_gremlin_graph
+          \ azurerm_cosmosdb_mongo_collection
+          \ azurerm_cosmosdb_mongo_database
+          \ azurerm_cosmosdb_sql_container
+          \ azurerm_cosmosdb_sql_database
+          \ azurerm_dashboard
+          \ azurerm_data_factory
+          \ azurerm_data_factory_dataset_mysql
+          \ azurerm_data_factory_dataset_postgresql
+          \ azurerm_data_factory_dataset_sql_server_table
+          \ azurerm_data_factory_integration_runtime_managed
+          \ azurerm_data_factory_linked_service_data_lake_storage_gen2
+          \ azurerm_data_factory_linked_service_mysql
+          \ azurerm_data_factory_linked_service_postgresql
+          \ azurerm_data_factory_linked_service_sql_server
+          \ azurerm_data_factory_pipeline
+          \ azurerm_data_factory_trigger_schedule
+          \ azurerm_data_lake_analytics_account
+          \ azurerm_data_lake_analytics_firewall_rule
+          \ azurerm_data_lake_store_file
+          \ azurerm_data_lake_store_firewall_rule
+          \ azurerm_databricks_workspace
+          \ azurerm_ddos_protection_plan
+          \ azurerm_dedicated_host
+          \ azurerm_dedicated_host_group
+          \ azurerm_dev_test_lab
+          \ azurerm_dev_test_linux_virtual_machine
+          \ azurerm_dev_test_policy
+          \ azurerm_dev_test_schedule
+          \ azurerm_dev_test_virtual_network
+          \ azurerm_devspace_controller
+          \ azurerm_disk_encryption_set
+          \ azurerm_dns_a_record
+          \ azurerm_dns_aaaa_record
+          \ azurerm_dns_caa_record
+          \ azurerm_dns_cname_record
+          \ azurerm_dns_mx_record
+          \ azurerm_dns_ns_record
+          \ azurerm_dns_ptr_record
+          \ azurerm_dns_srv_record
+          \ azurerm_dns_txt_record
+          \ azurerm_eventgrid_domain
+          \ azurerm_eventgrid_event_subscription
+          \ azurerm_eventgrid_topic
+          \ azurerm_eventhub_authorization_rule
+          \ azurerm_eventhub_consumer_group
+          \ azurerm_eventhub_namespace
+          \ azurerm_eventhub_namespace_authorization_rule
+          \ azurerm_eventhub_namespace_disaster_recovery_config
+          \ azurerm_express_route_circuit
+          \ azurerm_express_route_circuit_authorization
+          \ azurerm_express_route_circuit_peering
+          \ azurerm_firewall
+          \ azurerm_firewall_application_rule_collection
+          \ azurerm_firewall_nat_rule_collection
+          \ azurerm_firewall_network_rule_collection
+          \ azurerm_frontdoor
+          \ azurerm_function_app
+          \ azurerm_hdinsight_hadoop_cluster
+          \ azurerm_hdinsight_hbase_cluster
+          \ azurerm_hdinsight_interactive_query_cluster
+          \ azurerm_hdinsight_kafka_cluster
+          \ azurerm_hdinsight_ml_services_cluster
+          \ azurerm_hdinsight_rserver_cluster
+          \ azurerm_hdinsight_spark_cluster
+          \ azurerm_healthcare_service
+          \ azurerm_image
+          \ azurerm_iot_dps
+          \ azurerm_iot_dps_certificate
+          \ azurerm_iothub
+          \ azurerm_iothub_consumer_group
+          \ azurerm_iothub_dps
+          \ azurerm_iothub_dps_certificate
+          \ azurerm_iothub_dps_shared_access_policy
+          \ azurerm_iothub_endpoint_eventhub
+          \ azurerm_iothub_endpoint_servicebus_queue
+          \ azurerm_iothub_endpoint_servicebus_topic
+          \ azurerm_iothub_endpoint_storage_container
+          \ azurerm_iothub_fallback_route
+          \ azurerm_iothub_route
+          \ azurerm_key_vault
+          \ azurerm_key_vault_access_policy
+          \ azurerm_key_vault_certificate
+          \ azurerm_key_vault_key
+          \ azurerm_key_vault_secret
+          \ azurerm_kubernetes_cluster
+          \ azurerm_kubernetes_cluster_node_pool
+          \ azurerm_kusto_cluster
+          \ azurerm_kusto_database
+          \ azurerm_kusto_database_principal
+          \ azurerm_kusto_eventhub_data_connection
+          \ azurerm_lb
+          \ azurerm_lb_backend_address_pool
+          \ azurerm_lb_nat_pool
+          \ azurerm_lb_nat_rule
+          \ azurerm_lb_outbound_rule
+          \ azurerm_lb_probe
+          \ azurerm_lb_rule
+          \ azurerm_local_network_gateway
+          \ azurerm_log_analytics_linked_service
+          \ azurerm_log_analytics_solution
+          \ azurerm_log_analytics_workspace_linked_service
+          \ azurerm_logic_app_action_custom
+          \ azurerm_logic_app_action_http
+          \ azurerm_logic_app_trigger_custom
+          \ azurerm_logic_app_trigger_http_request
+          \ azurerm_logic_app_trigger_recurrence
+          \ azurerm_managed_disk
+          \ azurerm_management_group
+          \ azurerm_management_lock
+          \ azurerm_maps_account
+          \ azurerm_mariadb_configuration
+          \ azurerm_mariadb_database
+          \ azurerm_mariadb_firewall_rule
+          \ azurerm_mariadb_server
+          \ azurerm_marketplace_agreement
+          \ azurerm_media_services_account
+          \ azurerm_metric_alertrule
+          \ azurerm_monitor_action_group
+          \ azurerm_monitor_activity_log_alert
+          \ azurerm_monitor_autoscale_setting
+          \ azurerm_monitor_diagnostic_setting
+          \ azurerm_monitor_log_profile
+          \ azurerm_monitor_metric_alert
+          \ azurerm_mssql_database_vulnerability_assessment_rule_baseline
+          \ azurerm_mssql_elasticpool
+          \ azurerm_mssql_server_security_alert_policy
+          \ azurerm_mssql_server_vulnerability_assessment
+          \ azurerm_mysql_configuration
+          \ azurerm_mysql_database
+          \ azurerm_mysql_firewall_rule
+          \ azurerm_mysql_server
+          \ azurerm_nat_gateway
+          \ azurerm_netapp_account
+          \ azurerm_netapp_pool
+          \ azurerm_netapp_volume
+          \ azurerm_network_connection_monitor
+          \ azurerm_network_ddos_protection_plan
+          \ azurerm_network_interface
+          \ azurerm_network_interface_application_gateway_backend_address_pool_association
+          \ azurerm_network_interface_application_security_group_association
+          \ azurerm_network_interface_backend_address_pool_association
+          \ azurerm_network_interface_nat_rule_association
+          \ azurerm_network_packet_capture
+          \ azurerm_network_profile
+          \ azurerm_network_security_group
+          \ azurerm_network_security_rule
+          \ azurerm_network_watcher
+          \ azurerm_network_watcher_flow_log
+          \ azurerm_notification_hub
+          \ azurerm_notification_hub_authorization_rule
+          \ azurerm_notification_hub_namespace
+          \ azurerm_packet_capture
+          \ azurerm_point_to_site_vpn_gateway
+          \ azurerm_policy_assignment
+          \ azurerm_policy_definition
+          \ azurerm_policy_set_definition
+          \ azurerm_postgresql_configuration
+          \ azurerm_postgresql_database
+          \ azurerm_postgresql_firewall_rule
+          \ azurerm_postgresql_server
+          \ azurerm_postgresql_virtual_network_rule
+          \ azurerm_private_dns_a_record
+          \ azurerm_private_dns_aaaa_record
+          \ azurerm_private_dns_cname_record
+          \ azurerm_private_dns_mx_record
+          \ azurerm_private_dns_ptr_record
+          \ azurerm_private_dns_srv_record
+          \ azurerm_private_dns_zone
+          \ azurerm_private_dns_zone_virtual_network_link
+          \ azurerm_private_endpoint
+          \ azurerm_private_link_endpoint
+          \ azurerm_private_link_service
+          \ azurerm_proximity_placement_group
+          \ azurerm_public_ip
+          \ azurerm_public_ip_prefix
+          \ azurerm_recovery_network_mapping
+          \ azurerm_recovery_replicated_vm
+          \ azurerm_recovery_services_fabric
+          \ azurerm_recovery_services_protected_vm
+          \ azurerm_recovery_services_protection_container
+          \ azurerm_recovery_services_protection_container_mapping
+          \ azurerm_recovery_services_protection_policy_vm
+          \ azurerm_recovery_services_replication_policy
+          \ azurerm_recovery_services_vault
+          \ azurerm_redis_cache
+          \ azurerm_redis_firewall_rule
+          \ azurerm_relay_hybrid_connection
+          \ azurerm_relay_namespace
+          \ azurerm_resource_group
+          \ azurerm_resources
+          \ azurerm_role_assignment
+          \ azurerm_role_definition
+          \ azurerm_route
+          \ azurerm_route_table
+          \ azurerm_scheduler_job
+          \ azurerm_scheduler_job_collection
+          \ azurerm_search_service
+          \ azurerm_security_center_contact
+          \ azurerm_security_center_subscription_pricing
+          \ azurerm_security_center_workspace
+          \ azurerm_service_fabric_cluster
+          \ azurerm_servicebus_namespace
+          \ azurerm_servicebus_namespace_authorization_rule
+          \ azurerm_servicebus_queue
+          \ azurerm_servicebus_queue_authorization_rule
+          \ azurerm_servicebus_subscription
+          \ azurerm_servicebus_subscription_rule
+          \ azurerm_servicebus_topic
+          \ azurerm_servicebus_topic_authorization_rule
+          \ azurerm_shared_image
+          \ azurerm_shared_image_gallery
+          \ azurerm_shared_image_version
+          \ azurerm_signalr_service
+          \ azurerm_site_recovery_fabric
+          \ azurerm_site_recovery_network_mapping
+          \ azurerm_site_recovery_protection_container
+          \ azurerm_site_recovery_protection_container_mapping
+          \ azurerm_site_recovery_replicated_vm
+          \ azurerm_site_recovery_replication_policy
+          \ azurerm_snapshot
+          \ azurerm_sql_active_directory_administrator
+          \ azurerm_sql_database
+          \ azurerm_sql_elasticpool
+          \ azurerm_sql_failover_group
+          \ azurerm_sql_firewall_rule
+          \ azurerm_sql_server
+          \ azurerm_sql_virtual_network_rule
+          \ azurerm_storage_account
+          \ azurerm_storage_account_network_rules
+          \ azurerm_storage_blob
+          \ azurerm_storage_container
+          \ azurerm_storage_data_lake_gen2_filesystem
+          \ azurerm_storage_management_policy
+          \ azurerm_storage_queue
+          \ azurerm_storage_share
+          \ azurerm_storage_share_directory
+          \ azurerm_storage_table
+          \ azurerm_storage_table_entity
+          \ azurerm_stream_analytics_function_javascript_udf
+          \ azurerm_stream_analytics_job
+          \ azurerm_stream_analytics_output_blob
+          \ azurerm_stream_analytics_output_eventhub
+          \ azurerm_stream_analytics_output_mssql
+          \ azurerm_stream_analytics_output_servicebus_queue
+          \ azurerm_stream_analytics_output_servicebus_topic
+          \ azurerm_stream_analytics_reference_input_blob
+          \ azurerm_stream_analytics_stream_input_blob
+          \ azurerm_stream_analytics_stream_input_eventhub
+          \ azurerm_stream_analytics_stream_input_iothub
+          \ azurerm_subnet
+          \ azurerm_subnet_nat_gateway_association
+          \ azurerm_subnet_network_security_group_association
+          \ azurerm_subnet_route_table_association
+          \ azurerm_template_deployment
+          \ azurerm_traffic_manager_endpoint
+          \ azurerm_traffic_manager_profile
+          \ azurerm_user_assigned_identity
+          \ azurerm_virtual_hub
+          \ azurerm_virtual_machine
+          \ azurerm_virtual_machine_data_disk_attachment
+          \ azurerm_virtual_machine_extension
+          \ azurerm_virtual_machine_scale_set
+          \ azurerm_virtual_network
+          \ azurerm_virtual_network_gateway
+          \ azurerm_virtual_network_gateway_connection
+          \ azurerm_virtual_network_peering
+          \ azurerm_virtual_wan
+          \ azurerm_vpn_gateway
+          \ azurerm_vpn_server_configuration
+          \ azurerm_web_application_firewall_policy
           \ azurestack_availability_set
           \ azurestack_dns_a_record
           \ azurestack_dns_zone
@@ -2900,6 +3399,7 @@ syn keyword terraResourceTypeBI
           \ flexibleengine_sdrs_drill_v1
           \ flexibleengine_sdrs_protectedinstance_v1
           \ flexibleengine_sdrs_protectiongroup_v1
+          \ flexibleengine_sdrs_replication_attach_v1
           \ flexibleengine_sdrs_replication_pair_v1
           \ flexibleengine_sfs_file_system_v2
           \ flexibleengine_smn_subscription_v2
@@ -2983,6 +3483,7 @@ syn keyword terraResourceTypeBI
           \ google_access_context_manager_access_level
           \ google_access_context_manager_access_policy
           \ google_access_context_manager_service_perimeter
+          \ google_access_context_manager_service_perimeter_resource
           \ google_app_engine_application
           \ google_app_engine_application_url_dispatch_rules
           \ google_app_engine_domain_mapping
@@ -3098,6 +3599,7 @@ syn keyword terraResourceTypeBI
           \ google_container_analysis_note
           \ google_container_cluster
           \ google_container_node_pool
+          \ google_container_registry
           \ google_data_fusion_instance
           \ google_dataflow_job
           \ google_dataproc_autoscaling_policy
@@ -3110,6 +3612,7 @@ syn keyword terraResourceTypeBI
           \ google_dataproc_job_iam_member
           \ google_dataproc_job_iam_policy
           \ google_deployment_manager_deployment
+          \ google_dialogflow_agent
           \ google_dns_managed_zone
           \ google_dns_policy
           \ google_dns_record_set
@@ -3202,6 +3705,7 @@ syn keyword terraResourceTypeBI
           \ google_project_iam_policy
           \ google_project_organization_policy
           \ google_project_service
+          \ google_project_services
           \ google_project_usage_export_bucket
           \ google_pubsub_subscription
           \ google_pubsub_subscription_iam_binding
@@ -3219,6 +3723,11 @@ syn keyword terraResourceTypeBI
           \ google_runtimeconfig_config_iam_policy
           \ google_runtimeconfig_variable
           \ google_scc_source
+          \ google_secret_manager_secret
+          \ google_secret_manager_secret_iam_binding
+          \ google_secret_manager_secret_iam_member
+          \ google_secret_manager_secret_iam_policy
+          \ google_secret_manager_secret_version
           \ google_security_scanner_scan_config
           \ google_service_account
           \ google_service_account_iam_binding
@@ -3378,10 +3887,12 @@ syn keyword terraResourceTypeBI
           \ huaweicloud_lb_member_v2
           \ huaweicloud_lb_monitor_v2
           \ huaweicloud_lb_pool_v2
+          \ huaweicloud_lb_whitelist_v2
           \ huaweicloud_maas_task_v1
           \ huaweicloud_mls_instance
           \ huaweicloud_mrs_cluster_v1
           \ huaweicloud_mrs_job_v1
+          \ huaweicloud_nat_dnat_rule_v2
           \ huaweicloud_nat_gateway_v2
           \ huaweicloud_nat_snat_rule_v2
           \ huaweicloud_networking_floatingip_associate_v2
@@ -3555,22 +4066,33 @@ syn keyword terraResourceTypeBI
           \ logentries_logset
           \ logicmonitor_collector
           \ logicmonitor_collector_group
+          \ logicmonitor_dashboard
+          \ logicmonitor_dashboard_group
           \ logicmonitor_device
           \ logicmonitor_device_group
           \ mailgun_domain
           \ mailgun_route
           \ metalcloud_infrastructure
+          \ mongodbatlas_alert_configuration
+          \ mongodbatlas_auditing
           \ mongodbatlas_cloud_provider_snapshot
           \ mongodbatlas_cloud_provider_snapshot_restore_job
           \ mongodbatlas_cluster
+          \ mongodbatlas_custom_db_role
           \ mongodbatlas_database_user
           \ mongodbatlas_encryption_at_rest
+          \ mongodbatlas_global_cluster_config
           \ mongodbatlas_maintenance_window
           \ mongodbatlas_network_container
           \ mongodbatlas_network_peering
+          \ mongodbatlas_private_endpoint
+          \ mongodbatlas_private_endpoint_interface_link
           \ mongodbatlas_private_ip_mode
           \ mongodbatlas_project
           \ mongodbatlas_project_ip_whitelist
+          \ mongodbatlas_team
+          \ mongodbatlas_teams
+          \ mongodbatlas_x509_authentication_database_user
           \ mysql_database
           \ mysql_grant
           \ mysql_role
@@ -3791,6 +4313,10 @@ syn keyword terraResourceTypeBI
           \ oci_datacatalog_data_asset
           \ oci_dataflow_application
           \ oci_dataflow_invoke_run
+          \ oci_datascience_model
+          \ oci_datascience_model_provenance
+          \ oci_datascience_notebook_session
+          \ oci_datascience_project
           \ oci_dns_record
           \ oci_dns_steering_policy
           \ oci_dns_steering_policy_attachment
@@ -3948,6 +4474,7 @@ syn keyword terraResourceTypeBI
           \ opennebula_template
           \ opennebula_virtual_data_center
           \ opennebula_virtual_machine
+          \ opennebula_virtual_machine_group
           \ opennebula_virtual_network
           \ openstack_blockstorage_quotaset_v2
           \ openstack_blockstorage_quotaset_v3
@@ -4153,6 +4680,7 @@ syn keyword terraResourceTypeBI
           \ opsgenie_escalation
           \ opsgenie_heartbeat
           \ opsgenie_maintenance
+          \ opsgenie_notification_policy
           \ opsgenie_schedule
           \ opsgenie_schedule_rotation
           \ opsgenie_team
@@ -4450,6 +4978,7 @@ syn keyword terraResourceTypeBI
           \ random_shuffle
           \ random_string
           \ random_uuid
+          \ resource_group_name
           \ rightscale_credential
           \ rightscale_cwf_process
           \ rightscale_deployment
@@ -4493,6 +5022,7 @@ syn keyword terraResourceTypeBI
           \ scaleway_lb_frontend_beta
           \ scaleway_object_bucket
           \ scaleway_rdb_instance_beta
+          \ scaleway_registry_namespace_beta
           \ scaleway_security_group
           \ scaleway_security_group_rule
           \ scaleway_server
@@ -4705,6 +5235,26 @@ syn keyword terraResourceTypeBI
           \ tencentcloud_vpn_connection
           \ tencentcloud_vpn_customer_gateway
           \ tencentcloud_vpn_gateway
+          \ test_resource
+          \ test_resource_computed_set
+          \ test_resource_config_mode
+          \ test_resource_defaults
+          \ test_resource_deprecated
+          \ test_resource_diff_suppress
+          \ test_resource_force_new
+          \ test_resource_gh12183
+          \ test_resource_import_other
+          \ test_resource_import_removed
+          \ test_resource_list
+          \ test_resource_list_set
+          \ test_resource_map
+          \ test_resource_nested
+          \ test_resource_nested_id
+          \ test_resource_nested_set
+          \ test_resource_state_func
+          \ test_resource_timeout
+          \ test_resource_with_custom_diff
+          \ test_undeleteable
           \ tfe_notification_configuration
           \ tfe_oauth_client
           \ tfe_organization
@@ -4825,6 +5375,7 @@ syn keyword terraResourceTypeBI
           \ yandex_compute_instance_group
           \ yandex_compute_snapshot
           \ yandex_container_registry
+          \ yandex_dataproc_cluster
           \ yandex_iam_service_account
           \ yandex_iam_service_account_api_key
           \ yandex_iam_service_account_iam_binding

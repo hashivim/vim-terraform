@@ -17,13 +17,13 @@ function get_providers() {
     # Make a ramdisk because there is a ton of stuff to download
     sudo mount -t tmpfs -o size=512m tmpfs $(pwd)/terraform-providers
     cd terraform-providers
-    for PAGE in {1..2}; do
+    for PAGE in {1..3}; do
         for REPO in $(curl -sL https://api.github.com/users/terraform-providers/repos?page=${PAGE}\&per_page=100 | jq -r .[].name); do
             if [ ! -d ${REPO} ]; then
                 git clone --depth 1 https://github.com/terraform-providers/${REPO}
                 # Only get the folder/files we need. There's probably a better way checkout only the files we need, but I don't know it.
                 cd ${REPO}
-                find . -type f -not -name "*provider*.go" -delete
+                find . -type f -not -name "*provider*.go" -and -not -name "*registration*.go" -delete
                 cd ..
             else
                 cd ${REPO}
