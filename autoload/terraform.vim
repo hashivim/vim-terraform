@@ -3,6 +3,7 @@ set cpoptions&vim
 
 " Ensure no conflict with arguments from the environment
 let $TF_CLI_ARGS_fmt=''
+let $TF_LOG=''
 
 function! terraform#fmt()
   if !filereadable(expand('%:p'))
