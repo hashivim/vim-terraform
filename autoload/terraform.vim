@@ -53,6 +53,8 @@ function! terraform#commands(ArgLead, CmdLine, CursorPos) abort
     \ 'graph',
     \ 'import',
     \ 'init',
+    \ 'login',
+    \ 'logout',
     \ 'output',
     \ 'plan',
     \ 'providers',
