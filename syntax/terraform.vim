@@ -16,18 +16,10 @@ endif
 
 syn case match
 
-syn keyword terraSection connection
-            \ content
-            \ data
-            \ dynamic
-            \ locals
-            \ module
-            \ output
-            \ provider
-            \ provisioner
-            \ resource
-            \ terraform
-            \ variable
+" A block is introduced by a type, some number of labels - which are either
+" strings or identifiers - and an opening curly brace.  Match the type.
+syn match terraBlockIntroduction /^\s*\zs\K\k*\ze\s\+\(\("\K\k*"\|\K\k*\)\s\+\)*{/ contains=terraBlockType
+syn keyword terraBlockType contained data locals module output provider resource terraform variable
 
 syn keyword terraValueBool true false on off yes no
 
@@ -56,12 +48,12 @@ syn keyword terraType           string bool number object tuple list map set
 syn keyword terraValueNull      null
 
 " enable block folding
-syn region terraBlock matchgroup=terraBraces start="{" end="}" fold transparent
+syn region terraBlockBody matchgroup=terraBraces start="{" end="}" fold transparent
 
 hi def link terraComment           Comment
 hi def link terraTodo              Todo
 hi def link terraBraces            Delimiter
-hi def link terraSection           Structure
+hi def link terraBlockType         Structure
 hi def link terraValueBool         Boolean
 hi def link terraValueDec          Number
 hi def link terraValueHexaDec      Number
