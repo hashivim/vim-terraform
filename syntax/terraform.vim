@@ -44,7 +44,7 @@ syn match terraFunction "[a-z0-9]\+(\@="
 """ HCL2
 syn keyword terraRepeat         for in
 syn keyword terraConditional    if
-syn keyword terraType           string bool number object tuple list map set
+syn keyword terraType           string bool number object tuple list map set any
 syn keyword terraValueNull      null
 
 " enable block folding
