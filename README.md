@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/Supports%20Terraform%20Version-%3E%3D0.12.20-blue.svg)](https://github.com/hashicorp/terraform/blob/v0.12.20/CHANGELOG.md)
+[![](https://img.shields.io/badge/Supports%20Terraform%20Version-%3E%3D0.12.26-blue.svg)](https://github.com/hashicorp/terraform/blob/v0.12.26/CHANGELOG.md)
 
 ## Call For Maintainers
 
