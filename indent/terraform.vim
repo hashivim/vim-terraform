@@ -48,12 +48,12 @@ function! TerraformIndent(lnum)
   endif
 
   " If the previous line starts a block comment /*, increase by one
-  if prevline =~ '/\*'
+  if prevline =~# '/\*'
     let thisindent += 1
   endif
 
   " If the previous line ends a block comment */, decrease by one
-  if prevline =~ '\*/'
+  if prevline =~# '\*/'
     let thisindent -= 1
   endif
 
