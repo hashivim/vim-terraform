@@ -9,7 +9,7 @@ further information.
 - - - -
 ## Overview: vim-terraform
 
-This plugin adds a `:Terraform` command that runs terraform, with tab
+This plugin adds a `:!Terraform` command that runs terraform, with tab
 completion of subcommands. It also sets up `*.tf`, `*.tfvars`, and
 `*.tfstate` files to be highlighted as HCL, HCL, and JSON respectively.
 
@@ -41,7 +41,7 @@ Allow vim-terraform to automatically fold (hide until unfolded) sections of terr
     let g:terraform_fold_sections=1
 
 Allow vim-terraform to automatically format `*.tf` and `*.tfvars` files with `terraform fmt`.
-You can also do this manually with the `:TerraformFmt` command.
+You can also do this manually with the `:!TerraformFmt` command.
 
     let g:terraform_fmt_on_save=1
 
@@ -87,7 +87,7 @@ Thanks to the following contributors:
 -   Lowe Schmidt (@lsc)
 -   Mario Kozjak (@mkozjak)
 
-The `:TerraformFmt` command is adapted from
+The `:!TerraformFmt` command is adapted from
 [vim-hclfmt](https://github.com/fatih/vim-hclfmt/blob/master/autoload/fmt.vim).
 
 This project is intended to be a safe, welcoming space for collaboration, and
