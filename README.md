@@ -10,8 +10,8 @@ further information.
 ## Overview: vim-terraform
 
 This plugin adds a `:Terraform` command that runs terraform, with tab
-completion of subcommands. It also sets up `*.tf`, `*.tfvars`, and
-`*.tfstate` files to be highlighted as HCL, HCL, and JSON respectively.
+completion of subcommands. It also sets up `*.tf`, `*.tfvars`, `.terraformrc`
+and `terraform.rc` files to be highlighted as HCL and `*.tfstate` as JSON.
 
 - - - -
 ## Installation
