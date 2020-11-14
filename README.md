@@ -45,6 +45,10 @@ You can also do this manually with the `:TerraformFmt` command.
 
     let g:terraform_fmt_on_save=1
 
+Allow vim-terraform to use a custom path for the terraform binary. Defaults to terraform (found in $PATH)
+
+    let g:terraform_binary_path="/usr/local/Cellar/terraform/0.13.5/bin/terraform"
+
 - - - -
 ## Updating vim-terraform
 Note, this is only for maintainers of the `vim-terraform` project.
