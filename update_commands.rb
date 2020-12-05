@@ -4,15 +4,15 @@
 
 require 'open3'
 
-command_re = /^\s\s\s\s(\S+)/
+command_re = /^\s{2}([a-z0-9]\S*)/
 plugin_file = 'autoload/terraform.vim'
 
 # Create the list of commands.
 
 if File.file?('./terraform')
-    stdout, stderr, _status = Open3.capture3('./terraform list-commands')
+    stdout, stderr, _status = Open3.capture3('./terraform -help')
 else
-    stdout, stderr, _status = Open3.capture3('terraform list-commands')
+    stdout, stderr, _status = Open3.capture3('terraform -help')
 end
 
 output = if stderr == ''
