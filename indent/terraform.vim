@@ -30,13 +30,19 @@ function! TerraformIndent(lnum)
     return 0
   endif
 
-  " Usual case is to continue at the same indent as the previous non-blank line.
   let prevlnum = prevnonblank(a:lnum-1)
-  let thisindent = indent(prevlnum)
+  let prevline = getline(prevlnum)
 
+  " If the previous line is starts a non-indented heredoc string e.g. <<EOF
+  " then there should usually be no indent (skipped by default)
+  if g:terraform_unindent_heredoc && prevline =~? '<<[A-Z]\+$'
+    return 0
+  endif
+
+  " Usual case is to continue at the same indent as the previous non-blank line.
+  let thisindent = indent(prevlnum)
   " If that previous line is a non-comment ending in [ { (, increase the
   " indent level.
-  let prevline = getline(prevlnum)
   if prevline !~# '^\s*\(#\|//\)' && prevline =~# '[\[{\(]\s*$'
     let thisindent += &shiftwidth
   endif
