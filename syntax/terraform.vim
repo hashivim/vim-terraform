@@ -19,7 +19,7 @@ syn case match
 " A block is introduced by a type, some number of labels - which are either
 " strings or identifiers - and an opening curly brace.  Match the type.
 syn match terraBlockIntroduction /^\s*\zs\K\k*\ze\s\+\(\("\K\k*"\|\K\k*\)\s\+\)*{/ contains=terraBlockType
-syn keyword terraBlockType contained data locals module output provider resource terraform variable
+syn keyword terraBlockType contained data locals module output provider resource terraform variable source build
 
 syn keyword terraValueBool true false on off yes no
 
