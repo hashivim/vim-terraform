@@ -59,7 +59,7 @@ Defaults to terraform (found in $PATH)
 
 ---
 
-## Use with other HCL filetypes
+## Use with other HCL files
 
 This is a terraform plugin, with terraform-specific features.
 However, some users have reported that it also works well for other files that
