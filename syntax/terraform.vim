@@ -35,7 +35,7 @@ syn match terraBraces        "[\[\]]"
 
 """ skip \" and \\ in strings.
 syn region terraValueString   start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=terraStringInterp
-syn region terraStringInterp  matchgroup=terraBraces start=/\${/ end=/}/ contained contains=ALL
+syn region terraStringInterp  matchgroup=terraBraces start=/\(^\|[^$]\)\$\zs{/ end=/}/ contained contains=ALL
 syn region terraHereDocText   start=/<<-\?\z([a-z0-9A-Z]\+\)/ end=/^\s*\z1/ contains=terraStringInterp
 
 "" Functions.
