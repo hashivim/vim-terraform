@@ -63,6 +63,7 @@ function! terraform#commands(ArgLead, CmdLine, CursorPos) abort
     \ 'show',
     \ 'state',
     \ 'taint',
+    \ 'test',
     \ 'untaint',
     \ 'version',
     \ 'workspace'
