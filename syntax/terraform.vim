@@ -5,8 +5,8 @@ if exists('b:current_syntax')
   finish
 endif
 
-let s:cpo_save = &cpo
-set cpo&vim
+let s:cpo_save = &cpoptions
+set cpoptions&vim
 
 " Identifiers are made up of alphanumeric characters, underscores, and
 " hyphens.
@@ -67,5 +67,5 @@ hi def link terraValueNull         Constant
 
 let b:current_syntax = 'terraform'
 
-let &cpo = s:cpo_save
+let &cpoptions = s:cpo_save
 unlet s:cpo_save
