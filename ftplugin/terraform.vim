@@ -60,6 +60,7 @@ if get(g:, 'terraform_fmt_on_save', 0)
     autocmd!
     autocmd BufWritePre *.tf call terraform#fmt()
     autocmd BufWritePre *.tfvars call terraform#fmt()
+    autocmd BufWritePost *.tf redraw!
   augroup END
 endif
 
