@@ -71,7 +71,7 @@ For example to use this plugin for files with suffix `.hcl`, put the following
 in `~/.vim/ftdetect/terraform.vim`:
 
 ```viml
-autocmd BufRead,BufNewFile *.hcl set filetype=terraform
+autocmd BufRead,BufNewFile *.hcl set filetype=hcl.terraform
 ```
 
 ---
