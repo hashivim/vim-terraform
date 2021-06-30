@@ -19,7 +19,10 @@ syn case match
 " strings or identifiers - and an opening curly brace.  Match the type.
 syn match hclBlockType /^\s*\zs\K\k*\ze\s\+\(\("\K\k*"\|\K\k*\)\s\+\)*{/
 
-syn keyword hclValueBool true false on off yes no
+" An attribute name is an identifier followed by an equals sign.
+syn match hclAttributeName /\K\k*\ze\s\+=\s/
+
+syn keyword hclValueBool true false
 
 syn keyword hclTodo         contained TODO FIXME XXX BUG
 syn region  hclComment      start="/\*" end="\*/" contains=hclTodo,@Spell
@@ -46,12 +49,13 @@ syn keyword hclType           string bool number object tuple list map set any
 syn keyword hclValueNull      null
 
 " enable block folding
-syn region hclBlockBody matchgroup=hclBraces start="{" end="}" fold transparent contains=ALLBUT,hclBlockType
+syn region hclBlockBody matchgroup=hclBraces start="{" end="}" fold transparent
 
 hi def link hclComment           Comment
 hi def link hclTodo              Todo
 hi def link hclBraces            Delimiter
-hi def link hclBlockType         Structure
+hi def link hclAttributeName     Identifier
+hi def link hclBlockType         Type
 hi def link hclValueBool         Boolean
 hi def link hclValueDec          Number
 hi def link hclValueHexaDec      Number
