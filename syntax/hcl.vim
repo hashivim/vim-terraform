@@ -20,7 +20,8 @@ syn case match
 syn match hclBlockType /^\s*\zs\K\k*\ze\s\+\(\("\K\k*"\|\K\k*\)\s\+\)*{/
 
 " An attribute name is an identifier followed by an equals sign.
-syn match hclAttributeName /\K\k*\ze\s\+=\s/
+syn match hclAttributeAssignment /\(\K\k*\.\)*\K\k*\s\+=\s/ contains=hclAttributeName
+syn match hclAttributeName /\<\K\k*\>/ contained
 
 syn keyword hclValueBool true false
 
@@ -36,7 +37,7 @@ syn match hclBraces        "[\[\]]"
 
 """ skip \" and \\ in strings.
 syn region hclValueString   start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=hclStringInterp
-syn region hclStringInterp  matchgroup=hclBraces start=/\(^\|[^$]\)\$\zs{/ end=/}/ contained contains=ALL
+syn region hclStringInterp  matchgroup=hclBraces start=/\(^\|[^$]\)\$\zs{/ end=/}/ contained contains=ALLBUT,hclAttributeName
 syn region hclHereDocText   start=/<<-\?\z([a-z0-9A-Z]\+\)/ end=/^\s*\z1/ contains=hclStringInterp
 
 "" Functions.
