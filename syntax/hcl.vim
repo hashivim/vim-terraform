@@ -46,7 +46,6 @@ syn match hclFunction "[a-z0-9]\+(\@="
 """ HCL2
 syn keyword hclRepeat         for in
 syn keyword hclConditional    if
-syn keyword hclType           string bool number object tuple list map set any
 syn keyword hclValueNull      null
 
 " enable block folding
@@ -65,7 +64,6 @@ hi def link hclHereDocText       String
 hi def link hclFunction          Function
 hi def link hclRepeat            Repeat
 hi def link hclConditional       Conditional
-hi def link hclType              Type
 hi def link hclValueNull         Constant
 
 let b:current_syntax = 'hcl'
