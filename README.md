@@ -13,8 +13,8 @@ See the HashiVim home page for further information.
 
 This plugin adds a `:Terraform` command that runs terraform, with tab completion
 of subcommands.
-It also sets up `*.tf`, `*.tfvars`, `.terraformrc` and `terraform.rc` files to
-be highlighted as HCL and `*.tfstate` as JSON.
+It also sets up `*.hcl`, `*.tf`, `*.tfvars`, `.terraformrc` and `terraform.rc`
+files to be highlighted as HCL and `*.tfstate` as JSON.
 
 ---
 
@@ -36,43 +36,7 @@ With [Vundle](https://github.com/VundleVim/Vundle.vim), add the following to `~/
 
 ## Usage
 
-Allow vim-terraform to align settings automatically with Tabularize.
-
-    let g:terraform_align=1
-
-Allow vim-terraform to automatically fold (hide until unfolded) sections of
-terraform code.
-Defaults to 0 which is off.
-
-    let g:terraform_fold_sections=1
-
-Allow vim-terraform to automatically format `*.tf` and `*.tfvars` files with
-`terraform fmt`.
-You can also do this manually with the `:TerraformFmt` command.
-
-    let g:terraform_fmt_on_save=1
-
-Allow vim-terraform to use a custom path for the terraform binary.
-Defaults to terraform (found in $PATH)
-
-    let g:terraform_binary_path="/usr/local/Cellar/terraform/0.13.5/bin/terraform"
-
----
-
-## Use with other HCL files
-
-This is a terraform plugin, with terraform-specific features.
-However, some users have reported that it also works well for other files that
-use the Hashicorp Configuration Language.
-
-If you want to use this plugin for non-terraform files, the simplest way is to
-teach vim to treat them as terraform.
-For example to use this plugin for files with suffix `.hcl`, put the following
-in `~/.vim/ftdetect/terraform.vim`:
-
-```viml
-autocmd BufRead,BufNewFile *.hcl set filetype=terraform
-```
+Settings are documented in the [help](doc).
 
 ---
 
