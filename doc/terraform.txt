@@ -33,6 +33,15 @@ SETTINGS                                                 *terraform-settings*
     terraform fmt. You can also do this manually with the `:TerraformFmt` command.
     Default: 0
 
+*g:terraform_fmt_on_save_when_modified_only*
+    Allow vim-terraform to automatically format *.tf and *.tfvars files with
+    terraform fmt only when the current buffer is modified.
+    Default: 0
+>
+  let g:terraform_fmt_on_save=1
+  let g:terraform_fmt_on_save_when_modified_only=1
+<
+
 *g:terraform_fold_sections*
     Allow vim-terraform to automatically fold (hide until unfolded) sections of
     terraform code.

@@ -43,13 +43,11 @@ command! -nargs=+ -complete=custom,terraform#commands -buffer Terraform
 command! -nargs=0 -buffer TerraformFmt call terraform#fmt()
 let b:undo_ftplugin .= '|delcommand Terraform|delcommand TerraformFmt'
 
-if get(g:, 'terraform_fmt_on_save', 0)
-  augroup vim.terraform.fmt
-    autocmd!
-    autocmd BufWritePre *.tf call terraform#fmt()
-    autocmd BufWritePre *.tfvars call terraform#fmt()
-  augroup END
-endif
+augroup vim.terraform.fmt
+  autocmd!
+  autocmd BufWritePre *.tf call terraform#fmt_on_save()
+  autocmd BufWritePre *.tfvars call terraform#fmt_on_save()
+augroup END
 
 let &cpoptions = s:cpo_save
 unlet s:cpo_save

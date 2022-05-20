@@ -31,6 +31,23 @@ function! terraform#fmt() abort
   call winrestview(curw)
 endfunction
 
+function! terraform#fmt_on_save()
+  " Skip when "g:terraform_fmt_on_save" is disabled.
+  if get(g:, 'terraform_fmt_on_save', 0) == 0
+    return
+  endif
+
+  " Skip when "g:terraform_fmt_on_save_when_modified_only" is enabled
+  " and the current buffer is not modified.
+  if get(g:, 'terraform_fmt_on_save_when_modified_only', 0)
+    if &modified == 0
+      return
+    endif
+  endif
+
+  call terraform#fmt()
+endfunction
+
 function! terraform#commands(ArgLead, CmdLine, CursorPos) abort
   let commands = [
     \ 'init',
