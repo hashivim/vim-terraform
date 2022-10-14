@@ -49,7 +49,8 @@ let b:undo_ftplugin .= '|delcommand HclFmt'
 if get(g:, 'hcl_fmt_on_save', 0)
   augroup vim.terraform.fmt
     autocmd!
-    autocmd BufWritePre *.hcl call terraform#fmt()
+    autocmd BufWritePre *.tg.hcl call terraform#fmt()
+    autocmd BufWritePre terragrunt.hcl call terraform#fmt()
   augroup END
 endif
 
