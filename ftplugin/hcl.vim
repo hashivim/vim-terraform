@@ -6,6 +6,14 @@ if exists('b:did_ftplugin') || v:version < 700 || &compatible
 endif
 let b:did_ftplugin = 1
 
+if !exists('g:terraform_binary_path')
+  let g:terraform_binary_path='terraform'
+endif
+
+if !executable(g:terraform_binary_path)
+  finish
+endif
+
 let s:cpo_save = &cpoptions
 set cpoptions&vim
 
@@ -33,6 +41,16 @@ let b:undo_ftplugin .= ' commentstring<'
 if get(g:, 'hcl_align', 0) && exists(':Tabularize')
   inoremap <buffer> <silent> = =<Esc>:call hcl#align()<CR>a
   let b:undo_ftplugin .= '|iunmap <buffer> ='
+endif
+
+command! -nargs=0 -buffer HclFmt call terraform#fmt()
+let b:undo_ftplugin .= '|delcommand HclFmt'
+
+if get(g:, 'hcl_fmt_on_save', 0)
+  augroup vim.terraform.fmt
+    autocmd!
+    autocmd BufWritePre *.hcl call terraform#fmt()
+  augroup END
 endif
 
 let &cpoptions = s:cpo_save
