@@ -32,6 +32,19 @@ With [Vundle](https://github.com/VundleVim/Vundle.vim), add the following to `~/
 
     Plugin 'hashivim/vim-terraform'
 
+With [Vim-plug](https://github.com/junegunn/vim-plug), add the following to `~/.vimrc`:
+
+    Plug 'hashivim/vim-terraform'
+
+With [Lazy.nvim](https://github.com/folke/lazy.nvim), add the following to `init.lua`:
+```lua
+{ "hashivim/vim-terraform", ft = "terraform", cmd = {"Terraform", "TerraformFmt"} },
+```
+
+With [Packer.nvim](https://github.com/wbthomason/packer.nvim), add the following to `init.lua`:
+```lua
+use { "hashivim/vim-terraform" },
+```
 ---
 
 ## Usage
