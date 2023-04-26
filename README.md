@@ -20,17 +20,12 @@ files to be highlighted as HCL and `*.tfstate` as JSON.
 
 ## Installation
 
-With [Vim 8 packages](http://vimhelp.appspot.com/repeat.txt.html#packages):
+With [Vim packages](http://vimhelp.appspot.com/repeat.txt.html#packages):
 
     git clone https://github.com/hashivim/vim-terraform.git ~/.vim/pack/plugins/start/vim-terraform
 
-With [Pathogen](https://github.com/tpope/vim-pathogen):
-
-    git clone https://github.com/hashivim/vim-terraform.git ~/.vim/bundle/vim-terraform
-
-With [Vundle](https://github.com/VundleVim/Vundle.vim), add the following to `~/.vimrc`:
-
-    Plugin 'hashivim/vim-terraform'
+If you prefer to use a plugin manager, go ahead.
+</details>
 
 ---
 
