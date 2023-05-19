@@ -30,7 +30,7 @@ endif
 setlocal commentstring=#%s
 let b:undo_ftplugin .= ' commentstring<'
 
-if get(g:, 'hcl_align', 0) && exists(':Tabularize')
+if get(g:, 'hcl_align', 0) && (exists(':Tabularize') || exists(':EasyAlign'))
   inoremap <buffer> <silent> = =<Esc>:call hcl#align()<CR>a
   let b:undo_ftplugin .= '|iunmap <buffer> ='
 endif

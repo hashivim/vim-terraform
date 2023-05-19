@@ -10,7 +10,8 @@ Repo:    https://github.com/hashivim/vim-terraform
 SETTINGS                                                 *hcl-settings*
 
 *g:hcl_align*
-    Allow vim-terraform to align settings automatically with Tabularize.
+    Allow vim-terraform to align settings automatically with Tabularize or
+    EasyAlign.
     Default: 0
 
 *g:hcl_fold_sections*
