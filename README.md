@@ -13,8 +13,8 @@ See the HashiVim home page for further information.
 
 This plugin adds a `:Terraform` command that runs terraform, with tab completion
 of subcommands.
-It also sets up `*.hcl`, `*.tf`, `*.tfvars`, `.terraformrc` and `terraform.rc`
-files to be highlighted as HCL and `*.tfstate` as JSON.
+It also provides syntax highlighting, indentation and more for HCL and
+Terraform-related files.
 
 ---
 
