@@ -1,25 +1,18 @@
-[![](https://img.shields.io/badge/Supports%20Terraform%20Version-%3E%3D1.0.0-blue.svg)](https://github.com/hashicorp/terraform/blob/v1.0.0/CHANGELOG.md)
-
 ## Overview: vim-terramate
 
-This plugin adds a `:Terramate` command that runs terramate, with tab completion
-of subcommands.
-It also provides syntax highlighting, indentation and more for HCL and
-Terramate-related files.
+This plugin provides the following features:
+
+* Syntax highlighting for terramate files (`*.tm.hcl` and `*.tm`)
+* Language server integration with [terramate-ls](https://github.com/terramate-io/terramate/tree/main/cmd/terramate-ls) via [vim-lsp](https://github.com/prabirshrestha/vim-lsp)
+* `:Terramate` command that runs terramate, with tab completion of subcommands.
 
 ---
 
 ## Installation
 
-### With [Vim packages](http://vimhelp.appspot.com/repeat.txt.html#packages):
+### With vim-plug
 
-```
-git clone https://github.com/wmalik/vim-terramate.git ~/.vim/pack/plugins/start/vim-terramate
-```
-
-### With [Vim plug](https://github.com/junegunn/vim-plug):
-
-* Install vim-plug
+* Install [vim-plug](https://github.com/junegunn/vim-plug)
 * Add this to your vimrc
 
 ```vimscript
