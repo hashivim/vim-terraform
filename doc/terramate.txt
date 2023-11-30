@@ -1,0 +1,27 @@
+*terramate.txt*  basic vim/terramate integration
+
+Author:  Wasif Malik <https://github.com/wmalik>
+License: ISC license
+Repo:    https://github.com/wmalik/vim-terramate
+
+
+                                      Type |gO| to see the table of contents.
+==============================================================================
+COMMANDS                                                 *terramate-commands*
+
+These commands are only available if terramate is in your PATH.
+
+                                                                 *:Terramate*
+`:Terramate` [args]         Invoke an arbitrary terramate command.
+
+                                                               *:TerramateFmt*
+`:TerramateFmt`             Invoke `terramate fmt` on the whole project.
+
+==============================================================================
+SETTINGS                                                 *terramate-settings*
+
+*g:terramate_binary_path*
+    Allow vim-terramate to use a custom path for the terramate binary.
+    Default: terramate
+
+ vim:tw=78:et:ft=help:norl:
