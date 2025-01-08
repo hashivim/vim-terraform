@@ -41,7 +41,7 @@ syn region hclStringInterp  matchgroup=hclBraces start=/\(^\|[^$]\)\$\zs{/ end=/
 syn region hclHereDocText   start=/<<-\?\z([a-z0-9A-Z]\+\)/ end=/^\s*\z1/ contains=hclStringInterp
 
 "" Functions.
-syn match hclFunction "[a-z0-9]\+(\@="
+syn match hclFunction "[a-z0-9_]\+(\@="
 
 """ HCL2
 syn keyword hclRepeat         for in
