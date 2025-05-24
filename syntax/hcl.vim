@@ -26,24 +26,24 @@ syn match hclAttributeName /\<\K\k*\>/ contained
 syn keyword hclValueBool true false
 
 syn keyword hclTodo         contained TODO FIXME XXX BUG
-syn region  hclComment      start="/\*" end="\*/" contains=hclTodo,@Spell
 syn region  hclComment      start="#" end="$" contains=hclTodo,@Spell
 syn region  hclComment      start="//" end="$" contains=hclTodo,@Spell
+syn region  hclComment      start="/\*" end="\*/" contains=hclTodo,@Spell
 
-""" misc.
+" misc.
 syn match hclValueDec      "\<[0-9]\+\([kKmMgG]b\?\)\?\>"
 syn match hclValueHexaDec  "\<0x[0-9a-f]\+\([kKmMgG]b\?\)\?\>"
 syn match hclBraces        "[\[\]]"
 
-""" skip \" and \\ in strings.
+" skip \" and \\ in strings.
 syn region hclValueString   start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=hclStringInterp
 syn region hclStringInterp  matchgroup=hclBraces start=/\(^\|[^$]\)\$\zs{/ end=/}/ contained contains=ALLBUT,hclAttributeName
 syn region hclHereDocText   start=/<<-\?\z([a-z0-9A-Z]\+\)/ end=/^\s*\z1/ contains=hclStringInterp
 
-"" Functions.
+" Functions.
 syn match hclFunction "[a-z0-9_]\+(\@="
 
-""" HCL2
+" HCL2
 syn keyword hclRepeat         for in
 syn keyword hclConditional    if
 syn keyword hclValueNull      null
@@ -65,6 +65,9 @@ hi def link hclFunction          Function
 hi def link hclRepeat            Repeat
 hi def link hclConditional       Conditional
 hi def link hclValueNull         Constant
+
+" synchronize
+syntax sync ccomment hclComment
 
 let b:current_syntax = 'hcl'
 
